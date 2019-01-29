@@ -608,7 +608,7 @@ Imagen con ruta absoluta:
 
 **Ejemplo:**
 ```html
-<img src="programando.jpg" title="Soy super ñoño!!!"  />
+<img src="programando.jpg" title="¡Programando en JS!"  />
 ```
 
 #### Práctica
@@ -626,7 +626,7 @@ Imagen con ruta absoluta:
 ```html
 <figure>
   <img src="programando.png">
-  <figcaption>Programando como un campeón</figcaption>
+  <figcaption>¡Programando sin parar!</figcaption>
 </figure>
 ```
 
@@ -913,7 +913,7 @@ Facebook:
 
 **Ejemplo:**
 ```html
-<input type="text" name="apellido" value="Sanchez" />
+<input type="text" name="apellido" value="Lovelace" />
 ```
 
 * Por medio del atributo **placeholder** podemos establecer un texto dentro del input a modo de ejemplo. Este texto no es el valor final del campo y solo lo utilizamos para ayudar al usuario a entender que tipo de valor debe ingresar
@@ -921,7 +921,7 @@ Facebook:
 
 **Ejemplo:**
 ```html
-<input type="text" name="apellido" placeholder="Ej: Sanchez" />
+<input type="text" name="apellido" placeholder="Ej: Lovelace" />
 ```
 
 * Existe un atributo **size** que nos permite establecer el tamaño del campo de texto
@@ -931,14 +931,14 @@ Facebook:
 
 **Ejemplo:**
 ```html
-<input type="text" name="apellido" value="Sanchez" size="20" />
+<input type="text" name="apellido" value="Lovelace" size="20" />
 ```
 
 * Para limitar la cantidad de caracteres que puede ingresar un usuario utilizamos el atributo **maxlength** que acepta un valor numérico con la cantidad máxima de caracteres esperados
 
 **Ejemplo:**
 ```html
-<input type="text" name="apellido" value="Sanchez" maxlength="20" />
+<input type="text" name="apellido" value="Lovelace" maxlength="20" />
 ```
 
 #### Password
@@ -984,9 +984,9 @@ Facebook:
 **Ejemplo**
 ```html
 <form>
-  Estado Civil:
-  <input type="radio" name="estadocivil" value="1" /> Casada/o
-  <input type="radio" name="estadocivil" value="2" /> Soltera/o
+  Acepta términos y condiciones:
+  <input type="radio" name="terminos" value="1" /> Si
+  <input type="radio" name="terminos" value="2" /> No
 </form>
 ```
 
@@ -996,9 +996,9 @@ Facebook:
 **Ejemplo**
 ```html
 <form>
-  Estado Civil:
-  <input type="radio" name="estadocivil" value="1" /> Casada/o
-  <input type="radio" name="estadocivil" value="2" checked="checked" /> Soltera/o
+  Acepta términos y condiciones:
+  <input type="radio" name="terminos" value="1" /> Si
+  <input type="radio" name="terminos" value="2" checked="checked" /> No
 </form>
 ```
 
@@ -1143,7 +1143,7 @@ Facebook:
 
 **Ejemplo:**
 ```html
-<textarea name="bio">Rick Sanchez es un gran científico..</textarea>
+<textarea name="bio">Ada Lovelace es la 1er programadora.</textarea>
 ```
 
 * Podemos utilizar el atributo placeholder para establecer un valor inicial al igual que en el resto de los inputs
@@ -1623,7 +1623,7 @@ Facebook:
 **Ejemplo:**
 ```html
 <head>
-  <meta name="author" content="Rick Sanchez" />
+  <meta name="author" content="Grace Hopper" />
 </head>
 ```
 
@@ -1650,6 +1650,3 @@ Facebook:
 
 ## Extra:
 [Specs de HTML5 - super técnico](https://dev.w3.org/html5/spec-preview/Overview.html)
-
-## Felicitaciones ya sabes HTML5, ahora a defender el mundo de los malos Browsers!
-![Super Heroe HTML5](../assets/html/html_superhero.jpg)
