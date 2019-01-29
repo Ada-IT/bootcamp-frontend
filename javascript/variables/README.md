@@ -38,7 +38,7 @@ var nombreDeMiVariable;
 * En el ejemplo anterior vemos que declaramos una variable con el nombre de **nombre de mi variable** dado que los nombres de las variables no aceptan espacios utilizamos la denominación camel case para escribirlo: **nombreDeMiVariable**
 
 #### Prácticas
-[Ejercicio 1](../ejercicios/consignas/js/ej1.md)
+[Ejercicio 1](./ejercicios/ej1.md)
 
 ## Operador de asignación
 * Una vez declarado el nombre de una variable podemos asignarle un valor. Esto se da ya que tenemos asignado un espacio en memoria donde podemos guardar un valor
@@ -61,7 +61,7 @@ edad = 20;
 ```
 
 #### Prácticas
-[Ejercicio 2](../ejercicios/consignas/js/ej2.md)
+[Ejercicio 2](./ejercicios/ej2.md)
 
 * También podemos declarar todas las variables en una línea y luego asignarle valores
 
@@ -72,7 +72,7 @@ nombre = 'Ada';
 edad = 20;
 ```
 #### Prácticas
-[Ejercicio 3](../ejercicios/consignas/js/ej3.md)
+[Ejercicio 3](./ejercicios/ej3.md)
 
 * También podemos declarar una variable y asignar un valor en la misma sentencia
 
@@ -83,7 +83,7 @@ var edad = 20;
 ```
 
 #### Prácticas
-[Ejercicio 4](../ejercicios/consignas/js/ej4.md)
+[Ejercicio 4](./ejercicios/ej4.md)
 
 * Utilizando `console.log()` podemos mostrar el valor de una variable en la consola
 
@@ -98,7 +98,7 @@ console.log(edad);
 **Ejecutamos el programa utilizando la consola del navegador**
 
 #### Prácticas
-[Ejercicio 5](../ejercicios/consignas/js/ej5.md)
+[Ejercicio 5](./ejercicios/ej5.md)
 
 * Vemos como salida los valores Ada y 20
 * `console.log()` acepta varios valores separados por como para mostrar más de un valor en consola
@@ -118,7 +118,7 @@ console.log('edad: ', edad);
 * Esta es una forma fácil de ver los valores de las variables y saber de donde viene
 
 #### Prácticas
-[Ejercicio 6](../ejercicios/consignas/js/ej6.md)
+[Ejercicio 6](./ejercicios/ej6.md)
 
 ## Tipos base
 * Como vimos en los ejemplos anteriores existen distintos tipos de datos para representar distintos valores
@@ -175,8 +175,8 @@ console.log('¡Bienvenidos a Javascript!');
 * En este ejemplo utilizamos un **string o cadena de caracteres** en `console.log()` directamente
 
 #### Prácticas
-[Ejercicio 10](../ejercicios/consignas/js/ej10.md)
-[Ejercicio 11](../ejercicios/consignas/js/ej11.md)
+[Ejercicio 10](./ejercicios/ej10.md)
+[Ejercicio 11](./ejercicios/ej11.md)
 
 ### Concatenar textos
 * Utilizando el operador `+` podemos unir dos o más **strings**
@@ -204,9 +204,9 @@ console.log(nombre + ' ' + apellido);
 * Podemos ver en este ejemplo como utilizamos un valor literal para el espacio sin asignarlo a una variable
 
 #### Prácticas
-[Ejercicio 12](../ejercicios/consignas/js/ej12.md)
-[Ejercicio 13](../ejercicios/consignas/js/ej13.md)
-[Ejercicio 14](../ejercicios/consignas/js/ej14.md)
+[Ejercicio 12](./ejercicios/ej12.md)
+[Ejercicio 13](./ejercicios/ej13.md)
+[Ejercicio 14](./ejercicios/ej14.md)
 
 ### ¿Comillas dobles o simples?
 * Como sabemos podemos utilizar comillas dobles o simples para definir un tipo de dato **string**
@@ -226,8 +226,8 @@ console.log(otroTexto);
   * En caso de utilizar comilla doble como contenido definimos el string utilizando comillas simples
 
 #### Prácticas
-[Ejercicio 18](../ejercicios/consignas/js/ej18.md)
-[Ejercicio 19](../ejercicios/consignas/js/ej19.md)
+[Ejercicio 18](./ejercicios/ej18.md)
+[Ejercicio 19](./ejercicios/ej19.md)
 
 ### Números
 * Otro de los tipos de datos que tenemos en ECMAScript es **numbers** y nos permite utilizar números
@@ -244,8 +244,8 @@ console.log(volumen);
 ```
 
 #### Prácticas
-[Ejercicio 20](../ejercicios/consignas/js/ej20.md)
-[Ejercicio 21](../ejercicios/consignas/js/ej21.md)
+[Ejercicio 20](./ejercicios/ej20.md)
+[Ejercicio 21](./ejercicios/ej21.md)
 
 * Un error común que podemos hacer cuando arrancamos a programar o aprender ECMAScript es cofundirnos al encontrar algún código similar al siguiente ejemplo
 
@@ -276,7 +276,7 @@ console.log(casado);
 ```
 
 #### Prácticas
-[Ejercicio 22](../ejercicios/consignas/js/ej22.md)
+[Ejercicio 22](./ejercicios/ej22.md)
 
 ### Undefined
 * Al declarar una variable en ECMAScript y no asignarle ningún valor por defecto se le asigna el valor **undefined**
@@ -292,7 +292,7 @@ console.log(indefinido);
 * Es común tener que validar si un valor es **undefined** y lo vamos a ver más adelante
 
 #### Prácticas
-[Ejercicio 23](../ejercicios/consignas/js/ej23.md)
+[Ejercicio 23](./ejercicios/ej23.md)
 
 ### Null
 * Existe un valor llamado **null** para establecer que algo es nulo
@@ -306,7 +306,7 @@ console.log(nulo);
 ```
 
 #### Prácticas
-[Ejercicio 24](../ejercicios/consignas/js/ej24.md)
+[Ejercicio 24](./ejercicios/ej24.md)
 
 * Si bien **null** y **undefined** parecen similares se utilizan de distinta manera
 
@@ -333,8 +333,7 @@ console.log(typeof nulo); // object
 * Object es otro tipo de dato de ECMAScript y lo vamos a ver más adelante
 
 #### Prácticas
-[Ejercicio 25](../ejercicios/consignas/js/ej25.md)
-[Ejercicio 26](../ejercicios/consignas/js/ej26.md)
+[Ejercicio 25](./ejercicios/ej25.md)
 
 ## Operadores aritméticos
 * En ECMAScript existen operadores que nos van a permitir hacer operaciones ariméticas como pueden ser la suma, resta, multiplicación y división entre otros
@@ -479,12 +478,12 @@ console.log(resultado); // 0
 * Este operador nos es útil por ejemplo si queremos saber si un número es par o no.
 
 #### Prácticas
-[Ejercicio 27](../ejercicios/consignas/js/ej27.md)
-[Ejercicio 28](../ejercicios/consignas/js/ej28.md)
-[Ejercicio 29](../ejercicios/consignas/js/ej29.md)
-[Ejercicio 30](../ejercicios/consignas/js/ej30.md)
-[Ejercicio 31](../ejercicios/consignas/js/ej31.md)
-[Ejercicio 32](../ejercicios/consignas/js/ej32.md)
+[Ejercicio 27](./ejercicios/ej27.md)
+[Ejercicio 28](./ejercicios/ej28.md)
+[Ejercicio 29](./ejercicios/ej29.md)
+[Ejercicio 30](./ejercicios/ej30.md)
+[Ejercicio 31](./ejercicios/ej31.md)
+[Ejercicio 32](./ejercicios/ej32.md)
 
 
 ### Incremento y decremento
@@ -611,7 +610,7 @@ console.log(numero); // 10
 * El concepto es siempre el mismo y lo que cambia es la operación realizada
 
 #### Práctica
-[Ejercicio 33](../ejercicios/consignas/js/ej33.md)
+[Ejercicio 33](./ejercicios/ej33.md)
 
 ## Operadores de comparación simple y estricta
 
@@ -712,8 +711,8 @@ console.log(10 !== '10'); // true
 * Los dos últimos casos da **true** ya que no importa el valor que tengan ambos valores son distintos tipo de dato
 
 #### Práctica
-[Ejercicio 34](../ejercicios/consignas/js/ej34.md)
-[Ejercicio 35](../ejercicios/consignas/js/ej35.md)
+[Ejercicio 34](./ejercicios/ej34.md)
+[Ejercicio 35](./ejercicios/ej35.md)
 
 ## Operadores lógicos
 * Existen operadores lógicos que nos permiten anidar condicionales
@@ -787,8 +786,8 @@ console.log('El usuario es mayor de edad?: ', !resultado); // la condición es f
 ```
 
 #### Práctica
-[Ejercicio 36](../ejercicios/consignas/js/ej36.md)
-[Ejercicio 37](../ejercicios/consignas/js/ej37.md)
+[Ejercicio 36](./ejercicios/ej36.md)
+[Ejercicio 37](./ejercicios/ej37.md)
 
 ## Propiedades y métodos de string
 ### Propiedad length
@@ -814,8 +813,8 @@ console.log(texto.length);
 ```
 
 #### Práctica
-[Ejercicio 38](../ejercicios/consignas/js/ej38.md)
-[Ejercicio 39](../ejercicios/consignas/js/ej39.md)
+[Ejercicio 38](./ejercicios/ej38.md)
+[Ejercicio 39](./ejercicios/ej39.md)
 
 ### Métodos de String
 * Los métodos nos permiten obtener funcionalidad para los distintos tipos de datos
@@ -862,7 +861,7 @@ console.log(texto.concat('Script', ' es lo mejor', ' del mundo de la programaci�
 * Se muestra en pantalla el mensaje: **ECMAScript es lo mejor del mundo de la programación**;
 
 #### Prácticas
-[Ejercicio 40](../ejercicios/consignas/js/ej40.md)
+[Ejercicio 40](./ejercicios/ej40.md)
 
 ### Mayúsculas y minúsculas
 * Podemos transformar un texto a mayúscula o minúscula utilizando los métodos **toUpperCase** y **toLowerCase** respectivamente
@@ -879,8 +878,8 @@ console.log(textoEnMayuscula); // muestra el texto HOLA
 console.log(textoEnMinuscula); // muestra el texto javascript
 ```
 #### Prácticas
-[Ejercicio 41](../ejercicios/consignas/js/ej41.md)
-[Ejercicio 42](../ejercicios/consignas/js/ej42.md)
+[Ejercicio 41](./ejercicios/ej41.md)
+[Ejercicio 42](./ejercicios/ej42.md)
 
 ## Métodos de Number
 * Los tipos de datos **number** también tienen métodos que nos permiten obtener funcionalidades
@@ -937,4 +936,4 @@ console.log(mensaje); // 42
 * Obtenemos el resultado 42 ya que estamos concatenando 2 tipos de datos string
 
 #### Prácticas
-[Ejercicio 48](../ejercicios/consignas/js/ej48.md)
+[Ejercicio 48](./ejercicios/ej48.md)
