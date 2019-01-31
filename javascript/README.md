@@ -57,7 +57,9 @@ console.log(2 + 2);
 
 ![Devtools](https://file-gsemsvapwi.now.sh/)
 
-* [Variables](./variables/README.md)
+* [Variables y Tipos de Datos](./variables/README.md)
+* [Operadores](./operadores/README.md)
+* [Métodos de String y Number](./stringsNumbers/README.md)
 * [Estructuras de control](./estructurasControl/README.md)
 * [Arrays](./arrays/README.md)
 * [Funciones](./funciones/README.md)
