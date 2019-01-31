@@ -4,7 +4,7 @@
 * Una de las estructuras más conocidas es el **if** y en español podemos reconocerlos como **si entonces**
 * Esta estructura espera una condición **true** para que ingrese y ejecute el código que tiene dentro de su bloque
 
-![if](../assets/js/if.png)
+![if](https://file-wdvvncgzkb.now.sh)
 
 * Como vemos en esta imágen tenemos una condición que se va a resolver en true o false
 * En caso de que la condición sea verdadera (true) se va a ejecutar las distintas instrucciones
@@ -61,7 +61,7 @@ console.log('Este mensaje se ve siempre se cumpla o no la condición del if');
 * En caso de ser falsa la condición entonces entra en la otra sección
 * Utilizamos la palabra **SI NO** para el **else**
 
-![if/else](../assets/js/if-else.png)
+![if/else](https://file-wdvvncgzkb.now.sh/)
 
 **Ejemplo:**
 ```js
