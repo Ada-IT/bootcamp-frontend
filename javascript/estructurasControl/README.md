@@ -52,9 +52,9 @@ console.log('Este mensaje se ve siempre se cumpla o no la condición del if');
 ```
 
 #### Prácticas
-[Ejercicio 49](../ejercicios/consignas/js/ej49.md)
-[Ejercicio 50](../ejercicios/consignas/js/ej50.md)
-[Ejercicio 51](../ejercicios/consignas/js/ej51.md)
+[Ejercicio 49](./ejercicios/ej49.md)
+[Ejercicio 50](./ejercicios/ej50.md)
+[Ejercicio 51](./ejercicios/ej51.md)
 
 * También existe la estructura if/else que nos permite controlar que pasa si la condición es falsa
 * Es decir que en caso de que la condición sea verdadera entra en una parte de la estructura
@@ -85,9 +85,9 @@ if (numero === 2) {
 * Podemos leer este código de la siguiente manera: SI el número es igual a 2 entonces mostrar el mensaje 'El número es 2' SINO mostrar el mensaje 'El número no es 2'
 
 #### Prácticas
-[Ejercicio 52](../ejercicios/consignas/js/ej52.md)
-[Ejercicio 53](../ejercicios/consignas/js/ej53.md)
-[Ejercicio 54](../ejercicios/consignas/js/ej54.md)
+[Ejercicio 52](./ejercicios/ej52.md)
+[Ejercicio 53](./ejercicios/ej53.md)
+[Ejercicio 54](./ejercicios/ej54.md)
 
 ### Operador Ternario
 * Existe una manera más corta de escribir un if/else y es por medio del operador ternario
@@ -102,9 +102,9 @@ console.log(mensaje);
 ```
 
 #### Prácticas
-[Ejercicio 55](../ejercicios/consignas/js/ej55.md)
-[Ejercicio 56](../ejercicios/consignas/js/ej56.md)
-[Ejercicio 57](../ejercicios/consignas/js/ej57.md)
+[Ejercicio 55](./ejercicios/ej55.md)
+[Ejercicio 56](./ejercicios/ej56.md)
+[Ejercicio 57](./ejercicios/ej57.md)
 
 ### If Anidados
 * Podemos anidar estructuras if/else/if para validar distintas condiciones
@@ -135,9 +135,9 @@ if (nombre === 'Miriam') {
 * Podemos ver en este ejemplo que podemos preguntar por distintas condiciones
 
 #### Prácticas
-[Ejercicio 58](../ejercicios/consignas/js/ej58.md)
-[Ejercicio 59](../ejercicios/consignas/js/ej59.md)
-[Ejercicio 60](../ejercicios/consignas/js/ej60.md)
+[Ejercicio 58](./ejercicios/ej58.md)
+[Ejercicio 59](./ejercicios/ej59.md)
+[Ejercicio 60](./ejercicios/ej60.md)
 
 * Utilizar muchos if's anidados no es una buena práctica
 
@@ -206,9 +206,9 @@ console.log(mensaje);
 * En este ejemplo podemos decir SEGUN el nombre ENTONCES mostra un mensaje personalizado SINO mostrar un mensaje que ninguno de los nombres es el correcto.
 
 #### Prácticas
-[Ejercicio 61](../ejercicios/consignas/js/ej61.md)
-[Ejercicio 62](../ejercicios/consignas/js/ej62.md)
-[Ejercicio 63](../ejercicios/consignas/js/ej63.md)
+[Ejercicio 61](./ejercicios/ej61.md)
+[Ejercicio 62](./ejercicios/ej62.md)
+[Ejercicio 63](./ejercicios/ej63.md)
 
 ## Truthy and Falsy (valores verdaderos y falsos)
 * En ECMAScript existen valores que se pueden transformar como **true** o **false** en una condición
@@ -256,8 +256,8 @@ if (nombre) {
 ```
 
 #### Prácticas
-[Ejercicio 64](../ejercicios/consignas/js/ej64.md)
-[Ejercicio 65](../ejercicios/consignas/js/ej65.md)
+[Ejercicio 64](./ejercicios/ej64.md)
+[Ejercicio 65](./ejercicios/ej65.md)
 
 #### Estructuras de repetición
 * Es común en la programación tener que ejecutar un mismo código varias veces
@@ -378,16 +378,16 @@ while (numero < 10) {
 ```
 
 #### Prácticas
-[Ejercicio 66](../ejercicios/consignas/js/ej66.md)
-[Ejercicio 67](../ejercicios/consignas/js/ej67.md)
-[Ejercicio 68](../ejercicios/consignas/js/ej68.md)
-[Ejercicio 69](../ejercicios/consignas/js/ej69.md)
-[Ejercicio 70](../ejercicios/consignas/js/ej70.md)
-[Ejercicio 71](../ejercicios/consignas/js/ej71.md)
-[Ejercicio 72](../ejercicios/consignas/js/ej72.md)
-[Ejercicio 73](../ejercicios/consignas/js/ej73.md)
-[Ejercicio 74](../ejercicios/consignas/js/ej74.md)
-[Ejercicio 75](../ejercicios/consignas/js/ej75.md) (avanzado)
+[Ejercicio 66](./ejercicios/ej66.md)
+[Ejercicio 67](./ejercicios/ej67.md)
+[Ejercicio 68](./ejercicios/ej68.md)
+[Ejercicio 69](./ejercicios/ej69.md)
+[Ejercicio 70](./ejercicios/ej70.md)
+[Ejercicio 71](./ejercicios/ej71.md)
+[Ejercicio 72](./ejercicios/ej72.md)
+[Ejercicio 73](./ejercicios/ej73.md)
+[Ejercicio 74](./ejercicios/ej74.md)
+[Ejercicio 75](./ejercicios/ej75.md) (avanzado)
 
 ### do/while
 * Otra de las estructuras de repetición que podemos encontrar es el **do/while**
@@ -437,16 +437,16 @@ do {
 * En este ejemplo sólo se muestra el número 1000 y luego no se vuelve a repetir la condición.
 
 #### Prácticas
-[Ejercicio 76](../ejercicios/consignas/js/ej76.md)
-[Ejercicio 77](../ejercicios/consignas/js/ej77.md)
-[Ejercicio 78](../ejercicios/consignas/js/ej78.md)
-[Ejercicio 79](../ejercicios/consignas/js/ej79.md)
-[Ejercicio 80](../ejercicios/consignas/js/ej80.md)
-[Ejercicio 81](../ejercicios/consignas/js/ej81.md)
-[Ejercicio 82](../ejercicios/consignas/js/ej82.md)
-[Ejercicio 83](../ejercicios/consignas/js/ej83.md)
-[Ejercicio 84](../ejercicios/consignas/js/ej84.md)
-[Ejercicio 85](../ejercicios/consignas/js/ej85.md)
+[Ejercicio 76](./ejercicios/ej76.md)
+[Ejercicio 77](./ejercicios/ej77.md)
+[Ejercicio 78](./ejercicios/ej78.md)
+[Ejercicio 79](./ejercicios/ej79.md)
+[Ejercicio 80](./ejercicios/ej80.md)
+[Ejercicio 81](./ejercicios/ej81.md)
+[Ejercicio 82](./ejercicios/ej82.md)
+[Ejercicio 83](./ejercicios/ej83.md)
+[Ejercicio 84](./ejercicios/ej84.md)
+[Ejercicio 85](./ejercicios/ej85.md)
 
 ## For
 * Otra estructura de repetición que podemos utilizar es **for**
@@ -483,18 +483,18 @@ for (var numero = 0; numero <= 1000; numero++) {
 ```
 
 #### Prácticas
-[Ejercicio 86](../ejercicios/consignas/js/ej86.md)
-[Ejercicio 87](../ejercicios/consignas/js/ej87.md)
-[Ejercicio 88](../ejercicios/consignas/js/ej88.md)
-[Ejercicio 89](../ejercicios/consignas/js/ej89.md)
-[Ejercicio 90](../ejercicios/consignas/js/ej90.md)
-[Ejercicio 91](../ejercicios/consignas/js/ej91.md)
-[Ejercicio 92](../ejercicios/consignas/js/ej92.md)
-[Ejercicio 93](../ejercicios/consignas/js/ej93.md)
-[Ejercicio 94](../ejercicios/consignas/js/ej94.md)
-[Ejercicio 95](../ejercicios/consignas/js/ej95.md)
-[Ejercicio 96](../ejercicios/consignas/js/ej96.md)
-[Ejercicio 97](../ejercicios/consignas/js/ej97.md)
+[Ejercicio 86](./ejercicios/ej86.md)
+[Ejercicio 87](./ejercicios/ej87.md)
+[Ejercicio 88](./ejercicios/ej88.md)
+[Ejercicio 89](./ejercicios/ej89.md)
+[Ejercicio 90](./ejercicios/ej90.md)
+[Ejercicio 91](./ejercicios/ej91.md)
+[Ejercicio 92](./ejercicios/ej92.md)
+[Ejercicio 93](./ejercicios/ej93.md)
+[Ejercicio 94](./ejercicios/ej94.md)
+[Ejercicio 95](./ejercicios/ej95.md)
+[Ejercicio 96](./ejercicios/ej96.md)
+[Ejercicio 97](./ejercicios/ej97.md)
 
 
 ### Cortar la ejecución de una estructura de repetición
@@ -523,5 +523,5 @@ for (var i = 0; i < 1000; i++){
 * En este ejemplo si la variable i es 10 o más se va a cortar la ejecución del for y va a seguir el flujo normal del código
 
 #### Prácticas
-[Ejercicio 98](../ejercicios/consignas/js/ej98.md)
-[Ejercicio 99](../ejercicios/consignas/js/ej99.md)
+[Ejercicio 98](./ejercicios/ej98.md)
+[Ejercicio 99](./ejercicios/ej99.md)
