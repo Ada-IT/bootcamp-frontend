@@ -27,7 +27,6 @@ console.log(texto.length);
 
 ### Métodos de String
 * Los métodos nos permiten obtener funcionalidad para los distintos tipos de datos
-* Este método retorna un nuevo string con el texto concatenado
 * Podemos ver una lista de métodos del tipo String en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String)
 * Vamos a ver algunos de los métodos más conocidos y jugar un poco con ellos
 
