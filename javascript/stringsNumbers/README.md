@@ -89,6 +89,92 @@ console.log(textoEnMinuscula); // muestra el texto javascript
 [Ejercicio 41](./ejercicios/ej41.md)
 [Ejercicio 42](./ejercicios/ej42.md)
 
+### Caracteres y posiciones
+* Por medio del método **charAt** podemos saber que caracter se encuentra en una determinada posición de un string
+* Este método acepta un valor numérico como parámetro
+* El primer caracter esta ubicado en la posición 0
+* Para saber cual es el último caracter podemos utilizar la propiedad **length**
+* Dado que el primer elemento arranca en 0 a la logitud del string debemos restarle uno
+
+**Ejemplo:**
+```js
+let textoSuperLargo = 'Este texto es bien largo así podemos saber varias cosas de él.';
+let primerCaracter = textoSuperLargo.charAt(0);
+let posicionDelUltimoCaracter = textoSuperLargo.length - 1;
+let ultimoCaracter = textoSuperLargo.charAt(posicionDelUltimoCaracter);
+
+// Accedemos al primer caracter E
+console.log(primerCaracter);
+console.log(ultimoCaracter);
+```
+
+#### Prácticas
+[Ejercicio 43](../ejercicios/consignas/js/ej43.md)
+[Ejercicio 44](../ejercicios/consignas/js/ej44.md)
+
+### Recortando strings
+* Utilizando el método **slice** podemos obtener una parte de un string
+* Este método acepta dos parámetros slice(inicio, fin)
+* Utilizamos indice desde 0 para obtener desde el inicio de la cadena
+
+***Ejemplo:**
+```js
+let texto = 'Me encanta JavaScript!!';
+let resultado = texto.slice(11, 21);
+console.log(resultado); // JavaScript
+```
+
+* Si contamos desde la primer letra tenemos 11 caracteres hasta llegar a la **J** como primer letra
+* Recortamos desde la posición 11 hasta la 21, es decir que obtenemos como resultado la palabra JavaScript
+* También podemos no establecer el segundo parámetro (**fin**) y obtener desde la posición especificada como inicio hasta el final del texto
+
+***Ejemplo:**
+```js
+let texto = 'Me encanta JavaScript!!';
+let resultado = texto.slice(11);
+console.log(resultado); // JavaScript!!
+```
+
+* Este método acepta como **fin** un número negativo
+* Al utilizar un parámetro negativo lo que hace este método es posicionarse en el final de la cadena y volver tantos caracteres como nosotros especificamos en nuestro valor negativo
+
+***Ejemplo:**
+```js
+let texto = 'Me encanta JavaScript!!';
+let resultado = texto.slice(11, -8);
+console.log('JavaScript no es lo mismo que', resultado); // JavaScript no es lo mismo que Java
+```
+
+#### Prácticas
+[Ejercicio 45](../ejercicios/consignas/js/ej45.md)
+
+* Otro método que podemos utilizar de forma similar es el método **substr**
+* También podemos establecer 2 parámetros numéricos para obtener una porsión de una cadena de texto
+* El primer parámetro establece el **inicio**
+* El segundo parámetro establece la cantidad de caracteres que queremos recortar
+
+***Ejemplo:**
+```js
+let texto = 'Me encanta JavaScript!!';
+let resultado = texto.substr(11, 10);
+console.log(resultado); // JavaScript
+```
+#### Prácticas
+[Ejercicio 46](../ejercicios/consignas/js/ej46.md)
+
+* Podes aprender más sobre estos métodos en el sitio de MDN de [slice](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice) y [substr](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr)
+
+* Los Strings tienen muchos métodos que podemos usar
+* Podés leer sobre ellos en [MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String)
+* Leer sobre:
+  * includes()
+  * indexOf()
+  * repeat()
+  * replace()
+  * trim()
+  * ...más...
+* No es necesario memorizar todos los métodos, solo saber que existen y podemos usarlos.
+
 ## Métodos de Number
 * Los tipos de datos **number** también tienen métodos que nos permiten obtener funcionalidades
 

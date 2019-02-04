@@ -12,7 +12,6 @@ JavaScript empezó como una manera de hacer páginas web más interactivas. Hoy 
 * Débilmente tipado
 * Dinámico
 
-
 ## Historia
 
 Conocer la historia del lenguaje nos ayuda a entenderlo mejor.
