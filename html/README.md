@@ -55,7 +55,7 @@ En un artículo más largo podemos encontrar más secciones con otros títulos, 
 
 De alguna forma estamos acostumbrados a este tipo de estructuras gracias a los diarios u otro tipo de publicación física similar. Ahora bien, qué pasa cuando tenemos que estructurar otro tipo de documentos como puede ser un Twit?
 
-![Ejemplo twit de la nacion](../assets/html/ejemplo_la_nacion.png)
+![Ejemplo twit de la nacion](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/ejemplo_la_nacion.png)
 
 En este ejemplo podemos ver:
 
@@ -93,7 +93,7 @@ Twittea tu respuesta
 En síntesis a la hora de crear páginas web nos vamos a encontrar que cada uno de nuestros proyectos va a tener secciones que tiene una estructura particular. HTML nos brinda las etiquetas para describir las distintas partes de nuestro documento.
 
 **La Nación en HTML:**
-![La Nacion en HTML](../assets/html/lanacion_en_html.png)
+![La Nacion en HTML](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/lanacion_en_html.png)
 
 ## Estructura
 
@@ -220,7 +220,7 @@ Dentro de la etiqueta HTML vamos a tener una sección donde podemos describir co
 ```
 
 #### Práctica
-[Ejercicio 1](../ejercicios/consignas/html/ej01.md)
+[Ejercicio 1](./ejercicios/ej01.md)
 
 ## Etiquetas
 * Títulos H1/H6
@@ -263,9 +263,9 @@ Dentro de la etiqueta HTML vamos a tener una sección donde podemos describir co
 ```
 
 #### Práctica
-[Ejercicio 2](../ejercicios/consignas/html/ej02.md)
+[Ejercicio 2](./ejercicios/ej02.md)
 
-[Ejercicio 3](../ejercicios/consignas/html/ej03.md)
+[Ejercicio 3](./ejercicios/ej03.md)
 
 ### Contenedores genéricos
 #### Div
@@ -335,7 +335,7 @@ en cualquier lado de nuestro documento.
 ```
 
 #### Práctica
-[Ejercicio 4](../ejercicios/consignas/html/ej04.md)
+[Ejercicio 4](./ejercicios/ej04.md)
 
 ### Formato de texto
 * Existen algunas etiquetas de HTML que nos permiten describir como es el texto del documento
@@ -371,7 +371,7 @@ en cualquier lado de nuestro documento.
 ```
 
 #### Práctica
-[Ejercicio 5](../ejercicios/consignas/html/ej05.md)
+[Ejercicio 5](./ejercicios/ej05.md)
 
 ### Lista ordenada (ol)
 * Las listas ordenadas tienen como detalle números ordenados (1, 2, 3, etc)
@@ -389,7 +389,7 @@ en cualquier lado de nuestro documento.
 ```
 
 #### Práctica
-[Ejercicio 6](../ejercicios/consignas/html/ej06.md)
+[Ejercicio 6](./ejercicios/ej06.md)
 
 ### Lista de definición
 * Este tipo de lista se utiliza para mostrar un término y definiciones (glosario)
@@ -406,14 +406,14 @@ en cualquier lado de nuestro documento.
 ```
 
 #### Práctica
-[Ejercicio 7](../ejercicios/consignas/html/ej07.md)
+[Ejercicio 7](./ejercicios/ej07.md)
 
 ### Listas anidadas
 * Las listas se pueden anidar metiendo como contenido de un elemento de lista una nueva lista
 * Puede ser cualquier tipo de lista
 * Se pueden utilizar para crear distintos tipos de menu
 
-![Se te vuela la peluca](../assets/html/mindblown.gif)
+![Se te vuela la peluca](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/mindblown.gif)
 
 **Ejemplo:**
 ```html
@@ -430,7 +430,7 @@ en cualquier lado de nuestro documento.
 ```
 
 #### Práctica
-[Ejercicio 8](../ejercicios/consignas/html/ej08.md)
+[Ejercicio 8](./ejercicios/ej08.md)
 
 ## Hipervínculos
 * Podemos vincular documentos utilizando hipervínculos
@@ -475,7 +475,7 @@ en cualquier lado de nuestro documento.
 
 * Si tenemos 2 archivos que estan al mismo nivel podemos utilizar el nombre de los mismos como vínculo.
 
-![Archivos relativos](../assets/html/link_relativo.png)
+![Archivos relativos](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/link_relativo.png)
 
 **Ejemplo:**
 ```html
@@ -489,7 +489,7 @@ En about.html:
 * Podemos relacionar un archivo que esta dentro de una carpeta utilizando el nombre de la **carpeta/nombre del archivo**
 * También podemos establecer relación desde el archivo que esta dentro de la carpeta con uno que esta afuera utilizando **../** tantas veces como niveles de profundidad que tenga que salir
 
-![Archivos relativos](../assets/html/link_relativo2.png)
+![Archivos relativos](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/link_relativo2.png)
 
 **Ejemplo:**
 ```html
@@ -535,19 +535,19 @@ Desde otro archivo:
 ```
 
 #### Práctica
-[Ejercicio 9](../ejercicios/consignas/html/ej09.md)
+[Ejercicio 9](./ejercicios/ej09.md)
 
-[Ejercicio 10](../ejercicios/consignas/html/ej10.md)
+[Ejercicio 10](./ejercicios/ej10.md)
 
-[Ejercicio 11](../ejercicios/consignas/html/ej11.md)
+[Ejercicio 11](./ejercicios/ej11.md)
 
-[Ejercicio 12](../ejercicios/consignas/html/ej12.md)
+[Ejercicio 12](./ejercicios/ej12.md)
 
-[Ejercicio 13](../ejercicios/consignas/html/ej13.md)
+[Ejercicio 13](./ejercicios/ej13.md)
 
-[Ejercicio 14](../ejercicios/consignas/html/ej14.md)
+[Ejercicio 14](./ejercicios/ej14.md)
 
-[Ejercicio 15](../ejercicios/consignas/html/ej15.md)
+[Ejercicio 15](./ejercicios/ej15.md)
 
 ## Creando sitios:
 
@@ -555,7 +555,7 @@ Desde otro archivo:
 * Vamos a crear un sitio similar a [Medium](https://medium.com/) con todo lo que vimos hasta este momento.
 
 #### Práctica
-[Sitio 1](../ejercicios/consignas/html/sitio01/sitio01.md)
+[Sitio 1](./ejercicios/sitio01/sitio01.md)
 
 
 ## Imagenes
@@ -612,7 +612,7 @@ Imagen con ruta absoluta:
 ```
 
 #### Práctica
-[Ejercicio 16](../ejercicios/consignas/html/ej16.md)
+[Ejercicio 16](./ejercicios/ej16.md)
 
 ### Foto con detalle
 * Muchas veces necesitamos mostrar una imagen con un detalle, para esto HTML5 incorpora los elementos **figure** y **figcaption**
@@ -631,7 +631,7 @@ Imagen con ruta absoluta:
 ```
 
 #### Práctica
-[Ejercicio 17](../ejercicios/consignas/html/ej17.md)
+[Ejercicio 17](./ejercicios/ej17.md)
 
 ## Tablas
 * A la hora de mostrar datos tabulados podemos utilizar el concepto de tabla (ej: una grilla, comparar precios u horarios de servicios, etc)
@@ -658,7 +658,7 @@ Imagen con ruta absoluta:
 * En caso de tener una celda vacía, creamos el elemento **td** igual para que quede bien formada la tabla
 
 #### Práctica
-[Ejercicio 18](../ejercicios/consignas/html/ej18.md)
+[Ejercicio 18](./ejercicios/ej18.md)
 
 * Las tablas pueden tener 3 sectores definidos (thead, tbody y tfoot)
 * El elemento **thead** define el encabezado de la tabla
@@ -697,7 +697,7 @@ Imagen con ruta absoluta:
 </table>
 ```
 #### Práctica
-[Ejercicio 19](../ejercicios/consignas/html/ej19.md)
+[Ejercicio 19](./ejercicios/ej19.md)
 
 ### Agregar atributos visuales
 * Existen algunos atributos que nos permiten modificar la forma en que se ven las tablas
@@ -733,7 +733,7 @@ Imagen con ruta absoluta:
 ```
 
 #### Práctica
-[Ejercicio 20](../ejercicios/consignas/html/ej20.md)
+[Ejercicio 20](./ejercicios/ej20.md)
 
 
 * Otro de los atributos que tienen las tablas nos permiten establecer cual es el ancho por medio del atributo **width** que acepta un valor numérico en pixeles
@@ -766,7 +766,7 @@ Imagen con ruta absoluta:
 ```
 
 #### Práctica
-[Ejercicio 21](../ejercicios/consignas/html/ej21.md)
+[Ejercicio 21](./ejercicios/ej21.md)
 
 * Podemos unificar o unir celdas y columnas utilizando **rowspan** y **colspan**
 * Ambos atributos aceptan un valor numérico con la cantidad de celdas o celdas de columna que queremos unificar
@@ -789,16 +789,16 @@ Imagen con ruta absoluta:
 </table>
 ```
 
-![Tabla con columnas y celdas unificadas](../assets/html/tabla_unificada.png)
+![Tabla con columnas y celdas unificadas](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/tabla_unificada.png)
 
 #### Práctica
-[Ejercicio 22](../ejercicios/consignas/html/ej22.md)
+[Ejercicio 22](./ejercicios/ej22.md)
 
 #### Práctica extra
 * Crear un nuevo archivo: got.html
 * Reproducir el contenido de la siguiente imagen utilizando todo lo aprendido
 
-![Listado de episodios de GOT](../assets/html/game_of_thrones_episodes.png)
+![Listado de episodios de GOT](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/game_of_thrones_episodes.png)
 
 * Para los links se puede utilizar el atributo href con el valor '#' para simular que esta vinculado con otro documento
 * El color verde oscuro es: #2a4c4c
@@ -834,7 +834,7 @@ Imagen con ruta absoluta:
 ```
 
 #### Práctica
-[Sitio 2](../ejercicios/consignas/html/sitio02.md)
+[Sitio 2](./ejercicios/sitio02.md)
 
 ##  Formulario
 * Los formularios son elementos que tienen campos que nos permiten obtener datos del usuario
@@ -843,29 +843,26 @@ Imagen con ruta absoluta:
 **Buscadores:**
 
 Google:
-![Google](../assets/html/google.png)
+![Google](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/google.png)
 
 Twitter:
-![Twitter search](../assets/html/buscar1.png)
+![Twitter search](https://file-jtagexoite.now.sh/)
 
 Youtube:
-![Youtube search](../assets/html/youtube_search.png)
+![Youtube search](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/youtube_search.png)
 
 **Comentarios/posts:**
 
 Twitter post:
-![Twitter post](../assets/html/twit.png)
-
-Medium:
-![Medium post](../assets/html/medium_comment.png)
+![Twitter post](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/twit.png)
 
 Facebook:
-![Medium post](../assets/html/facebook_post.png)
+![FB post](https://file-sxppyighjc.now.sh/)
 
 **Log in / sign up**
 
 Facebook:
-![Facebook post](../assets/html/facebook_signup.png)
+![Facebook post](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/facebook_signup.png)
 
 * Para definir un formulario utilizamos la etiqueta **form**
 * Los formularios tienen 3 atributos importantes:
@@ -970,9 +967,9 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 23](../ejercicios/consignas/html/ej23.md)
+[Ejercicio 23](./ejercicios/ej23.md)
 
-[Ejercicio 24](../ejercicios/consignas/html/ej24.md)
+[Ejercicio 24](./ejercicios/ej24.md)
 
 #### Radio buttons
 * Permite que el usuario seleccione sólo un valor entre algunas opciones
@@ -1003,7 +1000,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 25](../ejercicios/consignas/html/ej25.md)
+[Ejercicio 25](./ejercicios/ej25.md)
 
 #### Checkboxes
 * Permite que el usuario seleccione/deseleccione multiples valores entre algunas opciones
@@ -1025,7 +1022,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 26](../ejercicios/consignas/html/ej26.md)
+[Ejercicio 26](./ejercicios/ej26.md)
 
 ### Hidden
 * En algunos casos podemos necesitar agregar algunos datos que no queremos que el usuario vea en el formulario, para esto utilizamos inputs ocultos
@@ -1042,7 +1039,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 27](../ejercicios/consignas/html/ej27.md)
+[Ejercicio 27](./ejercicios/ej27.md)
 
 #### Image buttons
 * Permite enviar o submitear los datos del formulario a otro documento utilizando una imagen
@@ -1060,7 +1057,7 @@ Facebook:
 * Al ser un atributo visual, en el futuro, lo vamos a controlar desde CSS
 
 #### Práctica
-[Ejercicio 28](../ejercicios/consignas/html/ej28.md)
+[Ejercicio 28](./ejercicios/ej28.md)
 
 #### Campos especiales en HTML5
 * HTML5 incorpora nuevos tipos de inputs
@@ -1101,7 +1098,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 29](../ejercicios/consignas/html/ej29.md)
+[Ejercicio 29](./ejercicios/ej29.md)
 
 ##### Search
 * Utilizando este nuevo tipo de input podemos pedirle al usuario que ingrese un criterio por el cual vamos a realizar algún tipo de busqueda
@@ -1117,7 +1114,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 30](../ejercicios/consignas/html/ej30.md)
+[Ejercicio 30](./ejercicios/ej30.md)
 
 #### File upload
 * Permite seleccionar un archivo que será enviado con el resto de los datos del formulario
@@ -1134,7 +1131,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 31](../ejercicios/consignas/html/ej31.md)
+[Ejercicio 31](./ejercicios/ej31.md)
 
 ### Text area
 * Permite ingresar texto multilinea, se puede utilizar para notas, una bio o cualquier texto que ocupe más de una linea
@@ -1162,7 +1159,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 32](../ejercicios/consignas/html/ej32.md)
+[Ejercicio 32](./ejercicios/ej32.md)
 
 ### Drop-down
 * Permite seleccionar una o varias opciones de una lista
@@ -1218,7 +1215,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 33](../ejercicios/consignas/html/ej33.md)
+[Ejercicio 33](./ejercicios/ej33.md)
 
 ### Buttons
 * También contamos con botones personalizados utilizando el elemento **button**
@@ -1319,7 +1316,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 34](../ejercicios/consignas/html/ej34.md)
+[Ejercicio 34](./ejercicios/ej34.md)
 
 ### Validar campos
 * Es común tener que validar los datos ingresados por el usuario para verificar que tengamos todo lo que necesitamos y en el formato correcto
@@ -1423,15 +1420,15 @@ Facebook:
 * Para más información podes leer la siguiente guía de [HTML5 en el MDN](https://developer.mozilla.org/es/docs/Sections_and_Outlines_of_an_HTML5_document)
 
 #### Práctica
-[Ejercicio 35](../ejercicios/consignas/html/ej35.md)
+[Ejercicio 35](./ejercicios/ej35.md)
 
-[Ejercicio 36](../ejercicios/consignas/html/ej36.md)
+[Ejercicio 36](./ejercicios/ej36.md)
 
-[Ejercicio 37](../ejercicios/consignas/html/ej37.md)
+[Ejercicio 37](./ejercicios/ej37.md)
 
-[Ejercicio 38](../ejercicios/consignas/html/ej38.md)
+[Ejercicio 38](./ejercicios/ej38.md)
 
-[Ejercicio 39](../ejercicios/consignas/html/ej39.md)
+[Ejercicio 39](./ejercicios/ej39.md)
 
 ## Iframe
 * La etiqueta **iframe** nos permite embeber un documento dentro de otro
@@ -1458,7 +1455,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 40](../ejercicios/consignas/html/ej40.md)
+[Ejercicio 40](./ejercicios/ej40.md)
 
 ## Audio y video
 * En la última versión de HTML se incorporan etiquetas para poder tener video y audio en nuestros documentos
@@ -1534,7 +1531,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 41](../ejercicios/consignas/html/ej41.md)
+[Ejercicio 41](./ejercicios/ej41.md)
 
 * También podemos agregar audio a nuestros documentos
 * Para incorporar audio utilizamos la etiqueta **audio**
@@ -1574,7 +1571,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 42](../ejercicios/consignas/html/ej42.md)
+[Ejercicio 42](./ejercicios/ej42.md)
 
 ## Metadata
 * La etiqueta **meta** nos permite agregar metadata a nuestros documentos
@@ -1646,7 +1643,7 @@ Facebook:
 ```
 
 #### Práctica
-[Ejercicio 43](../ejercicios/consignas/html/ej43.md)
+[Ejercicio 43](./ejercicios/ej43.md)
 
 ## Extra:
 [Specs de HTML5 - super técnico](https://dev.w3.org/html5/spec-preview/Overview.html)
