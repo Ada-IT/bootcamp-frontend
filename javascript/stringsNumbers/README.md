@@ -31,7 +31,7 @@ console.log(texto.length);
 * Podemos ver una lista de métodos del tipo String en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String)
 * Vamos a ver algunos de los métodos más conocidos y jugar un poco con ellos
 
-**Ejemeplo:**
+**Ejemplo:**
 ```js
 var variableString = 'valor de nuestro string';
 
