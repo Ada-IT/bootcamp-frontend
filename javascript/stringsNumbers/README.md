@@ -109,8 +109,8 @@ console.log(ultimoCaracter);
 ```
 
 #### Prácticas
-[Ejercicio 43](../ejercicios/consignas/js/ej43.md)
-[Ejercicio 44](../ejercicios/consignas/js/ej44.md)
+[Ejercicio 43](./ejercicios/ej43.md)
+[Ejercicio 44](./ejercicios/ej44.md)
 
 ### Recortando strings
 * Utilizando el método **slice** podemos obtener una parte de un string
@@ -146,7 +146,7 @@ console.log('JavaScript no es lo mismo que', resultado); // JavaScript no es lo 
 ```
 
 #### Prácticas
-[Ejercicio 45](../ejercicios/consignas/js/ej45.md)
+[Ejercicio 45](./ejercicios/ej45.md)
 
 * Otro método que podemos utilizar de forma similar es el método **substr**
 * También podemos establecer 2 parámetros numéricos para obtener una porsión de una cadena de texto
@@ -160,7 +160,7 @@ let resultado = texto.substr(11, 10);
 console.log(resultado); // JavaScript
 ```
 #### Prácticas
-[Ejercicio 46](../ejercicios/consignas/js/ej46.md)
+[Ejercicio 46](./ejercicios/ej46.md)
 
 * Podes aprender más sobre estos métodos en el sitio de MDN de [slice](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice) y [substr](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr)
 
