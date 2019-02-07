@@ -1,7 +1,7 @@
 ## Estructuras de control
 
 * Por medio de las estructuras de control podemos controlar el flujo de nuestro código y como queremos que se ejecute según se cumplan o no algunas condiciones
-* Una de las estructuras más conocidas es el **if** y en español podemos reconocerlos como **si entonces**
+* Una de las estructuras más conocidas es el **if** y en español podemos reconocerlo como **si entonces**
 * Esta estructura espera una condición **true** para que ingrese y ejecute el código que tiene dentro de su bloque
 
 ![if](https://file-wdvvncgzkb.now.sh)
@@ -230,7 +230,7 @@ if ('') {
 }
 ```
 
-* Podemos ver en este ejemplo que al ECMASCript interpretar el string vacío como un valor falsy o falso no entra en la condición del if verdadero sino por el lado del falso. Es por esto que tenemos que validar nuestros datos.
+* Podemos ver en este ejemplo que al interpretar el string vacío como un valor falsy o falso, no se entra en la condición del if verdadero sino por el lado del falso. Es por esto que tenemos que validar nuestros datos.
 
 **Ejemplo:**
 ```js
@@ -278,7 +278,7 @@ console.log(9);
 console.log(10);
 ```
 
-* Si bien de esta forma logramos el objetivo es poco práctico si necesito cambiar por ejemplo el mensaje que quiero mostrar ya que tengo que modificar muchas lineas de código, imaginemos que tengo que mostrar del 0 al 100 o al 1000! IMPOSIBLE!
+* Si bien de esta forma logramos el objetivo, es poco práctico si necesito, por ejemplo, cambiar el mensaje que quiero mostrar: tengo que modificar muchas lineas de código. Imaginemos que tengo que mostrar del 0 al 100 o al 1000! IMPOSIBLE!
 
 **Ejemplo:**
 ```js
@@ -345,7 +345,7 @@ while (numero < 10000) {
 ```
 
 * Vemos que de esta forma las estructura de repetición nos hacen la vida mucho más fácil y controlable
-* Un tema que tenemos que tener en cuenta es que al utilizar las estructuras de repetición podemos caer en lo que se denomina un loop infinito, es decir que es un código que se va a repetir por siempre ya que la condición no cambia. Esto puede colgar un servidor o el ambiente donde estemos ejecutando esta repetición. IMPORTANTE: recordar cambiar la condicón en algún momento.
+* Un tema que tenemos que tener en cuenta es que al utilizar las estructuras de repetición podemos caer en lo que se denomina un loop infinito: un código que se va a repetir por siempre ya que la condición no cambia. Esto puede colgar un servidor o el ambiente donde estemos ejecutando esta repetición. IMPORTANTE: recordar cambiar la condicón en algún momento.
 
 **Ejemplo:**
 ```js
@@ -419,7 +419,7 @@ var numero = 0;
 do {
   console.log('número: ', numero);
   numero++;
-} while (numero < 10000) {
+} while (numero < 10000);
 ```
 
 * En este ejemplo mostramos el mensaje e incrementamos la variable al menos una vez y luego podemos seguir mostrando el resto de los números
@@ -431,7 +431,7 @@ var numero = 1000;
 do {
   console.log('número: ', numero);
   numero++;
-} while (numero < 10) {
+} while (numero < 10); 
 ```
 
 * En este ejemplo sólo se muestra el número 1000 y luego no se vuelve a repetir la condición.
@@ -460,7 +460,7 @@ for (iniciarVariable; condicion; alteración) {
 }
 ```
 
-* Por ejemplo para mostrar números de 0 a 10 podemos escribri el siguiente for:
+* Por ejemplo, para mostrar números de 0 a 10, podemos escribir el siguiente for:
 
 **Ejemplo:**
 ```js
