@@ -8,25 +8,22 @@
 
 **Ejemplo:**
 ```js
-['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime']
+['Smells Like Teen Spirit', 'Come As You Are', 'Heart-Shaped Box', 'Lithium'];
 ```
 
-* En este caso tenemos un **array** que tiene 7 elementos que parecen ser personas
+* En este caso tenemos un **array** que tiene 4 elementos que parecen ser personas
 
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
+var playlist = ['Smells Like Teen Spirit', 'Come As You Are', 'Heart-Shaped Box', 'Lithium'];
 
 // otra forma de escribir esto puede ser:
-var alumnos = [
-  'nico',
-  'pedro',
-  'juan',
-  'marta',
-  'belen',
-  'emilia',
-  'xime'
+var playlist = [
+  'Smells Like Teen Spirit',
+  'Come As You Are',
+  'Heart-Shaped Box',
+  'Lithium'
 ];
 ```
 
@@ -34,7 +31,7 @@ var alumnos = [
 
 **Ejemplo:**
 ```js
-var alumnos = [];
+var playlist = [];
 ```
 
 * Un array puede guardar cualquier tipo de dato
@@ -42,11 +39,11 @@ var alumnos = [];
 **Ejemplo:**
 ```js
 var datos = [
-  'hola',
+  'Ada',
   42,
-  false,
+  true,
   null,
-  function() { console.log('hola') }
+  function() { console.log('¡hola!') }
 ];
 ```
 
@@ -57,22 +54,22 @@ var datos = [
 **Ejemplo:**
 ```js
 var datos = [
-  'hola',
+  'Ada',
   42,
-  false,
+  true,
   null,
-  function() { console.log('hola') }
+  function() { console.log('¡hola!') }
 ];
 
-var saludo = datos[0];
-var significadoDeLaVida = datos[1];
-var casada = datos[2];
+var nombre = datos[0];
+var edad = datos[1];
+var esProgramadora = datos[2];
 var miVariable = datos[3];
 var saludar = datos[4];
 
-console.log(saludo);
-console.log(significadoDeLaVida);
-console.log('casada?:', casada);
+console.log(nombre);
+console.log(edad);
+console.log('programadora?:', esProgramadora);
 console.log(miVariable);
 
 // Acá se viene el gran momento de tu vida:
@@ -81,65 +78,69 @@ saludar(); // muestra en consola hola
 
 * En este ejemplo vemos que podemos acceder a los distintos elementos de un **array** utilizando un índice numérico
 * Podemos almacenar todos los datos en otras variables
-* En el caso de la función estamos simplemente asignando una función a la variable saludar como cualquier otro valor (ECMAScript nos deja hacer esto y es genial) y luego ejecutamos esta función (todo muy normal)
+* En el caso de la función estamos simplemente asignando una función a la variable saludar como cualquier otro valor (ECMAScript nos deja hacer esto) y luego ejecutamos esta función
 
 #### Prácticas
-[Ejercicio 117](../ejercicios/consignas/js/ej117.md)
-[Ejercicio 118](../ejercicios/consignas/js/ej118.md)
-[Ejercicio 119](../ejercicios/consignas/js/ej119.md)
+[Ejercicio 000](./ejercicios/arr_000.md)
+[Ejercicio 001](./ejercicios/arr_001.md)
+[Ejercicio 002](./ejercicios/arr_002.md)
+[Ejercicio 003](./ejercicios/arr_003.md)
+[Ejercicio 004](./ejercicios/arr_004.md)
 
 * También podemos asignar un valor a una posición de un array utilizando el índice
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
-alumnos[0] = 'Pana';
-alumnos[3] = 'Jorge';
+var peliculas = ["Superman", "Batman Begins", "The Dark Knight", "Man of Steel", "The Batman"];
 
-console.log(alumnos);
-// ['Pana', 'pedro', 'juan', 'Jorge', 'belen', 'emilia', 'xime']
+peliculas[0] = 'Batman';
+peliculas[3] = 'The Dark Knight Rises';
+
+console.log(peliculas);
+// [ 'Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises', 'The Batman' ]
 ```
 
 * Tenemos que tener cuidado al asignar un item de un array
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
-alumnos[8] = 'Paola';
-console.log(alumnos);
-// [ 'nico', 'pedro', 'marta', 'belen', 'emilia', , , , 'Paola' ]
+var peliculas = ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises'];
+peliculas[8] = 'The Batman';
+console.log(peliculas);
+// ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises', , , , , 'The Batman']
 ```
 
 * ECMAScript al manejar la memoria de forma dinámica asigna espacios vacíos en las posiciones donde no existen valores
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
-alumnos[8] = 'Paola';
-alumnos[5] = 'Lucas';
-alumnos[6] = 'Lucy';
-alumnos[7] = 'Andy';
-console.log(alumnos);
+var peliculas = ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises'];
+peliculas[4] = 'Batman: The Killing Joke';
+peliculas[5] = 'Batman: The Dark Knight Returns, Part 1';
+peliculas[6] = 'Batman: The Dark Knight Returns, Part 2';
+peliculas[7] = 'LEGO Batman';
+peliculas[8] = 'The Batman';
+console.log(peliculas);
 /*
 [
-  'nico',
-  'pedro',
-  'marta',
-  'belen',
-  'emilia',
-  'Lucas',
-  'Lucy',
-  'Andy',
-  'Paola'
+  'Batman',
+  'Batman Begins',
+  'The Dark Knight',
+  'The Dark Knight Rises',
+  'Batman: The Killing Joke',
+  'Batman: The Dark Knight Returns, Part 1',
+  'Batman: The Dark Knight Returns, Part 2',
+  'LEGO Batman',
+  'The Batman'
 ]
 */
 ```
 * En este caso completamos los datos que nos faltaban utilizando índices
 
 #### Prácticas
-[Ejercicio 120](../ejercicios/consignas/js/ej120.md)
-[Ejercicio 121](../ejercicios/consignas/js/ej121.md)
-[Ejercicio 122](../ejercicios/consignas/js/ej122.md)
+[Ejercicio 005](./ejercicios/arr_005.md)
+[Ejercicio 006](./ejercicios/arr_006.md)
+[Ejercicio 007](./ejercicios/arr_007.md)
 
 ## Métodos y Propiedades más utilizados del Array
 
@@ -149,8 +150,8 @@ console.log(alumnos);
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
-console.log(alumnos.length); // 5
+var peliculas = ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises'];
+console.log(peliculas.length); // 4
 ```
 
 * Podemos utilizar esta propiedad para obtener el último elemento de un array
@@ -158,24 +159,25 @@ console.log(alumnos.length); // 5
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
-var cantidadDeElementos = alumnos.length;
-var ultimoIndice = cantidadDeElementos - 1;
-console.log(alumnos[ultimoIndice]); // emilia
+var peliculas = ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises'];
+var cantidadDePeliculas = peliculas.length;
+var ultimoIndice = cantidadDePeliculas - 1;
+console.log(peliculas[ultimoIndice]); // The Dark Knight Rises
 ```
 
 * Otra forma de escribir esto es:
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
-console.log(alumnos[ alumnos.length - 1 ]); // emilia
+var peliculas = ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises'];
+console.log(peliculas[ peliculas.length - 1 ]); // The Dark Knight Rises
 ```
 
 * Vemos que podemos utilizar la propiedad length - 1 para obtener el último índice y luego obtener el último elemento
 
 #### Prácticas
-[Ejercicio 123](../ejercicios/consignas/js/ej123.md)
-[Ejercicio 124](../ejercicios/consignas/js/ej124.md)
+[Ejercicio 008](./ejercicios/arr_008.md)
+[Ejercicio 009](./ejercicios/arr_009.md)
+[Ejercicio 010](./ejercicios/arr_010.md)
 
 ### Push, unshift, shift y pop
 * Utilizando los métodos **push, unshift, shift y pop** podemos alterar los elementos de un array
@@ -405,7 +407,7 @@ if (mutantes.indexOf('Logan') > -1) {
 ```
 
 * En la primer condición se cumple ya que indexOf retorna la posición 2 donde se encuentra el elemento Bestia
-* En la segunda condición no se cumple ya que indexOf retorna -1 ya que Logan no es parte del array mutantes en este momento (sólo para este ejemplo, te queremos Logan! ❤️)
+* En la segunda condición no se cumple ya que indexOf retorna -1 ya que Logan no es parte del array mutantes en este momento.
 
 ### toString
 * El método **toString** nos retorna la representación del contenido de un array en string
@@ -420,16 +422,19 @@ console.log(mutantes.toString());
 ```
 
 #### Prácticas
-[Ejercicio 125](../ejercicios/consignas/js/ej125.md)
-[Ejercicio 126](../ejercicios/consignas/js/ej126.md)
-[Ejercicio 127](../ejercicios/consignas/js/ej127.md)
-[Ejercicio 128](../ejercicios/consignas/js/ej128.md)
-[Ejercicio 129](../ejercicios/consignas/js/ej129.md)
-[Ejercicio 130](../ejercicios/consignas/js/ej130.md)
-[Ejercicio 131](../ejercicios/consignas/js/ej131.md)
-[Ejercicio 132](../ejercicios/consignas/js/ej132.md)
-[Ejercicio 133](../ejercicios/consignas/js/ej133.md)
-[Ejercicio 134](../ejercicios/consignas/js/ej134.md)
+[Ejercicio 011](./ejercicios/arr_011.md)
+[Ejercicio 012](./ejercicios/arr_012.md)
+[Ejercicio 013](./ejercicios/arr_013.md)
+[Ejercicio 014](./ejercicios/arr_014.md)
+[Ejercicio 015](./ejercicios/arr_015.md)
+[Ejercicio 016](./ejercicios/arr_016.md)
+[Ejercicio 017](./ejercicios/arr_017.md)
+[Ejercicio 018](./ejercicios/arr_018.md)
+[Ejercicio 019](./ejercicios/arr_019.md)
+[Ejercicio 020](./ejercicios/arr_020.md)
+[Ejercicio 021](./ejercicios/arr_021.md)
+[Ejercicio 022](./ejercicios/arr_022.md)
+[Ejercicio 023](./ejercicios/arr_023.md)
 
 ### ForEach
 * Podemos iterar o recorrer un array utilizando el método forEach()
@@ -486,8 +491,8 @@ Carlos
 * Vemos en este ejemplo que agregando un segundo parámetro podemos obtener el índice de los elementos y como primer valor el elemento en sí.
 
 #### Prácticas
-[Ejercicio 135](../ejercicios/consignas/js/ej135.md)
-[Ejercicio 136](../ejercicios/consignas/js/ej136.md)
+[Ejercicio 135](./ejercicios/ej135.md)
+[Ejercicio 136](./ejercicios/ej136.md)
 
 ### Map
 * El método **map** crea un nuevo **array** con el resultado de la función que le pasamos como parámetros
@@ -509,8 +514,8 @@ console.log(mascotas) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] Este array qued�
 * El array original queda intacto
 
 #### Prácticas
-[Ejercicio 137](../ejercicios/consignas/js/ej137.md)
-[Ejercicio 138](../ejercicios/consignas/js/ej138.md)
+[Ejercicio 137](./ejercicios/ej137.md)
+[Ejercicio 138](./ejercicios/ej138.md)
 
 ### Filter
 * El método **filter** retorna un nuevo **array** utilizando un filtro
@@ -528,8 +533,8 @@ console.log(notas); // [1, 2, 3, 4, 10, 5] array original
 ```
 
 #### Prácticas
-[Ejercicio 139](../ejercicios/consignas/js/ej139.md)
-[Ejercicio 140](../ejercicios/consignas/js/ej140.md)
+[Ejercicio 139](./ejercicios/ej139.md)
+[Ejercicio 140](./ejercicios/ej140.md)
 
 ### Reduce
 * El método **reduce** nos permite recorrer un array y obtener un sólo dato como resultado final
@@ -549,8 +554,8 @@ console.log(sumaDeNotas); // 25 resultado final de sumar todas las notas
 ```
 
 #### Prácticas
-[Ejercicio 141](../ejercicios/consignas/js/ej141.md)
-[Ejercicio 142](../ejercicios/consignas/js/ej142.md)
+[Ejercicio 141](./ejercicios/ej141.md)
+[Ejercicio 142](./ejercicios/ej142.md)
 
 * Podes ver más métodos de array en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 
