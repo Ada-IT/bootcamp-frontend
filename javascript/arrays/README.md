@@ -189,25 +189,23 @@ console.log(peliculas[ peliculas.length - 1 ]); // The Dark Knight Rises
 
 **Ejemplo:**
 ```js
-var animales = ['perro', 'pato', 'vaca'];
-var cantidadDeAnimales = animales.push('gato');
+var techsFrontend = ['react', 'vue', 'angular'];
+var cantidadDeTechs = techsFrontend.push('backbone');
 
-console.log(animales);
-// [ 'perro', 'pato', 'vaca', 'gato' ]
-console.log(cantidadDeAnimales); // 4
+console.log(techsFrontend);
+// [ 'react', 'vue', 'angular', 'backbone' ]
+console.log(cantidadDeTechs); // 4
 
-cantidadDeAnimales = animales.push('elefante', 'delfin');
+cantidadDeTechs = techsFrontend.push('ember', 'polymer');
 
-console.log(animales);
-// [ 'perro', 'pato', 'vaca', 'gato', 'elefante', 'delfin' ]
-console.log(cantidadDeAnimales); // 6
+console.log(techsFrontend);
+// [ 'react', 'vue', 'angular', 'backbone', 'ember', 'polymer' ]
+console.log(cantidadDeTechs); // 6
 ```
 
 * En este ejemplo vemos varias cosas interesantes
-* Por un lado con el método **push** podemos agregar un elemento a un array como en el caso de **gato** o varios como en el caso de **elefante y delfin**
-* Estamos modificando el array original **animales**, es decir que estamos mutando su valor
-* Al declarar una array utilizando **const** nos permite tener una constante pero podemos cambiar los elementos que tiene esta colección.
-* En caso de asignar otro valor a la variable obtenemos el mismo error de siempre
+* Por un lado con el método **push** podemos agregar un elemento a un array como en el caso de **backbone** o varios como en el caso de **ember y polymer**
+* Estamos modificando el array original **techsFrontend**, es decir que estamos mutando su valor
 
 #### Unshift
 * El método **unshift** agrega uno o más elementos al inicio de un array
@@ -216,18 +214,18 @@ console.log(cantidadDeAnimales); // 6
 
 **Ejemplo:**
 ```js
-var animales = ['perro', 'pato', 'vaca'];
-var cantidadDeAnimales = animales.unshift('gato');
+var techsFrontend = ['react', 'vue', 'angular'];
+var cantidadDeTechs = techsFrontend.unshift('backbone');
 
-console.log(animales);
-// [ 'gato', 'perro', 'pato', 'vaca' ]
-console.log(cantidadDeAnimales); // 4
+console.log(techsFrontend);
+// [ 'backbone', 'react', 'vue', 'angular' ]
+console.log(cantidadDeTechs); // 4
 
-cantidadDeAnimales = animales.unshift('elefante', 'delfin');
+cantidadDeTechs = techsFrontend.unshift('ember', 'polymer');
 
-console.log(animales);
-// [ 'elefante', 'delfin', 'gato', 'perro', 'pato', 'vaca' ]
-console.log(cantidadDeAnimales); // 6
+console.log(techsFrontend);
+// [ 'ember', 'polymer', 'backbone', 'react', 'vue', 'angular' ]
+console.log(cantidadDeTechs); // 6
 ```
 
 * Podemos decir que funciona como push pero en lugar de insertar los elementos al final lo hace al principio
@@ -240,28 +238,28 @@ console.log(cantidadDeAnimales); // 6
 
 **Ejemplo:**
 ```js
-var animales = ['perro', 'pato', 'vaca'];
-var perro = animales.shift();
-console.log(animales);
-// ['pato', 'vaca']
-console.log(animales.length);
+var techsFrontend = ['react', 'vue', 'angular'];
+var react = techsFrontend.shift();
+console.log(techsFrontend);
+// ['vue', 'angular']
+console.log(techsFrontend.length);
 // 2
 
-var pato = animales.shift();
-console.log(animales);
-// ['vaca']
-console.log(animales.length);
+var vue = techsFrontend.shift();
+console.log(techsFrontend);
+// ['angular']
+console.log(techsFrontend.length);
 // 1
 
-var vaca = animales.shift();
-console.log(animales);
+var angular = techsFrontend.shift();
+console.log(techsFrontend);
 // []
-console.log(animales.length);
+console.log(techsFrontend.length);
 // 0
 
-console.log(perro); // perro
-console.log(pato); // pato
-console.log(vaca); // vaca
+console.log(react); // react
+console.log(vue); // vue
+console.log(angular); // angular
 ```
 
 * Podemos ver como utilizando el método **shift** podemos obtener el primer elemento y eliminarlo del array
@@ -275,31 +273,31 @@ console.log(vaca); // vaca
 
 **Ejemplo:**
 ```js
-var animales = ['perro', 'pato', 'vaca'];
-var vaca = animales.pop();
-console.log(animales);
-// ['perro', 'pato']
-console.log(animales.length);
+var techsFrontend = ['react', 'vue', 'angular'];
+var angular = techsFrontend.pop();
+console.log(techsFrontend);
+// ['react', 'vue']
+console.log(techsFrontend.length);
 // 2
 
-var pato = animales.shift();
-console.log(animales);
-// ['perro']
-console.log(animales.length);
+var vue = techsFrontend.pop();
+console.log(techsFrontend);
+// ['react']
+console.log(techsFrontend.length);
 // 1
 
-var perro = animales.shift();
-console.log(animales);
+var react = techsFrontend.pop();
+console.log(techsFrontend);
 // []
-console.log(animales.length);
+console.log(techsFrontend.length);
 // 0
 
-console.log(vaca); // vaca
-console.log(pato); // pato
-console.log(perro); // perro
+console.log(angular); // angular
+console.log(vue); // vue
+console.log(react); // react
 ```
 
-* Vemos que el método pop funciona de manera similar que shift
+* Vemos que el método `pop` funciona de manera similar que `shift`
 
 ### Sort y reverse
 
@@ -316,10 +314,16 @@ numeros = numeros.sort();
 
 console.log(numeros);
 // [ 1, 2, 3, 4, 5, 8, 9 ]
+
+var techsFrontend = ['react', 'vue', 'angular'];
+techsFrontend = techsFrontend.sort();
+
+console.log(techsFrontend);
+// [ "angular", "react", "vue" ]
 ```
 
 * Al ordenar utilizando los elementos usando strings y la posición en la tabal de Unicode se pueden dar resultados que no son los esperados
-* También tenemos la opción de pasar una función de ordenado para establecer la forma que queremos ordenarlo
+* También tenemos la opción de pasar una función de ordenado para establecer la forma que queremos ordenarlo (_esto vamos a verlo más adelante_)
 
 #### Reverse
 * El método **reverse** nos permite revertir el orden que tiene un array
@@ -332,7 +336,13 @@ var numeros = [1, 4, 2, 5, 3, 8, 9];
 numeros = numeros.reverse();
 
 console.log(numeros);
-[ 9, 8, 3, 5, 2, 4, 1 ]
+// [ 9, 8, 3, 5, 2, 4, 1 ]
+
+var techsFrontend = ['react', 'vue', 'angular'];
+techsFrontend = techsFrontend.reverse();
+
+console.log(techsFrontend);
+// [ "angular", "vue", "react" ]
 ```
 
 ### Concat y join
@@ -365,22 +375,31 @@ console.log(resultado);
 
 **Ejemplo:**
 ```js
-var animales = ['perro', 'vaca', 'gato'];
-var mutantes = ['Charles Francis Xavier', 'Cíclope', 'Bestia', 'Jean Grey'];
-var animalesMutantes = animales.concat(mutantes);
+var pares = [0, 2, 4, 6, 8];
+var impares = [1, 3, 5, 7, 9];
+var todosLosNumeros = pares.concat(impares);
 
-console.log(animalesMutantes);
-/*
-[
-  'perro',
-  'vaca',
-  'gato',
-  'Charles Francis Xavier',
-  'Cíclope',
-  'Bestia',
-  'Jean Grey'
-]
-*/
+console.log(todosLosNumeros);
+// [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
+
+var vocales = ["A", "E", "I", "O", "U"];
+var consonantes = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "Ñ", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
+var todasLasLetras = vocales.concat(consonantes);
+
+console.log(todasLasLetras);
+// ["A", "E", "I", "O", "U", "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "Ñ", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+```
+
+* Otra forma similar de utilizar `concat()`, que es bastante frecuente, es partiendo de un array vacío y pasando a concat todos los arrays que quiero unir.
+
+**Ejemplo:**
+```js
+var vocales = ["A", "E", "I", "O", "U"];
+var consonantes = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "Ñ", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
+var todasLasLetras = [].concat(vocales, consonantes);
+
+console.log(todasLasLetras);
+// ["A", "E", "I", "O", "U", "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "Ñ", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
 ```
 
 ### IndexOf
@@ -390,24 +409,23 @@ console.log(animalesMutantes);
 
 **Ejemplo:**
 ```js
-var mutantes = ['Charles Francis Xavier', 'Cíclope', 'Bestia', 'Jean Grey'];
+var villanosDeBatman = ['Joker', 'Bane', "Ra's Al Ghul", 'Scarecrow'];
 
-if (mutantes.indexOf('Bestia') > -1) {
-  console.log('Bestia es parte de los mutantes');
+if (villanosDeBatman.indexOf('Scarecrow') > -1) {
+  console.log('Scarecrow es uno de los villanos de Batman.');
 }
+// Scarecrow es uno de los villanos de Batman.
 
-// Bestia es parte de los mutantes
-
-if (mutantes.indexOf('Logan') > -1) {
-  console.log('Logan es parte de los mutantes');
+if (villanosDeBatman.indexOf('Lex Luthor') > -1) {
+  console.log('Lex Luthor es parte de los villanos de Batman');
 } else {
-  console.log('Logan no es parte de los mutantes');
+  console.log('Lex Luthor no es parte de los villanos de Batman');
 }
-// Logan no es parte de los mutantes
+// Lex Luthor no es parte de los villanos de Batman
 ```
 
 * En la primer condición se cumple ya que indexOf retorna la posición 2 donde se encuentra el elemento Bestia
-* En la segunda condición no se cumple ya que indexOf retorna -1 ya que Logan no es parte del array mutantes en este momento.
+* En la segunda condición no se cumple ya que indexOf retorna -1 ya que Lex Luthor no es parte del array de villanos de Batman.
 
 ### toString
 * El método **toString** nos retorna la representación del contenido de un array en string
@@ -416,9 +434,9 @@ if (mutantes.indexOf('Logan') > -1) {
 
 **Ejemplo:**
 ```js
-var mutantes = ['Charles Francis Xavier', 'Cíclope', 'Bestia', 'Jean Grey'];
-console.log(mutantes.toString());
-// 'Charles Francis Xavier', 'Cíclope', 'Bestia', 'Jean Grey'
+var villanosDeBatman = ['Joker', 'Bane', "Ra's Al Ghul", 'Scarecrow'];
+console.log(villanosDeBatman.toString());
+// Joker,Bane,Ra's Al Ghul,Scarecrow
 ```
 
 #### Prácticas
