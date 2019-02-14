@@ -179,7 +179,7 @@ console.log( saludo('Hedy') ); // Muestra en consola: ¡Hola Hedy!
 **Ejemplo:**
 ```js
 var saludar = function(nombreDelUsuario, edad) {
-  console.log('¡El usuario ' + nombreDelUsuario + ' tiene años' + edad + '!';
+  console.log('¡El usuario ' + nombreDelUsuario + ' tiene años' + edad + '!');
 }
 
 saludar('Ada', 27); // ¡El usuario Ada tiene 27 años!
