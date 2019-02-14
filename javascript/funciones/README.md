@@ -118,8 +118,8 @@ if (usuarioLoggeado()) {
 
 **Ejemplo:**
 ```js
-function(parametro1, parametro2, parametro2) {
-  console.log(parametro1, parametro2, parametro2)
+function(parametro1, parametro2, parametro3) {
+  console.log(parametro1, parametro2, parametro3)
 }
 ```
 
