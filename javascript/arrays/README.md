@@ -447,6 +447,75 @@ console.log(villanosDeBatman.toString());
 // Joker,Bane,Ra's Al Ghul,Scarecrow
 ```
 
+### Recorrer un array
+* La mayoría de las veces, los ciclos `for` son usados para recorrer/**iterar** sobre cada uno de los elementos de un array.
+* Usando el acceso a los datos de un array mediante el índice, vamos a poder acceder a cada elemento.
+* Para hacer este recorrido, vamos a utilizar la propiedad `length`
+
+**Ejemplo:**
+```js
+var villanosDeBatman = ['Joker', 'Bane', "Ra's Al Ghul", 'Scarecrow'];
+for (var i = 0; i < villanosDeBatman.length; i++) {
+  console.log(villanosDeBatman[i]);
+}
+
+// Joker
+// Bane
+// Ra's Al Ghul
+// Scarecrow
+```
+
+* Recordemos que los índices de los arrays comienza en `0`, por eso inicializamos `i = 0`
+* Esto quiere decir que el último elemento de un array siempre va a ser **su longitud - 1**
+* La condición que pusimos en el **for** es `i < villanosDeBatman.length`, con la cual estamos haciendo que la última vuelta sea cuando i es la longitud - 1
+* Si tenemos un array con 3 elementos, significa que el primer indice es 0 y el último 2 (_length - 1_). Entonces, con un for iteramos desde `i = 0` hasta `i < 3`
+
+**Ejemplo:**
+```js
+var numeros = [8, 2, 5];
+for (var i = 0; i < numeros.length; i++) {
+  // en la primer vuelta del for i tiene el valor 0
+  // en la segunda vuelta del for i tiene el valor 1
+  // en la tercer vuelta del for i tiene el valor 2
+  console.log(numeros[i]);
+}
+
+// cuando el for quiere hacer una cuarta vuelta, como i tiene valor 3 ya no es menor a la longitud (porque queda 3 < 3, y es falso) entonces deja de ejecutarse
+
+// 8
+// 2
+// 5
+```
+
+* Si necesitamos recorrer el array en orden inverso, tenemos que usar un for de la misma forma que antes solo que cambiando el valor inicial de `i` y la condición
+* En este caso, el primer elemento que queremos mostrar va a ser el que está en la última posición `length - 1`
+
+**Ejemplos:**
+```js
+var villanosDeBatman = ['Joker', 'Bane', "Ra's Al Ghul", 'Scarecrow'];
+// en este caso estamos diciendo que vaya desde i = 3 (length - 1)
+// y en la condicion decimos que siga dando vueltas siempre que i se mayor o igual a 0
+// usamos el igual porque queremos y necesitamos que llegue a 0, ya que seria el elemento que esta en la primer posición
+for (var i = villanosDeBatman.length - 1; i >= 0; i--) {
+  // en la primer vuelta del for i tiene el valor 2
+  // en la segunda vuelta del for i tiene el valor 1
+  // en la tercer vuelta del for i tiene el valor 0
+  console.log(villanosDeBatman[i]);
+}
+
+// cuando el for quiere hacer una cuarta vuelta, como i ya tiene el valor -1 (y la condición queda -1 >= 0, y es falso) entonces deja de ejecutarse
+
+// Scarecrow
+// Ra's Al Ghul
+// Bane
+// Joker
+```
+
+* En este ejemplo, en el for, lo que hicimos fue:
+  * Inicializar `i` en `length - 1` (que sería el último índice posible)
+  * Dar vueltas siempre que se cumpla que i sea **mayor o igual a 0**. Acá es importante ver que necesitamos que `i` sea 0, ya que es el primer índice del array
+  * En el tercer componente del for, en lugar de incrementar `i`, lo estamos decrementando
+
 #### Prácticas
 [Ejercicio 017](./ejercicios/arr_017.md)
 [Ejercicio 018](./ejercicios/arr_018.md)
