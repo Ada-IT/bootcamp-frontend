@@ -118,8 +118,8 @@ if (usuarioLoggeado()) {
 
 **Ejemplo:**
 ```js
-function(parametro1, parametro2, parametro2) {
-  console.log(parametro1, parametro2, parametro2)
+function(parametro1, parametro2, parametro3) {
+  console.log(parametro1, parametro2, parametro3)
 }
 ```
 
@@ -179,7 +179,7 @@ console.log( saludo('Hedy') ); // Muestra en consola: ¡Hola Hedy!
 **Ejemplo:**
 ```js
 var saludar = function(nombreDelUsuario, edad) {
-  console.log('¡El usuario ' + nombreDelUsuario + ' tiene años' + edad + '!';
+  console.log('¡El usuario ' + nombreDelUsuario + ' tiene años' + edad + '!');
 }
 
 saludar('Ada', 27); // ¡El usuario Ada tiene 27 años!
