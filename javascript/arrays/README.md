@@ -524,6 +524,9 @@ for (var i = villanosDeBatman.length - 1; i >= 0; i--) {
 [Ejercicio 021](./ejercicios/arr_021.md)
 [Ejercicio 022](./ejercicios/arr_022.md)
 [Ejercicio 023](./ejercicios/arr_023.md)
+[Ejercicio 024](./ejercicios/arr_024.md)
+[Ejercicio 025](./ejercicios/arr_025.md)
+[Ejercicio 026](./ejercicios/arr_026.md)
 
 ### ForEach
 * Podemos iterar o recorrer un array utilizando el método forEach()
