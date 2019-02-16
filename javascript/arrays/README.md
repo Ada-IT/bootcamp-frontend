@@ -528,63 +528,75 @@ for (var i = villanosDeBatman.length - 1; i >= 0; i--) {
 [Ejercicio 025](./ejercicios/arr_025.md)
 [Ejercicio 026](./ejercicios/arr_026.md)
 
-### ForEach
+### forEach
 * Podemos iterar o recorrer un array utilizando el método forEach()
 * Este método acepta una función como parámetro
 * La función que le pasamos a este método recibe como parámetro cada uno de los elementos del array
 
 **Ejemplo:**
 ```js
-var alumnos = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+var peliculas = ['Batman', 'Batman Begins', 'The Dark Knight', 'The Dark Knight Rises'];
 
-alumnos.forEach(function(alumno) {
-  console.log(alumno);
+peliculas.forEach(function(pelicula) {
+  console.log(pelicula);
 });
+
+// Batman Begins
+// The Dark Knight
+// The Dark Knight Rises
 ```
 
-* En este ejemplo vemos que podemos utilizar el método forEach en el array alumnos
+* En este ejemplo vemos que podemos utilizar el método forEach en el array peliculas
 * Le pasamos un function como parámetro como si fuera cualquier otro tipo de parámetro (number, string, etc)
-* El parámetro que recibe esta función en este caso le pusimos alumno ya que estamos recorriendo una colección de alumnos
+* El parámetro que recibe esta función en este caso le pusimos pelicula ya que estamos recorriendo una colección de peliculas
 * Le podemos poner el nombre que queremos al parámetro
 
 **Ejemplo:**
 ```js
-var mascotas = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+var techsFrontend = ['react', 'vue', 'angular'];
 
-mascotas.forEach(function(mascota) {
-  console.log(mascota);
+techsFrontend.forEach(function(tech) {
+  console.log(tech);
 });
+
+// react
+// vue
+// angular
 ```
 
-* En este caso la colección es de mascotas por lo cual utilizamos el nombre mascota para que tenga sentido que cada elemento de la colección es una mascota. Podríamos utilizar otros como item, elemento o lo que a nosotros nos guste. Siempre es mejor poner un nombre con contexto que explique de forma fácil de que es la colección que estamos iterando y los elementos que estamos utilizando
+* En este caso la colección es de tecnologías por lo cual utilizamos el nombre `tech` para que tenga sentido que cada elemento de la colección es una tecnología. Podríamos utilizar otros como item, elemento o lo que a nosotros nos guste. Siempre es mejor poner un nombre con contexto que explique de forma fácil de que es la colección que estamos iterando y los elementos que estamos utilizando
 
 * Podemos obtener otro parámetro más en la función que se ejecuta por cada elemento que es el índice del elemento
 
 **Ejemplo:**
 ```js
-var mascotas = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+var playlist = ['Smells Like Teen Spirit', 'Come As You Are', 'Heart-Shaped Box', 'Lithium'];
 
-mascotas.forEach(function(mascota, indice) {
+playlist.forEach(function(cancion, indice) {
   console.log('indice', indice);
-  console.log(mascota);
+  console.log(cancion);
 });
-/*
-indice 0
-Amelia
-indice 1
-Ciro
-indice 2
-Ulises
-indice 3
-Carlos
-*/
+
+// indice 0
+// Smells Like Teen Spirit
+// indice 1
+// Come As You Are
+// indice 2
+// Heart-Shaped Box
+// indice 3
+// Lithium
 ```
 
 * Vemos en este ejemplo que agregando un segundo parámetro podemos obtener el índice de los elementos y como primer valor el elemento en sí.
 
 #### Prácticas
-[Ejercicio 135](./ejercicios/ej135.md)
-[Ejercicio 136](./ejercicios/ej136.md)
+[Ejercicio 027](./ejercicios/arr_027.md)
+[Ejercicio 028](./ejercicios/arr_028.md)
+[Ejercicio 029](./ejercicios/arr_029.md)
+[Ejercicio 030](./ejercicios/arr_030.md)
+[Ejercicio 031](./ejercicios/arr_031.md)
+[Ejercicio 032](./ejercicios/arr_032.md)
+[Ejercicio 033](./ejercicios/arr_033.md)
 
 ### Map
 * El método **map** crea un nuevo **array** con el resultado de la función que le pasamos como parámetros
@@ -593,21 +605,38 @@ Carlos
 
 **Ejemplo:**
 ```js
-var mascotas = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
-var mascotasMayuscula = mascotas.map(function(mascota) {
-  return mascota.toUpperCase();
+var nombres = ["Ada Lovelace", "Hedy Lamarr", "Grace Hopper"];
+var nombresMayuscula = nombres.map(function(nombre) {
+  return nombre.toUpperCase();
 });
 
-console.log(mascotasMayuscula) // [ 'AMELIA', 'CIRO', 'ULISES', 'CARLOS' ] Todos en mayúscula
-console.log(mascotas) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] Este array quedó igual que antes
+console.log(nombresMayuscula) // [ 'ADA LOVELACE', 'HEDY LAMARR', 'GRACE HOPPER' ] Todos en mayúscula
+console.log(nombres) // [ 'Ada Lovelace', 'Hedy Lamarr', 'Grace Hopper' ] Este array quedó igual que antes
 ```
 
 * En este ejemplo vemos como podemos utilizar **map** para crear un nuevo array modificando los valores de otro array
 * El array original queda intacto
 
+**Ejemplo:**
+```js
+var numeros = [1, 2, 3, 4];
+var triples = numeros.map(function(numero) {
+  return numero * 3;
+});
+
+console.log(triples) // [ 3, 6, 9, 12 ] todos los numeros multiplicados por 3
+console.log(numeros) // [ 1, 2, 3, 4 ] este array quedó igual que antes
+```
+
 #### Prácticas
-[Ejercicio 137](./ejercicios/ej137.md)
-[Ejercicio 138](./ejercicios/ej138.md)
+[Ejercicio 034](./ejercicios/arr_034.md)
+[Ejercicio 035](./ejercicios/arr_035.md)
+[Ejercicio 036](./ejercicios/arr_036.md)
+[Ejercicio 037](./ejercicios/arr_037.md)
+[Ejercicio 038](./ejercicios/arr_038.md)
+[Ejercicio 039](./ejercicios/arr_039.md)
+[Ejercicio 040](./ejercicios/arr_040.md)
+[Ejercicio 041](./ejercicios/arr_041.md)
 
 ### Filter
 * El método **filter** retorna un nuevo **array** utilizando un filtro
@@ -625,8 +654,8 @@ console.log(notas); // [1, 2, 3, 4, 10, 5] array original
 ```
 
 #### Prácticas
-[Ejercicio 139](./ejercicios/ej139.md)
-[Ejercicio 140](./ejercicios/ej140.md)
+[Ejercicio 039](./ejercicios/arr_039.md)
+[Ejercicio 040](./ejercicios/arr_040.md)
 
 ### Reduce
 * El método **reduce** nos permite recorrer un array y obtener un sólo dato como resultado final
@@ -646,8 +675,6 @@ console.log(sumaDeNotas); // 25 resultado final de sumar todas las notas
 ```
 
 #### Prácticas
-[Ejercicio 141](./ejercicios/ej141.md)
-[Ejercicio 142](./ejercicios/ej142.md)
 
 * Podes ver más métodos de array en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 
