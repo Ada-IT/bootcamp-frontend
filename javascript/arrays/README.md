@@ -654,14 +654,18 @@ console.log(notas); // [1, 2, 3, 4, 10, 5] array original
 ```
 
 #### Prácticas
-[Ejercicio 039](./ejercicios/arr_039.md)
-[Ejercicio 040](./ejercicios/arr_040.md)
+[Ejercicio 042](./ejercicios/arr_042.md)
+[Ejercicio 043](./ejercicios/arr_043.md)
+[Ejercicio 044](./ejercicios/arr_044.md)
+[Ejercicio 045](./ejercicios/arr_045.md)
+[Ejercicio 046](./ejercicios/arr_046.md)
 
 ### Reduce
 * El método **reduce** nos permite recorrer un array y obtener un sólo dato como resultado final
-* Acepta una función con dos parámetro
+* Acepta como primer parámetro una función con dos parámetro
   * Primer parámetro es el acumulador
   * El segundo valor es cada item en el array
+* Y tiene un segundo parámetro, opcional, que es el valor inicial del acumulador. Si este parámetro no está, toma como valor inicial el primer elemento del array
 * Podemos utilizar el acumulador para ir sumando valores, por ejemplo:
 
 **Ejemplo:**
@@ -674,7 +678,21 @@ var sumaDeNotas = notas.reduce(function(total, nota) {
 console.log(sumaDeNotas); // 25 resultado final de sumar todas las notas
 ```
 
+**Ejemplo:**
+```js
+var palabras = ['¡', 'Hola,', 'mundo', '!'];
+const frase = palabras.reduce(function(acumulador, item) {
+  return acumulador + ' ' + item;
+}, 'Frase:');
+console.log(frase); // Frase: ¡ Hola, mundo !
+```
+
 #### Prácticas
+[Ejercicio 047](./ejercicios/arr_047.md)
+[Ejercicio 048](./ejercicios/arr_048.md)
+[Ejercicio 049](./ejercicios/arr_049.md)
+[Ejercicio 050](./ejercicios/arr_050.md)
+[Ejercicio 051](./ejercicios/arr_051.md)
 
 * Podes ver más métodos de array en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 
