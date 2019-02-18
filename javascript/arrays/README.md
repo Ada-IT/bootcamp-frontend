@@ -693,6 +693,13 @@ console.log(frase); // Frase: ¡ Hola, mundo !
 [Ejercicio 049](./ejercicios/arr_049.md)
 [Ejercicio 050](./ejercicios/arr_050.md)
 [Ejercicio 051](./ejercicios/arr_051.md)
+[Ejercicio 052](./ejercicios/arr_052.md)
+[Ejercicio 053](./ejercicios/arr_053.md)
+
+#### Prácticas Generales
+[Ejercicio 054](./ejercicios/arr_054.md)
+[Ejercicio 055](./ejercicios/arr_055.md)
+[Ejercicio 056](./ejercicios/arr_056.md)
 
 * Podes ver más métodos de array en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 
