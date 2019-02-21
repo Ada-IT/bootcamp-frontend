@@ -91,7 +91,20 @@ console.log(persona.dni); // 90909090
 ```
 
 * Podemos caer en el error de escribir mal una propiedad o por ahí utilizar mayúscula y no encontrar la propiedad buscada o eventualmente terminar creando nuevas propiedades
-* De nuevo, por las dudas... tener cuidado con las propiedades de los objetos de ECMAScript
+* Tenemos que tener cuidado con las propiedades de los objetos de JS
+
+#### Prácticas
+[Ejercicio 001](./ejercicios/obj_001.md)
+[Ejercicio 002](./ejercicios/obj_002.md)
+[Ejercicio 003](./ejercicios/obj_003.md)
+[Ejercicio 004](./ejercicios/obj_004.md)
+[Ejercicio 005](./ejercicios/obj_005.md)
+[Ejercicio 006](./ejercicios/obj_006.md)
+[Ejercicio 007](./ejercicios/obj_007.md)
+[Ejercicio 008](./ejercicios/obj_008.md)
+[Ejercicio 009](./ejercicios/obj_009.md)
+[Ejercicio 010](./ejercicios/obj_010.md)
+[Ejercicio 011](./ejercicios/obj_011.md)
 
 ### Métodos
 * Los objetos pueden tener métodos
