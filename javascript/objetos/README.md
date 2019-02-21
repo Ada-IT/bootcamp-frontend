@@ -110,6 +110,8 @@ console.log(persona.dni); // 90909090
 [Ejercicio 014](./ejercicios/obj_014.md)
 [Ejercicio 015](./ejercicios/obj_015.md)
 [Ejercicio 016](./ejercicios/obj_016.md)
+[Ejercicio 017](./ejercicios/obj_017.md)
+[Ejercicio 018](./ejercicios/obj_018.md)
 
 ### Propiedades dinámicas de un objeto
 * Puede pasar que no sabemos el nombre de una propiedad y necesitemos acceder de forma dinámica
