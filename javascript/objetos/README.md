@@ -193,6 +193,12 @@ for (var i = 0; i < propiedades.length; i++) {
 ```
 * Podes leer más sobre `Object.keys` en el [sitio del MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/keys)
 
+#### Prácticas
+[Ejercicio 019](./ejercicios/obj_019.md)
+[Ejercicio 020](./ejercicios/obj_020.md)
+[Ejercicio 021](./ejercicios/obj_021.md)
+[Ejercicio 022](./ejercicios/obj_022.md)
+[Ejercicio 023](./ejercicios/obj_023.md)
 
 ### Métodos
 * Los objetos pueden tener métodos
@@ -288,3 +294,12 @@ console.log(persona.edad) // 27
 persona.cumpleanios();
 console.log(persona.edad) // 28
 ```
+#### Prácticas
+[Ejercicio 024](./ejercicios/obj_024.md)
+[Ejercicio 025](./ejercicios/obj_025.md)
+[Ejercicio 026](./ejercicios/obj_026.md)
+[Ejercicio 027](./ejercicios/obj_027.md)
+[Ejercicio 028](./ejercicios/obj_028.md)
+[Ejercicio 029](./ejercicios/obj_029.md)
+[Ejercicio 030](./ejercicios/obj_030.md)
+[Ejercicio 031](./ejercicios/obj_031.md)
