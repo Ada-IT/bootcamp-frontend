@@ -662,10 +662,10 @@ console.log(notas); // [1, 2, 3, 4, 10, 5] array original
 
 ### Reduce
 * El método **reduce** nos permite recorrer un array y obtener un sólo dato como resultado final
-* Acepta como primer parámetro una función con dos parámetro
+* Acepta como primer parámetro una función con dos parámetros
   * Primer parámetro es el acumulador
   * El segundo valor es cada item en el array
-* Y tiene un segundo parámetro, opcional, que es el valor inicial del acumulador. Si este parámetro no está, toma como valor inicial el primer elemento del array
+* Y reduce tiene un segundo parámetro, opcional, que es el valor inicial del acumulador. Si este parámetro no está, toma como valor inicial el primer elemento del array
 * Podemos utilizar el acumulador para ir sumando valores, por ejemplo:
 
 **Ejemplo:**
@@ -681,10 +681,31 @@ console.log(sumaDeNotas); // 25 resultado final de sumar todas las notas
 **Ejemplo:**
 ```js
 var palabras = ['¡', 'Hola,', 'mundo', '!'];
+// en este ejemplo estamos haciendo una reducción del array a un string
 const frase = palabras.reduce(function(acumulador, item) {
   return acumulador + ' ' + item;
 }, 'Frase:');
 console.log(frase); // Frase: ¡ Hola, mundo !
+```
+
+* A continuación una animación para ver como funciona `reduce` -> [Ver](http://reduce.surge.sh/)
+* También podemos usar `reduce` para filtrar, ya que estaríamos haciendo una reducción de ese mismo array
+* Por ejemplo, si tenemos un array de números, podemos quedarnos con todos los que son múltiplos de 3
+
+**Ejemplo:**
+```js
+var numeros = [1, 2, 3, 5, 9, 11, 12, 14, 18];
+
+var multiploDe3 = numeros.reduce(function(multiplosAcumulados, numero) {
+  // solo si el numero es multiplo de 3, lo agrego al array acumulador
+  if (numero % 3 === 0) {
+    multiplosAcumulados.push(numero);
+  }
+
+  return multiplosAcumulados;
+}, []); // este array vacio, es el primer valor que va a tomar nuevas variable acumuladora, que en este ejemplo se llama multiplosAcumulados
+
+console.log(multiploDe3); // [ 3, 9, 12, 18 ]
 ```
 
 #### Prácticas
