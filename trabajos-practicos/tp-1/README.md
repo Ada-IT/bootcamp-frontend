@@ -1,4 +1,4 @@
-# Trabajo Práctico 2 - Grupal
+# Trabajo Práctico 1
 
 * Generar una página según el modelo del mockup, tanto mobile, como desktop. Tener en cuenta respetar la estructura de carpetas, para las hojas de estilos, los html y las imagenes.
 * En la carpeta “images” van a encontrar todas las imagenes necesarias para realizar dicho trabajo.
