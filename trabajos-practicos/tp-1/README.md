@@ -2,10 +2,10 @@
 
 * Generar una página según el modelo del mockup, tanto mobile, como desktop. Tener en cuenta respetar la estructura de carpetas, para las hojas de estilos, los html y las imagenes.
 * En la carpeta “images” van a encontrar todas las imagenes necesarias para realizar dicho trabajo.
-* La primer imagen del caroulsel deve redireccionar a la receta completa (nuevo html).
-* El primer link del nav "platos" (ensalada) deve redireccionar a la receta completa.
+* La primer imágen del carousel tiene que redireccionar a la receta completa (nuevo html).
+* El primer link del nav "platos" (ensalada) tiene que redireccionar a la receta completa.
 * La home debe redireccionar a la Home
-* Los iconos tienen que tener un link
+* Los íconos tienen que tener un link
 
 ### Para resolverlo es necesario:
 * Sass
