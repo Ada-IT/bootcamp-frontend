@@ -18,12 +18,12 @@ saludar(); // Muestra en consola hola
 
 * En este ejemplo vemos que podemos definir una función con el nombre **saludar** y luego la utilizamos llamandola con el **nombre y los paréntesis**
 * Podemos utilizar una función tantas veces como lo necesitemos
-* Cuando vemos que estamos repitiendo código es un caso común donde podemos refactorizar y abstraer ese código en una función
+* Cuando vemos que estamos repitiendo código es un caso común donde podemos mejorarlo y separar ese código en una función
 * También el uso de funciones nos hace más fácil testear nuestro código
 
 #### Prácticas
-[Ejercicio 100](../ejercicios/consignas/js/ej100.md)
-[Ejercicio 101](../ejercicios/consignas/js/ej101.md)
+[Ejercicio 001](./ejercicios/fn_001.md)
+[Ejercicio 002](./ejercicios/fn_002.md)
 
 * Dado que las funciones en ECMASCript son un tipo de dato lo podemos asignar a una variable
 * Al asignar una función a una variable no necesitamos darle un nombre ya que para eso podemos utilizar la variable
@@ -44,9 +44,9 @@ saludar(); // Muestra en consola hola
 * La asignación funciona de la misma forma que si fuera cualquier otro tipo de dato (string, number, boolean y ahora function)
 
 #### Prácticas
-[Ejercicio 102](../ejercicios/consignas/js/ej102.md)
-[Ejercicio 103](../ejercicios/consignas/js/ej103.md)
-[Ejercicio 104](../ejercicios/consignas/js/ej104.md)
+[Ejercicio 003](./ejercicios/fn_003.md)
+[Ejercicio 004](./ejercicios/fn_004.md)
+[Ejercicio 005](./ejercicios/fn_005.md)
 
 * Una función puede o no retornar un valor
 * Cuando una función no retorna un valor obtenemos **undefined** como se ve al ejecutar `console.log()` en la consola
@@ -105,8 +105,10 @@ if (usuarioLoggeado()) {
 * En el segundo caso una función puede retornar un valor boolean directamente y lo podemos utilizar como condición. Si el usuario está loggeado podemos saludarlo
 
 #### Prácticas
-[Ejercicio 105](../ejercicios/consignas/js/ej105.md)
-[Ejercicio 106](../ejercicios/consignas/js/ej106.md)
+[Ejercicio 006](./ejercicios/fn_006.md)
+[Ejercicio 007](./ejercicios/fn_007.md)
+[Ejercicio 008](./ejercicios/fn_008.md)
+[Ejercicio 009](./ejercicios/fn_009.md)
 
 * Las funciones también aceptan uno o varios valores como parametros
 * Utilizando parametros hacemos que nuestras funciones sean más flexibles y le podemos dar más funcionalidades
@@ -116,8 +118,8 @@ if (usuarioLoggeado()) {
 
 **Ejemplo:**
 ```js
-function(parametro1, parametro2, parametro2) {
-  console.log(parametro1, parametro2, parametro2)
+function(parametro1, parametro2, parametro3) {
+  console.log(parametro1, parametro2, parametro3)
 }
 ```
 
@@ -125,8 +127,8 @@ function(parametro1, parametro2, parametro2) {
 
 **Ejemplo:**
 ```js
-function saludar(nombreDelUsuario) {
-  console.log('¡Hola ' + nombreDelUsuario + '!');
+function saludar(nombrePersona) {
+  console.log('¡Hola ' + nombrePersona + '!');
 }
 
 saludar('Ada'); // Muestra en consola: ¡Hola Ada!
@@ -136,16 +138,16 @@ saludar('Hedy'); // Muestra en consola: ¡Hola Hedy!
 
 * En este ejemplo vemos varias cosas
   * Declaramos una función saludar
-  * La función saludar espera un parámetro que le pusimos el nombre de **nombreDelUsuario**
-  * **nombreDelUsuario** en la función no es más que una variable que va a tomar un valor según lo que le pasen como parámetro a la función
+  * La función saludar espera un parámetro que le pusimos el nombre de **nombrePersona**
+  * **nombrePersona** en la función no es más que una variable que va a tomar un valor según lo que le pasen como parámetro a la función
   * Al ejecutar la función `saludar('Ada')` estamos pasando 'Ada' como parámetro
-  * Dentro de la función **nombreDelUsuario** tiene asignado el nombre que le pasaron, ejemplo en el primer llamado tiene 'Ada', en el segundo 'Grace' y en el tercero 'Hedy'
+  * Dentro de la función **nombrePersona** tiene asignado el nombre que le pasaron, ejemplo en el primer llamado tiene 'Ada', en el segundo 'Grace' y en el tercero 'Hedy'
   * Podemos cambiar los valores que le pasamos como parámetros a una función y eso es lo que le da tanta felxibilidad a las funciones
 
 **Ejemplo:**
 ```js
-var saludar = function(nombreDelUsuario) {
-  console.log('¡Hola ' + nombreDelUsuario + '!');
+var saludar = function(nombrePersona) {
+  console.log('¡Hola ' + nombrePersona + '!');
 }
 
 saludar('Ada'); // Muestra en consola: ¡Hola Ada!
@@ -177,7 +179,7 @@ console.log( saludo('Hedy') ); // Muestra en consola: ¡Hola Hedy!
 **Ejemplo:**
 ```js
 var saludar = function(nombreDelUsuario, edad) {
-  console.log('¡El usuario ' + nombreDelUsuario + ' tiene años' + edad + '!';
+  console.log('¡El usuario ' + nombreDelUsuario + ' tiene años' + edad + '!');
 }
 
 saludar('Ada', 27); // ¡El usuario Ada tiene 27 años!
@@ -188,13 +190,14 @@ saludar(35, 'Grace'); // ¡El usuario 35 tiene Grace años!
 * En el segundo llamado se utilizan mal los parámetros por lo cual se muestra mal el mensaje
 
 #### Prácticas
-[Ejercicio 107](../ejercicios/consignas/js/ej107.md)
-[Ejercicio 108](../ejercicios/consignas/js/ej108.md)
-[Ejercicio 109](../ejercicios/consignas/js/ej109.md)
-[Ejercicio 110](../ejercicios/consignas/js/ej110.md)
-[Ejercicio 111](../ejercicios/consignas/js/ej111.md)
-[Ejercicio 112](../ejercicios/consignas/js/ej112.md)
-[Ejercicio 113](../ejercicios/consignas/js/ej113.md)
-[Ejercicio 114](../ejercicios/consignas/js/ej114.md)
-[Ejercicio 115](../ejercicios/consignas/js/ej115.md)
-[Ejercicio 116](../ejercicios/consignas/js/ej116.md)
+[Ejercicio 010](./ejercicios/fn_010.md)
+[Ejercicio 011](./ejercicios/fn_011.md)
+[Ejercicio 012](./ejercicios/fn_012.md)
+[Ejercicio 013](./ejercicios/fn_013.md)
+[Ejercicio 014](./ejercicios/fn_014.md)
+[Ejercicio 015](./ejercicios/fn_015.md)
+[Ejercicio 016](./ejercicios/fn_016.md)
+[Ejercicio 017](./ejercicios/fn_017.md)
+[Ejercicio 018](./ejercicios/fn_018.md)
+[Ejercicio 019](./ejercicios/fn_019.md)
+[Ejercicio 020](./ejercicios/fn_020.md)
