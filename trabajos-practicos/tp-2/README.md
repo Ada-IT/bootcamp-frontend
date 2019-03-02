@@ -100,7 +100,7 @@ var local = {
       console.log( ventasSucursal("Centro") ); // 4195
       ```
 
-    * Las funciones **ventasSucursal** y **ventasVendedora** tienen mucho código en común, ya que son la misma funcionalidad pero trabajando con una propiedad distinta. Entonces, ¿cómo haría para que ambas funcione reutilicen código y evitemos repetir?
+    * Las funciones **ventasSucursal** y **ventasVendedora** tienen mucho código en común, ya que es la misma funcionalidad pero trabajando con una propiedad distinta. Entonces, ¿cómo harías para que ambas funciones reutilicen código y evitemos repetir?
 
     * Crear la función **sucursalDelMes(mes, anio)**, que se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la sucursal que más vendió en plata en el mes. No cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`.
       ```js
