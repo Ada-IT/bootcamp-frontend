@@ -4,7 +4,7 @@
 
 Una empresa de venta de computadoras está desarrollando un sistema para llevar registro de ventas. Para ello cuenta con la siguiente información:
 
-  * Lista de los vendedoras de la empresa
+  * Lista de las vendedoras de la empresa
   * Lista de ventas. Un array con objetos. Cada objeto representa una venta y tiene las propiedades `fecha`, `nombreVendedora` (un String con el nombre), `componentes` (un array Strings con el nombre de cada componente vendido).
   * Lista de precios de los componentes, de la forma (nombre componente, precio).
 
