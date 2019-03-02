@@ -108,7 +108,7 @@ var local = {
       ```
 
 3. Para tener una mejor muestra de como está resultando el local, queremos desarrollar un reporte que nos muestre las ventas por sucursal y por mes. Para esto, necesitamos crear las siguientes funciones:
-    * **renderPorMes()**: Muestra una lista del importe total vendido por cada mes/año
+    * **renderPorMes()**: Muestra una lista ordenada del importe total vendido por cada mes/año
     ```js
     console.log( renderPorMes() );
     // Ventas por mes:
