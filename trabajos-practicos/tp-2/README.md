@@ -47,12 +47,12 @@ var local = {
 
     * **vendedoraDelMes(mes, anio)**, se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la vendedora que más vendió en plata en el mes. O sea no cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`.
       ```js
-      console.log( vendedoraDelMes(1, 2019) ); // "Ada" (vendio por $670, una máquina de $320 y otra de $350)
+      console.log( vendedoraDelMes(0, 2019) ); // "Ada" (vendio por $670, una máquina de $320 y otra de $350)
       ```
 
     * **ventasMes(mes, anio)**: Obtener las ventas de un mes.
       ```js
-      console.log( ventasMes(1, 2019) ); // 1250
+      console.log( ventasMes(0, 2019) ); // 1250
       ```
 
     * **ventasVendedora(nombre)**: Obtener las ventas totales realizadas por una vendedora sin límite de fecha.
