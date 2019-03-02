@@ -20,7 +20,7 @@ var local = {
     { fecha: new Date(2019, 0, 12), nombreVendedora: "Grace", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1200"] }
   ],
 
-  precios = [
+  precios: [
     { componente: "Monitor GPRS 3000", precio: 200 },
     { componente: "Motherboard ASUS 1500", precio: 120 },
     { componente: "Monitor ASC 543", precio: 250 },
