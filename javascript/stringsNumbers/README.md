@@ -149,7 +149,7 @@ console.log('JavaScript no es lo mismo que', resultado); // JavaScript no es lo 
 [Ejercicio 45](./ejercicios/ej45.md)
 
 * Otro método que podemos utilizar de forma similar es el método **substr**
-* También podemos establecer 2 parámetros numéricos para obtener una porsión de una cadena de texto
+* También podemos establecer 2 parámetros numéricos para obtener una porción de una cadena de texto
 * El primer parámetro establece el **inicio**
 * El segundo parámetro establece la cantidad de caracteres que queremos recortar
 
