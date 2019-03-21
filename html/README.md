@@ -14,66 +14,66 @@ Existen diferentes versiones de HTML y en la actualidad utilizamos la versión d
 
 Muchas paginas web son la versión electrónica de documentos reales. Por ejemplo en [lanacion.com.ar](http://www.lanacion.com.ar) podemos encontrar la versión digital del contenido que sale publicado en el diario de manera física.
 
-En la publicación [Carreras de drones: cómo entrenan y quiénes compiten en la Argentina](http://www.lanacion.com.ar/2020025-carreras-de-drones-como-entrenan-y-quienes-compiten-en-la-argentina) podemos ver un claro ejemplo de como estructurar una noticia.
+En la publicación [CAMBIO DE CARRERA: VENTAJAS Y DESAFÍOS DE INGRESAR AL MERCADO DE LA TECNOLOGÍA](https://www.infotechnology.com/negocios/Cambio-de-carrera-ventajas-y-desafios-de-ingresar-al-mercado-de-la-tecnologia-20190318-0007.html) podemos ver un claro ejemplo de como estructurar una noticia.
 
 **Tenemos un título principal:**
 
 ```
-Carreras de drones: cómo entrenan y quiénes compiten en la Argentina
+CAMBIO DE CARRERA: VENTAJAS Y DESAFÍOS DE INGRESAR AL MERCADO DE LA TECNOLOGÍA
 ```
 
 **Una bajada:**
 ```
-[Video] Leonardo Cascavilla y Santiago Nardi integran el Ezeiza Team; en +Despiertos contaron en qué consiste la Led Cup 2017
+EL SECTOR TECNOLÓGICO ES, HOY, UNO DE LOS POCOS QUE EN LA ARGENTINA TIENE PLENO EMPLEO Y HASTA POSICIONES SIN CUBRIR. POR ESO YA SON MUCHOS LOS QUE DECIDIERON CAMBIAR EL RUMBO DE SUS VIDAS Y EMBARCARSE EN UNA NUEVA PROFESIÓN. CÓMO LO HICIERON Y QUÉ TRABAJOS CONSIGUIERON.
 ```
 
 **La nota:**
 ```
-Las carreras de drones se hacen en todo el mundo..
+La tecnología está en todos lados. Empezó a expandirse...
 ```
 
-**Material audiovisual (el video)**
+**Material audiovisual (imagenes, videos)**
 
 **Autor:**
 ```
-Martina Rua
+AXEL MARAZZI
 ```
 
 **Fecha:**
 ```
-MIÉRCOLES 03 DE MAYO DE 2017 • 12:01
+18 de Marzo 2019
 ```
 
 **Etiquetas realacionadas:**
 ```
-Drones
+cambio de carrera
 ```
 
-**Y sin duda lo mejor de la nación, una lista de comentarios.**
+**Y una lista de comentarios.**
 
 En un artículo más largo podemos encontrar más secciones con otros títulos, textos e imagenes. Estas estructuras ayudan al leector a entender la noticia y de alguna forma estamos acostumbrados a este formato. También podemos hacer un análisis similar en un blog post como puede ser [medium.com](https://medium.com/@kentcdodds/classes-complexity-and-functional-programming-a8dd86903747).
 
 De alguna forma estamos acostumbrados a este tipo de estructuras gracias a los diarios u otro tipo de publicación física similar. Ahora bien, qué pasa cuando tenemos que estructurar otro tipo de documentos como puede ser un Twit?
 
-![Ejemplo twit de la nacion](https://github.com/nisnardi/comunidad-it-js/raw/master/assets/html/ejemplo_la_nacion.png)
+![Ejemplo tw](https://file-xpnminiasq.now.sh)
 
 En este ejemplo podemos ver:
 
 **Contenido:**
 ```
-Arabia Saudita hace un drástico giro con un nuevo heredero
+Digital Inclusion Changes Women's Lives GSMA
 ```
 
 **Fecha:**
 ```
-8:03 - 22 jun. 2017
+12:41 - 9 mar. 2019
 ```
 
 **Imagen**
 
 **Datos del autor:**
 ```
-El avatar de la nación
+El avatar de Ada
 ```
 
 **Campo de texto para ingresar una respuesta:**
@@ -86,7 +86,6 @@ Twittea tu respuesta
 * Siguiendo o seguir al usuario
 * Respuestas
 * Retwittear
-* Agregar a Pocket
 * Poner que me gusta
 * Mandar un mensaje directo a otro usuario
 
