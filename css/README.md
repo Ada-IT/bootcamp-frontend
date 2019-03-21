@@ -94,7 +94,7 @@ selector {
   * HEXA
   * HUE
 
-![Colores](../assets/css/rgb_model.gif)
+![Colores](https://file-ulyttqkltc.now.sh/)
 
 ### Nombre de color
 * Existen nombres de colores que podemos utilizar directamente y el browser sabe como mostrarlos
@@ -198,7 +198,7 @@ body {
 ### HSL
 * Este sistema hace referencia a **H**ue, **S**aturation and **I**ntensity, es decir Matiz, Saturación e Intensidad
 * Podemos establecer un valor entre 0 y 360 para el HUE según el color que queremos
-![HUE](../assets/css/hue.png)
+![HUE](https://file-xpfmnfmxjn.now.sh/)
 * Tanto saturación como intensidad aceptan un valor que va de 0 a 100%
 * Ejemplo:
   * negro: hsl(0, 0%, 0%)
@@ -260,7 +260,7 @@ body {
 * Para evitar este problema necesitamos otra alternativa que nos permita definir los atributos visuales de nuestros elementos a nivel documento
 
 #### Práctica
-[Ejercicio 1](../ejercicios/consignas/css/ej1.md)
+[Ejercicio 1](./ejercicios/ej1.md)
 
 ### Agregar hoja de estilo en un documento (style)
 * Por medio de la etiqueta **style** podemos definir los estilos que queremos para nuestros elementos a nivel documento
@@ -316,7 +316,7 @@ body {
 ```
 
 #### Práctica
-[Ejercicio 2](../ejercicios/consignas/css/ej2.md)
+[Ejercicio 2](./ejercicios/ej2.md)
 
 * Esta forma de utilizar los estilos está buena cuando necesitamos definir estilos para un documento
 * Si bien esta forma es más general que definir los estilos en cada elemento, sigue siendo una individual a nivel documento
@@ -424,7 +424,7 @@ Archivo: contact.html
 ```
 
 #### Práctica
-[Ejercicio 3](../ejercicios/consignas/css/ej3.md)
+[Ejercicio 3](./ejercicios/ej3.md)
 
 * CSS se llama Hoja de estilo en cascada ya que los elementos pueden **heredar** propiedades visuales de padre a hijo
 * Si establecemos estilos al **body** todos los elementos que esten en el documento van a heredar esos atributos
@@ -462,7 +462,7 @@ styles.css
 * Como regla podemos decir que siempre ponemos los estilos más generales primero y después sobrescribimos lo que necesitamos
 
 #### Práctica
-[Ejercicio 4](../ejercicios/consignas/css/ej4.md)
+[Ejercicio 4](./ejercicios/ej4.md)
 
 
 
@@ -523,7 +523,7 @@ p, h1 {
 ```
 
 #### Práctica
-[Ejercicio 5](../ejercicios/consignas/css/ej5.md)
+[Ejercicio 5](./ejercicios/ej5.md)
 
 ### Selector universal
 * Por medio del selector asterisco (*) podemos seleccionar todos los elementos
@@ -596,7 +596,7 @@ En HTML:
 ```
 
 #### Práctica
-[Ejercicio 6](../ejercicios/consignas/css/ej6.md)
+[Ejercicio 6](./ejercicios/ej6.md)
 
 ## Hijos
 * Podemos seleccionar los elementos que sólo son hijos directos de un elemento
@@ -620,13 +620,13 @@ div > p {
 * En el ejemplo anterior vemos como podemos seleccionar sólo los párrafos que son hijos de un elemento div
 
 #### Práctica
-[Ejercicio 7](../ejercicios/consignas/css/ej7.md)
+[Ejercicio 7](./ejercicios/ej7.md)
 
 ## Selector descendiente
 * El selector descendiente permite seleccionar cualquier elemento
 
 #### Práctica
-[Ejercicio 8](../ejercicios/consignas/css/ej8.md)
+[Ejercicio 8](./ejercicios/ej8.md)
 
 * Ahora que sabemos varios selectores podemos ver más propiedades de CSS
 * Existen más selectores y los vamos a seguir viendo más adelante
@@ -645,7 +645,7 @@ div > p {
 
 **Ejemplos de tipografías por defecto**
 
-![Fonts](../assets/css/fonts.png)
+![Fonts](https://file-blpqrfykjl.now.sh/)
 
 **Ejemplo:**
 ```css
@@ -665,7 +665,7 @@ h1 {
   * Los títulos h1 son grises y con tipografía Times New Roman o serif
 
 #### Práctica
-[Ejercicio 9](../ejercicios/consignas/css/ej9.md)
+[Ejercicio 9](./ejercicios/ej9.md)
 
 ### Tamaño
 * Por medio de la propiedad **font-size** podemos establecer el tamaño de la tipografía
@@ -694,7 +694,7 @@ h1 {
   * Para aprender más sobre el tema podemos seguir leyendo este buen artículo de [alistapart.com (en inglés y muy buen sitio)](https://alistapart.com/article/howtosizetextincss)
   * Una buena sección para mirar del mismo sitio: [Typography Web Fonts](https://alistapart.com/topic/typography-web-fonts)
 
-  ![Font size](../assets/css/size.png)
+  ![Font size](https://file-spzbvupkzb.now.sh/)
 
   **Ejemplo:**
   ```css
@@ -706,7 +706,7 @@ h1 {
   ```
 
 #### Práctica
-[Ejercicio 10](../ejercicios/consignas/css/ej10.md)
+[Ejercicio 10](./ejercicios/ej10.md)
 
   ### Bold
   * Por medio de la propiedad **font-weight** podemos establecer si el peso de nuestra tipografía
@@ -729,7 +729,7 @@ h1 {
   ```
 
 #### Práctica
-[Ejercicio 11](../ejercicios/consignas/css/ej11.md)
+[Ejercicio 11](./ejercicios/ej11.md)
 
 ### Itálica
 * Por medio de la propiedad font-style podemos establecer si queremos que nuestra tipografía sea normal, itálica o oblicua
@@ -772,7 +772,7 @@ p { text-transform: lowercase; }
 ```
 
 #### Práctica
-[Ejercicio 12](../ejercicios/consignas/css/ej12.md)
+[Ejercicio 12](./ejercicios/ej12.md)
 
 ### Alineado de textos
 * Por medio de la propiedad text-align podemos establecer como queremos alinear los textos de forma horizontal
@@ -784,7 +784,7 @@ p { text-transform: lowercase; }
 * Podemos aprender más sobre esta propiedad en el [sitio de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
 
 #### Práctica
-[Ejercicio 13](../ejercicios/consignas/css/ej13.md)
+[Ejercicio 13](./ejercicios/ej13.md)
 
 ### Decorado
 * Por medio de la propiedad text-decoration establecemos si queremos decorar nuestras tipografía según los valores posibles:
@@ -813,7 +813,7 @@ h1 {
 ```
 
 #### Práctica
-[Ejercicio 14](../ejercicios/consignas/css/ej14.md)
+[Ejercicio 14](./ejercicios/ej14.md)
 
 ### Identación
 * Podemos identar nuestro texto utilizando la propiedad **text-indent**
@@ -827,7 +827,7 @@ p { text-indent: 20px; }
 ```
 
 #### Práctica
-[Ejercicio 15](../ejercicios/consignas/css/ej15.md)
+[Ejercicio 15](./ejercicios/ej15.md)
 
 ### Sombra
 * Para establecer la sombra de nuestro texto utilizamos la propiedad **text-shadow**
@@ -847,7 +847,7 @@ p { text-shadow: 4px 2px 0px #000000; }
 * Para jugar con estas opciones podemos usar el [siguiente sitio](http://www.cssportal.com/css3-text-shadow-generator)
 
 #### Práctica
-[Ejercicio 16](../ejercicios/consignas/css/ej16.md)
+[Ejercicio 16](./ejercicios/ej16.md)
 
 ### Espaciado o aire
 * Podemos establecer la distancia tanto entre letras como palabras
@@ -881,7 +881,7 @@ p {
 ```
 
 #### Práctica
-[Ejercicio 17](../ejercicios/consignas/css/ej17.md)
+[Ejercicio 17](./ejercicios/ej17.md)
 
 ### Alineado Vertical
 * Podemos alinear los textos de forma verticual utilizando la propiedad **vertical-align**
@@ -906,14 +906,14 @@ img { vertical-align: bottom; }
 ```
 
 #### Práctica
-[Ejercicio 18](../ejercicios/consignas/css/ej18.md)
+[Ejercicio 18](./ejercicios/ej18.md)
 
 
 ## Modelo de Caja
 * Podemos pensar los elementos de HTML como una caja
 * Este concepto se conoce como box model
 
-![Box Model](../assets/css/css-box-model.png)
+![Box Model](https://file-btoblsulhf.now.sh/)
 
 * **content:** es el contenido del elemento, por ejemplo un texto u otros elementos
 * **padding:** es un margen interno entre el borde y el contenido, podemos establecer diferentes valores para la parte superior, inferior, izquierda y derecha
@@ -957,7 +957,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 19](../ejercicios/consignas/css/ej19.md)
+[Ejercicio 19](./ejercicios/ej19.md)
 
 ### Ancho y Alto
 * Por medio de las propiedades **width** y **height** podemos establecer el ancho y alto de la caja
@@ -988,7 +988,7 @@ div {
 * En caso de necesitar ser más grande la caja se va a agrandar pero nunca va a ser menor a 100px
 
 #### Práctica
-[Ejercicio 20](../ejercicios/consignas/css/ej20.md)
+[Ejercicio 20](./ejercicios/ej20.md)
 
 ### Contenido Extra
 * Existe una propiedad llamada **overflow** que nos permite manejar como se debe comportar el contenido extra de nuestro sitio
@@ -1005,7 +1005,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 21](../ejercicios/consignas/css/ej21.md)
+[Ejercicio 21](./ejercicios/ej21.md)
 
 ### Bordes:
 * Por medio de la propiedad border podemos establecer el borde de la caja
@@ -1097,7 +1097,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 22](../ejercicios/consignas/css/ej22.md)
+[Ejercicio 22](./ejercicios/ej22.md)
 
 ### Aire interno de la caja
 * Por medio de la propiedad **padding** podemos establecer un márgen interno de la caja
@@ -1149,7 +1149,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 23](../ejercicios/consignas/css/ej23.md)
+[Ejercicio 23](./ejercicios/ej23.md)
 
 
 ### Márgenes
@@ -1202,7 +1202,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 24](../ejercicios/consignas/css/ej24.md)
+[Ejercicio 24](./ejercicios/ej24.md)
 
 * Podemos establecer el valor **auto** para que el browser establezca el valor de forma automática
 * Utilizando este valor para los márgenes izquierda y derecha más establecer un valor de ancho de caja podemos centrar un elemento
@@ -1224,7 +1224,7 @@ div {
 * Recordemos que para centrar un elemento inline podemos establecer la propiedad **text-align:center** al padre del elemento que queremos centrar de forma horizontal
 
 #### Práctica
-[Ejercicio 25](../ejercicios/consignas/css/ej25.md)
+[Ejercicio 25](./ejercicios/ej25.md)
 
 ### Sombra
 * Utilizando la propiedad **box-shadow** establecemos una sombra a la caja
@@ -1249,7 +1249,7 @@ div {
 * Para ver como funciona esta propiedad podemos utilizar la [siguiente herramienta](http://www.cssmatic.com/es/box-shadow)
 
 #### Práctica
-[Ejercicio 26](../ejercicios/consignas/css/ej26.md)
+[Ejercicio 26](./ejercicios/ej26.md)
 
 
 * También podemos establecer que la sombra es interna a la caja si utilizamos el valor **inset** como primer valor
@@ -1264,7 +1264,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 27](../ejercicios/consignas/css/ej27.md)
+[Ejercicio 27](./ejercicios/ej27.md)
 
 ### Cambiar la forma en la que se comporta un elemento
 * Utilizando la propiedad **display** podemos cambiar la forma en que se comportan los elementos
@@ -1278,7 +1278,7 @@ div {
   * **visible:** Establecemos que este elemento tiene que ser visible
 
 #### Práctica
-[Ejercicio 28](../ejercicios/consignas/css/ej28.md)
+[Ejercicio 28](./ejercicios/ej28.md)
 
 ### Borders redondeados
 * Por medio de la propiedad **border-radius** podemos establecer bordes redondeados
@@ -1314,7 +1314,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 29](../ejercicios/consignas/css/ej29.md)
+[Ejercicio 29](./ejercicios/ej29.md)
 
 ### Imágen de fondo
 * Existen algunas propiedades que nos permiten utilizar imagenes como fondo de la caja
@@ -1342,7 +1342,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 30](../ejercicios/consignas/css/ej30.md)
+[Ejercicio 30](./ejercicios/ej30.md)
 
 ### Repetir el fondo
 
@@ -1364,7 +1364,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 31](../ejercicios/consignas/css/ej31.md)
+[Ejercicio 31](./ejercicios/ej31.md)
 
 * Es importante recordar que trabajar con imagenes muchas veces es más fácil si lo hacemos en la medida que necesitamos
 * Dado que el browser tiene que descargar cada foto de manera individual también conviene tener estas imagenes optimizadas para que pesen menos
@@ -1409,7 +1409,7 @@ div {
   * right bottom
 
 #### Práctica
-[Ejercicio 32](../ejercicios/consignas/css/ej32.md)
+[Ejercicio 32](./ejercicios/ej32.md)
 
 ### Fijar el fondo:
 * Por medio de la propiedad **background-attachment** podemos establecer si queremos fijar o escrolear el fondo según el valor seleccionado:
@@ -1430,7 +1430,7 @@ div.scroll {
 ```
 
 #### Práctica
-[Ejercicio 33](../ejercicios/consignas/css/ej33.md)
+[Ejercicio 33](./ejercicios/ej33.md)
 
 ### Establecer todos los valores juntos:
 * Por medio de la propiedad **background** podemos establecer todos los valores en una sola propiedad respetando el siguiente orden:
@@ -1448,7 +1448,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 34](../ejercicios/consignas/css/ej34.md)
+[Ejercicio 34](./ejercicios/ej34.md)
 
 ### Color de fondo con gradiente
 * Para establecer un degradado utilizamos la propiedad **linear-gradient**
@@ -1465,7 +1465,7 @@ div {
 ```
 
 #### Práctica
-[Ejercicio 35](../ejercicios/consignas/css/ej35.md)
+[Ejercicio 35](./ejercicios/ej35.md)
 
 ## Pseudo elementos y clases (más selectores)
 
@@ -1496,7 +1496,7 @@ div::selection {
 ```
 
 #### Práctica
-[Ejercicio 36](../ejercicios/consignas/css/ej36.md)
+[Ejercicio 36](./ejercicios/ej36.md)
 
 
 ### Pseudo clases
@@ -1532,7 +1532,7 @@ tr:nth-child(odd) {
 ```
 
 #### Práctica
-[Ejercicio 37](../ejercicios/consignas/css/ej37.md)
+[Ejercicio 37](./ejercicios/ej37.md)
 
 ## Cursor
 * Por medio de la propiedad **cursor** cambiamos la forma en al que se ve el cursor en nuestros documentos/elementos
@@ -1555,7 +1555,7 @@ button { cursor: help; }
 ```
 
 #### Práctica
-[Ejercicio 38](../ejercicios/consignas/css/ej38.md)
+[Ejercicio 38](./ejercicios/ej38.md)
 
 ## Listas
 
@@ -1630,7 +1630,7 @@ ol {
 ```
 
 #### Práctica
-[Ejercicio 39](../ejercicios/consignas/css/ej39.md)
+[Ejercicio 39](./ejercicios/ej39.md)
 
 ## Tablas
 * Para las tablas podemos utilizar muchas de las propiedades que ya vimos como border, width, padding, height, background-color, margin, etc
@@ -1651,7 +1651,7 @@ table {
 ```
 
 #### Práctica
-[Ejercicio 40](../ejercicios/consignas/css/ej40.md)
+[Ejercicio 40](./ejercicios/ej40.md)
 
 ### Agrupar Bordes
 * Por medio de la propiedad **border-collapse** podemos establecer los siguientes comportamientos de la tabla y sus bordes:
@@ -1659,16 +1659,16 @@ table {
 * **separate:** Los bordes están sueltos por lo cual los podemos distanciar unos con otros
 
 #### Práctica
-[Ejercicio 41](../ejercicios/consignas/css/ej41.md)
+[Ejercicio 41](./ejercicios/ej41.md)
 
 ## Forms
 * Los formularios y los inpusts tienen las mismas propiedades que vimos hasta el momento
 
 #### Práctica
-[Ejercicio 42](../ejercicios/consignas/css/ej42.md)
+[Ejercicio 42](./ejercicios/ej42.md)
 
 #### Práctica Especial Sitio 01
-[Ejercicio 43](../ejercicios/consignas/css/ej43.md)
+[Ejercicio 43](./ejercicios/ej43.md)
 
 ## Layouts
 * Como vimos los elementos pueden ser en bloque (No dejan que otro elemento este en la misma linea) y en linea (Se rodea de texto)
@@ -1706,7 +1706,7 @@ p {
 ```
 
 #### Práctica
-[Ejercicio 44](../ejercicios/consignas/css/ej44.md)
+[Ejercicio 44](./ejercicios/ej44.md)
 
 ### Posicionamiento absoluto
 * Con este posicionamiento podemos establecer la posición absoluta que queremos que ocupe un elemento en realación a su contenedor. Este elemento es removido del flow normal por lo cual no afecta al resto de los elementos. Estos elementos posicionados de manera absoluta son scrolleados acompañando el scroll del usuario.
@@ -1721,7 +1721,7 @@ p {
 ```
 
 #### Práctica
-[Ejercicio 45](../ejercicios/consignas/css/ej45.md)
+[Ejercicio 45](./ejercicios/ej45.md)
 
 ### Posicionamiento Fixed
 * Este posicionamiento es similar al absoluto pero en lugar de ser posicionado de forma absoluta al elemento padre lo hace en relación al browser, es decir que este elemento se posiciona usando las coordenadas del browser y no del elemento padre. El resto de los elementos siguen funcionando de la misma forma, es decir que hacen como si este elemento fixed no existiera.
@@ -1736,7 +1736,7 @@ p {
 ```
 
 #### Práctica
-[Ejercicio 46](../ejercicios/consignas/css/ej46.md)
+[Ejercicio 46](./ejercicios/ej46.md)
 
 ### z-index
 * Al cambiar la forma en que se comportan o posicionan los elementos podemos controlar el nivel de profundidad que utiliza cada uno utilizando la propiedad **z-index**, es decir que si dos elementos estan posicionados en el mismo lugar podemos hacer que uno se vea arriba del otro aumentando el nivel de z-index. Por ejemplo si tengo 2 elementos en la misma posición fixed puedo cambiar el nivel de uno a z-index:1 y el otro a z-index:2 y de esta forma hacer que el que tiene mayor nivel de z-index se vea arriba de todo.
@@ -1749,7 +1749,7 @@ p {
 ```
 
 #### Práctica
-[Ejercicio 47](../ejercicios/consignas/css/ej47.md)
+[Ejercicio 47](./ejercicios/ej47.md)
 
 ### Elementos Flotantes
 * Podemos establecer que un elemento flote hacia la izquierda o derecha de un elemento, el resto de los elementos se posicionan al costado de dicho elemento.
@@ -1778,7 +1778,7 @@ div {
 * En este ejemplo el div no va a tener a nadie flotando a su izquierda y se recupera el flow normal de los elementos
 
 #### Práctica
-[Ejercicio 48](../ejercicios/consignas/css/ej48.md)
+[Ejercicio 48](./ejercicios/ej48.md)
 
 
 * Podríamos tener 3 secciones que esten flotando para hacer una parte del sitio en 3 columnas
@@ -1811,10 +1811,10 @@ div {
 #### Ejemplos de grillas:
 
 ##### Ejemplo de distintas opciones
-![Distintas opciones](../assets/css/distintas_secciones.jpg)
+![Distintas opciones](https://file-gltudwegpm.now.sh/)
 
 ##### Ejemplo de sitio
-![Ejemplo de sitio](../assets/css/sitio.jpg)
+![Ejemplo de sitio](https://file-ayjyowmntc.now.sh/)
 
 ## Media Queries
 * Por medio de Media Query podemos establecer atributos visuales dependiendo del tipo de dispositivo que esta viendo el documento
@@ -1869,10 +1869,10 @@ div {
 * Con las [developers tools](https://developers.google.com/web/tools/chrome-devtools/device-mode) podemos probar diferentes dispositivos
 
 #### Práctica
-[Ejercicio 49](../ejercicios/consignas/css/ej49.md)
+[Ejercicio 49](./ejercicios/ej49.md)
 
 ### Flexbox
 * Próxima sección de Flexbox
 
 #### Práctica Especial Sitio 02
-[Sitio 02](../ejercicios/consignas/css/sitio02.md)
+[Sitio 02](./ejercicios/sitio02.md)
