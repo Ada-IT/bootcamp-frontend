@@ -13,6 +13,7 @@ var local = {
   vendedoras: ["Ada", "Grace", "Hedy", "Sheryl"],
 
   ventas: [
+    // tener en cuenta que Date guarda los meses del 0 (enero) al 11 (diciembre)
     { fecha: new Date(2019, 1, 4), nombreVendedora: "Grace", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
     { fecha: new Date(2019, 0, 1), nombreVendedora: "Ada", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
     { fecha: new Date(2019, 0, 2), nombreVendedora: "Grace", componentes: ["Monitor ASC 543", "Motherboard MZI"] },
@@ -45,12 +46,12 @@ var local = {
       console.log( cantidadVentasComponente("Monitor ASC 543") ); // 2
       ```
 
-    * **vendedoraDelMes(mes, anio)**, se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la vendedora que más vendió en plata en el mes. O sea no cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`.
+    * **vendedoraDelMes(mes, anio)**, se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la vendedora que más vendió en plata en el mes. O sea no cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
       ```js
       console.log( vendedoraDelMes(1, 2019) ); // "Ada" (vendio por $670, una máquina de $320 y otra de $350)
       ```
 
-    * **ventasMes(mes, anio)**: Obtener las ventas de un mes.
+    * **ventasMes(mes, anio)**: Obtener las ventas de un mes. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
       ```js
       console.log( ventasMes(1, 2019) ); // 1250
       ```
@@ -65,7 +66,7 @@ var local = {
       console.log( componenteMasVendido() ); // Monitor GPRS 3000
       ```
 
-    * **huboVentas(mes, anio)**: que indica si hubo ventas en un mes determinado.
+    * **huboVentas(mes, anio)**: que indica si hubo ventas en un mes determinado. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
       ```js
       console.log( huboVentas(3, 2019) ); // false
       ```
@@ -102,7 +103,7 @@ var local = {
 
     * Las funciones **ventasSucursal** y **ventasVendedora** tienen mucho código en común, ya que es la misma funcionalidad pero trabajando con una propiedad distinta. Entonces, ¿cómo harías para que ambas funciones reutilicen código y evitemos repetir?
 
-    * Crear la función **sucursalDelMes(mes, anio)**, que se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la sucursal que más vendió en plata en el mes. No cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`.
+    * Crear la función **sucursalDelMes(mes, anio)**, que se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la sucursal que más vendió en plata en el mes. No cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
       ```js
       console.log( sucursalDelMes(1, 2019) ); // "Centro"
       ```
