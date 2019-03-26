@@ -347,7 +347,7 @@ parrafos[0].parentElement;
 ```
 ```js
 var parrafos = document.querySelectorAll('p');
-parrafos[1].previousSibling; // De esta forma accedemos al primer párrafo parrafos[0]
+parrafos[1].previousElementSibling; // De esta forma accedemos al primer párrafo parrafos[0]
 parrafos[1].nextElementSibling; // De esta forma accedemos al elemento que sigue parrafos[2]
 ```
 
