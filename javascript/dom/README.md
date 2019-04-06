@@ -776,7 +776,7 @@ var select = document.querySelector('select');
 console.log(select.selectedIndex);  // retorna el índice del valor seleccionado
 console.log(select.options);  // retorna la colección de elementos options
 
-Select.options[indice]; // retorna el option seleccionado
+select.options[indice]; // retorna el option seleccionado
 console.log(select.options[indice].value); // retorna el valor del elemento seleccionado.
 ```
 
