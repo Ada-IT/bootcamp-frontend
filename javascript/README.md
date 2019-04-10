@@ -1,5 +1,13 @@
 # JavaScript
 
+# Tabla de Contenido
+
+* [JavaScript](#javascript)
+    * [Principales características](#principales-características)
+  * [Historia](#historia)
+  * [¿Javascript o Java?](#javascript-o-java)
+    * [Usando la consola del Browser](#usando-la-consola-del-browser)
+
 JavaScript es un lenguaje de programación o, en otras palabras, un medio por el cual la computadora es instruída para hacer cosas. Podemos controlar computadoras con enunciados escritos en un lenguaje de programación. Todos los navegadores web entienden JavaScript y vos podes tomar ventaja de eso para hacer que las páginas web hagan cosas.
 
 JavaScript empezó como una manera de hacer páginas web más interactivas. Hoy en día JavaScript corre no solo en navegadores, sino también en servidores web, teléfonos y hasta robots!
