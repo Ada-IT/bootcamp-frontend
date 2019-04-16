@@ -703,7 +703,7 @@ console.log(form.name); // login
 ```
 ```js
 var form = document.querySelector('form');
-var username = form.elements[0].value;
+var username = form.elements[0];
 
 username.value; // Obtenemos un string vacío
 username.value = 'pepe'; // Establecemos el valor del input username en pepe
