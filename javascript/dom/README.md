@@ -796,7 +796,7 @@ console.log(select.options[indice].value); // retorna el valor del elemento sele
 </form>
 ```
 ```js
-var checkboxes = document.querySelector('checkbox');
+var checkboxes = document.querySelectorAll("input[type='checkbox']")
 var femenino = checkboxes[0];
 var masculino = checkboxes[1];
 
