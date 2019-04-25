@@ -347,7 +347,7 @@ parrafos[0].parentElement;
 ```
 ```js
 var parrafos = document.querySelectorAll('p');
-parrafos[1].previousSibling; // De esta forma accedemos al primer párrafo parrafos[0]
+parrafos[1].previousElementSibling; // De esta forma accedemos al primer párrafo parrafos[0]
 parrafos[1].nextElementSibling; // De esta forma accedemos al elemento que sigue parrafos[2]
 ```
 
@@ -703,7 +703,7 @@ console.log(form.name); // login
 ```
 ```js
 var form = document.querySelector('form');
-var username = form.elements[0].value;
+var username = form.elements[0];
 
 username.value; // Obtenemos un string vacío
 username.value = 'pepe'; // Establecemos el valor del input username en pepe
@@ -776,7 +776,7 @@ var select = document.querySelector('select');
 console.log(select.selectedIndex);  // retorna el índice del valor seleccionado
 console.log(select.options);  // retorna la colección de elementos options
 
-Select.options[indice]; // retorna el option seleccionado
+select.options[indice]; // retorna el option seleccionado
 console.log(select.options[indice].value); // retorna el valor del elemento seleccionado.
 ```
 
@@ -796,7 +796,7 @@ console.log(select.options[indice].value); // retorna el valor del elemento sele
 </form>
 ```
 ```js
-var checkboxes = document.querySelector('checkbox');
+var checkboxes = document.querySelectorAll("input[type='checkbox']")
 var femenino = checkboxes[0];
 var masculino = checkboxes[1];
 
