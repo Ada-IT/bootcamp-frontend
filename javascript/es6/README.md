@@ -192,3 +192,13 @@ console.log(email);
 ```
 
 [**`Ver PPT`**](clase_1.pdf)
+
+## Arrow functions y default parameters
+
+[**`Teoría`**](teoría_2.pdf)
+[**`Ver PPT`**](clase_2.pdf)
+
+## Spread Operator
+
+[**`Teoría`**](teoría_3.pdf)
+[**`Ver PPT`**](clase_3.pdf)
