@@ -64,4 +64,5 @@ console.log(2 + 2);
 * [Funciones](./funciones/README.md)
 * [Objetos](./objetos/README.md)
 * [DOM](./dom/README.md)
+* [ES6](./es6/README.md)
 
