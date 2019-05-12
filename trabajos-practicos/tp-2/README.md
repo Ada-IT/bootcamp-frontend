@@ -1,4 +1,4 @@
-# Trabajo Práctico 3 - JS / DOM 1
+# Trabajo Práctico 2 - JS / DOM 1
 
 El Trabajo Práctico consiste en desarrollar una aplicación ToDo list.
 
