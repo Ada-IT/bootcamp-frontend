@@ -1,227 +1,140 @@
-# Trabajo Práctico JS - DOM
+# Trabajo Práctico 3 - JS
 
-* Generar una página según el modelo del mockup, tanto mobile, como desktop (ejemplo real: https://ada-trabajo-practico-3-ahewymdcrw.now.sh/).
-* Dentro de la carpeta **assets** van a encontrar todas las imagenes necesarias.
-* La API para extraer la información es: https://api.themoviedb.org
-* Para utilizar la API, es necesario crear una APIKey. La APIKey es un código que nos va a permitir tener acceso y consultar los datos de las películas.
-  1. Crear una cuenta en TMDB ingresando a https://www.themoviedb.org/account/signup
-  2. Una vez creada la cuenta (luego de verificar la cuenta de email), ingresar dentro de perfil a **Settings** ([screenshot](https://files.tmdb.org/misc/api_step_2-1534865151.png))
-  3. Hacer click en la opción **API**, que se encuentra en el menu del lado izquierdo ([screenshot](https://files.tmdb.org/misc/api_step_3-1534865163.png))
-  4. Hacer click en el botón **Create** ([screenshot](https://files.tmdb.org/misc/api_step_4-1534865184.png))
-  5. Hacer click en la opción **Developer** ([screenshot](https://files-ofltxeoqqv.now.sh/))
-  6. Nos va a pedir una aceptación de términos y condiciones
-  7. En la siguiente pantalla, nos aparecerá un formulario el cual tenemos que rellenar (pero podemos inventar la información) ([screenshot](https://files-eysgagylut.now.sh/))
-  8. Una vez que enviamos el formulario, nos aparece un panel con la información sobre la API. En particular, nos vamos a quedar con el valor que aparece en el cuadro API Key. ([screenshot](https://files-cfammdcugu.now.sh/))
+## Local de ventas de PCs
 
-* Las pantallas que vamos a tener son las siguientes:
-  1. **Home**
+Una empresa de venta de computadoras está desarrollando un sistema para llevar registro de ventas. Para ello cuenta con la siguiente información:
 
-      - [Home Desktop](./vistas/desktop_1_home.jpg)
-      - [Home Mobile](./vistas/mobile_1_home.png)
+  * Lista de las vendedoras de la empresa
+  * Lista de ventas. Un array con objetos. Cada objeto representa una venta y tiene las propiedades `fecha`, `nombreVendedora` (un String con el nombre), `componentes` (un array Strings con el nombre de cada componente vendido).
+  * Lista de precios de los componentes, de la forma (nombre componente, precio).
 
-  2. **Listado de películas por categoría o búsqueda (las 4 categorías y el resultado de búsqueda tienen el mismo diseño)**
+```js
+var local = {
+  vendedoras: ["Ada", "Grace", "Hedy", "Sheryl"],
 
-      - [Listado de películas Desktop](./vistas/desktop_2_seccion_popular.jpg)
-      - [Listado de películas Mobile](./vistas/mobile_3_seccion_popular.png)
+  ventas: [
+    // tener en cuenta que Date guarda los meses del 0 (enero) al 11 (diciembre)
+    { fecha: new Date(2019, 1, 4), nombreVendedora: "Grace", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
+    { fecha: new Date(2019, 0, 1), nombreVendedora: "Ada", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
+    { fecha: new Date(2019, 0, 2), nombreVendedora: "Grace", componentes: ["Monitor ASC 543", "Motherboard MZI"] },
+    { fecha: new Date(2019, 0, 10), nombreVendedora: "Ada", componentes: ["Monitor ASC 543", "Motherboard ASUS 1200"] },
+    { fecha: new Date(2019, 0, 12), nombreVendedora: "Grace", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1200"] }
+  ],
 
-  3. **Detalle de película (modal)**
-
-      - [Modal detalle de película Desktop](./vistas/desktop_3_detalle_pelicula.png)
-      - [Modal detalle de película Mobile](./vistas/desktop_4_detalle_pelicula.png)
-
-  4. **Menu de categorías (solo mobile)**
-
-      - [Menu de categorías (solo mobile)](./vistas/mobile_2_menu.png)
-
-### **Descripción por pantalla**
-
-En todas las pantallas se van a ver tanto la barra de búsqueda como el sidebar de categorías.
-
-1. **Home**
-
-    Tenemos un header (con una imagen que pueden cambiar) y el título general del sitio (que también pueden modificar).
-
-    Debajo aparecen 4 filas (una por cada categoría de películas: popular, top rated, upcoming y now playing). Dentro de cada categoría vemos las 5 primeras películas que nos devolvió la API y un botón `View All`, que nos redirigirá a la pantalla de la categoría específica.
-
-    Para sacar la información de cada categoría, vamos a utilizar la API:
-    ```js
-    // categoria Popular
-    `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
-    // categoría Top Rated
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
-    // categoría Upcoming
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`
-    // categoría Now Playing
-    `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
-    ```
-
-2. **Listado por categoría o búsqueda**
-
-    Tanto cuando hacemos click en una categoría específica, como cuando buscamos peliculas por palabras claves, la pantalla que vemos es idéntica.
-
-    Tenemos primero el titulo de la sección (`Popular Movies`, `Top Rated Movies`, `Upcoming Movies`, `Now Playing Movies`, `Search Results`) y, pegado al margen derecho, la cantidad de resultados de películas.
-
-    Luego, el listado de las películas de la categoría o como resultado de la búsqueda.
-
-    Al final, un botón `LOAD MORE`. Esto es debido a que la API devuelve todos los resultados **paginados**, de a 20 resultados por vez. Esto quiere decir que en lugar de tener un array con (por ejemplo) 60 películas, vamos a tener un array con 20. Cuando hacemos click en el botón `load more`, obtenemos un nuevo array con 20 peliculas más, y así sucesivamente hasta no tener más "páginas".
-
-    Para pedirle la información a la API, vamos a utilizar las siguientes URLs:
-
-    ```js
-    // si hicimos click en la categoria Popular, las peliculas a mostrar la sacamos de:
-    `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${paginaActual}`
-
-    // si hicimos click en la categoria Top Rated, las peliculas a mostrar la sacamos de:
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`
-
-    // si hicimos click en la categoria Upcoming, las peliculas a mostrar la sacamos de:
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${paginaActual}`
-
-    // si hicimos click en la categoria Now Playing, las peliculas a mostrar la sacamos de:
-    `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
-
-    // si hicimos una búsqueda por palabra clave, las peliculas a mostrar la sacamos de:
-    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${textoBusqueda}&page=${paginaActual}`
-    ```
-
-    `paginaActual` es una variable numérica que empieza en 1 y vamos a ir incrementando cuando hacemos click en `LOAD MORE`. Al incrementar, estamos "avanzando" a la siguiente página de películas, por lo que volvemos a hacer el pedido a la misma dirección de las APIs para pedir las próximas 20 películas en la categoría.
-
-3. **Detalle de la película**
-
-    Es un modal que se abre al hacer click en una película. En el mismo se muestra la información de la película que tenemos en el objeto devuelto por la API.
-
-    Para sacar la información detallada de la pelicula, vamos a utilizar:
-
-    ```js
-    `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`
-    ```
-
-4. **Menu de categorías (solo mobile)**
-
-    La versión responsive del sitio no tiene el sidebar con las 4 categorías, sino que las mismas aparecen en un menu hamburguesa.
-
-    Este menú solo va a tener los 4 íconos y nombres de cada categoría.
-
-
-### **Descripción de la API**
-
-* Tanto cuando solicitamos las peliculas de una categoría o por búsqueda de palabra clave (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${paginaActual}`) la respuesta que obtenemos es idéntica.
-
-  Al api nos responde con un objeto que tiene que página le pedimos, la cantidad de resultados total de la búsqueda, la cantidad de páginas que tenemos (clave para saber cuando dejar de mostrar el botón `LOAD MORE`) y un array en la propiedad `results` con todas las películas de la página:
-
-    ```js
-    {
-      "page":1,
-      "total_results":19783,
-      "total_pages":990,
-      "results":[
-          {
-            "vote_count":4394,
-            "id":299537,
-            "video":false,
-            "vote_average":7.1,
-            "title":"Captain Marvel",
-            "popularity":433.107,
-            "poster_path":"\/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
-            "original_language":"en",
-            "original_title":"Captain Marvel",
-            "genre_ids":[
-                28,
-                12,
-                878
-            ],
-            "backdrop_path":"\/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg",
-            "adult":false,
-            "overview":"The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
-            "release_date":"2019-03-06"
-          },
-          { ... },
-          { ... },
-          ...
-      ]
-    }
-    ```
-
-
-* Cuando queremos consultar los datos específicos de una película (`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`), la API nos responde con un objeto que tiene todos los datos.
-
-    ```js
-    {
-      "adult":false,
-      "backdrop_path":"/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
-      "belongs_to_collection":{
-          "id":86311,
-          "name":"The Avengers Collection",
-          "poster_path":"/qJawKUQcIBha507UahUlX0keOT7.jpg",
-          "backdrop_path":"/zuW6fOiusv4X9nnW3paHGfXcSll.jpg"
-      },
-      "budget":500000000,
-      "genres":[
-          {
-            "id":12,
-            "name":"Adventure"
-          },
-          {
-            "id":878,
-            "name":"Science Fiction"
-          },
-          {
-            "id":28,
-            "name":"Action"
-          }
-      ],
-      "homepage":"https://www.marvel.com/movies/avengers-endgame",
-      "id":299534,
-      "imdb_id":"tt4154796",
-      "original_language":"en",
-      "original_title":"Avengers: Endgame",
-      "overview":"After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
-      "popularity":336.684,
-      "poster_path":"/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-      "production_companies":[
-          {
-            "id":420,
-            "logo_path":"/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
-            "name":"Marvel Studios",
-            "origin_country":"US"
-          }
-      ],
-      "production_countries":[
-          {
-            "iso_3166_1":"US",
-            "name":"United States of America"
-          }
-      ],
-      "release_date":"2019-04-24",
-      "revenue":1223641414,
-      "runtime":181,
-      "spoken_languages":[
-          {
-            "iso_639_1":"en",
-            "name":"English"
-          }
-      ],
-      "status":"Released",
-      "tagline":"Part of the journey is the end.",
-      "title":"Avengers: Endgame",
-      "video":false,
-      "vote_average":8.7,
-      "vote_count":2912
-    }
-    ```
-
-
-
-### **Requerimientos**
-* SASS
-* Buena organización de carpetas
-* Buena tabulación del código
-* Respetar el diseño propuesto
-
-### **Fuente**
-```css
-font-family: 'Roboto', sans-serif;
+  precios: [
+    { componente: "Monitor GPRS 3000", precio: 200 },
+    { componente: "Motherboard ASUS 1500", precio: 120 },
+    { componente: "Monitor ASC 543", precio: 250 },
+    { componente: "Motherboard ASUS 1200", precio: 100 },
+    { componente: "Motherboard MZI", precio: 30 },
+    { componente: "HDD Toyiva", precio: 90 },
+    { componente: "HDD Wezter Dishital", precio: 75 },
+    { componente: "RAM Quinston", precio: 110 },
+    { componente: "RAM Quinston Fury", precio: 230 }
+  ]
+};
 ```
-```html
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
-```
+
+1. Se pide desarrollar las siguientes funciones:
+    * **precioMaquina(componentes)**: recibe un array de componentes y devuelve el precio de la máquina que se puede armar con esos componentes, que es la suma de los precios de cada componente incluido.
+      ```js
+      console.log( precioMaquina(["Monitor GPRS 3000", "Motherboard ASUS 1500"]) ); // 320 ($200 del monitor + $120 del motherboard)
+      ```
+
+    * **cantidadVentasComponente(componente)**: recibe un componente y devuelve la cantidad de veces que fue vendido, o sea que formó parte de una máquina que se vendió. La lista de ventas no se pasa por parámetro, se asume que está identificada por la variable `ventas`.
+      ```js
+      console.log( cantidadVentasComponente("Monitor ASC 543") ); // 2
+      ```
+
+    * **vendedoraDelMes(mes, anio)**, se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la vendedora que más vendió en plata en el mes. O sea no cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
+      ```js
+      console.log( vendedoraDelMes(1, 2019) ); // "Ada" (vendio por $670, una máquina de $320 y otra de $350)
+      ```
+
+    * **ventasMes(mes, anio)**: Obtener las ventas de un mes. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
+      ```js
+      console.log( ventasMes(1, 2019) ); // 1250
+      ```
+
+    * **ventasVendedora(nombre)**: Obtener las ventas totales realizadas por una vendedora sin límite de fecha.
+      ```js
+      console.log( ventasVendedora("Grace") ); // 900
+      ```
+
+    * **componenteMasVendido()**: Devuelve el nombre del componente que más ventas tuvo historicamente. El dato de la cantidad de ventas es el que indica la función `cantidadVentasComponente`
+      ```js
+      console.log( componenteMasVendido() ); // Monitor GPRS 3000
+      ```
+
+    * **huboVentas(mes, anio)**: que indica si hubo ventas en un mes determinado. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
+      ```js
+      console.log( huboVentas(3, 2019) ); // false
+      ```
+
+
+2. Como se abrió una nueva sucursal en Caballito, ahora los datos de las ventas también tienen el nombre de la sucursal en la cual se realizó. Por ejemplo: `{ fecha: new Date(2019, 1, 1), nombreVendedora: "Ada", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"], sucursal: 'Centro' }`. Por este cambio, se pide:
+    * En las ventas ya existentes, tenemos que agregar la propiedad `sucursal` con el valor **Centro** (ya que es la sucursal original).
+
+    * Agregar al objeto principal la propiedad `sucursales: ['Centro', 'Caballito']`
+
+    * Cargar la siguiente información en el array `ventas`, creando sus respectivos objetos siguiendo el patrón: fecha, nombreVendedora, componentes, sucursal
+    ```js
+    // 12/02/2019, Hedy, [Monitor GPRS 3000, HDD Toyiva], Centro
+    // 24/02/2019, Sheryl, [Motherboard ASUS 1500, HDD Wezter Dishital], Caballito
+    // 01/02/2019, Ada, [Motherboard MZI, RAM Quinston Fury], Centro
+    // 11/02/2019, Grace, [Monitor ASC 543, RAM Quinston], Caballito
+    // 15/02/2019, Ada, [Motherboard ASUS 1200, RAM Quinston Fury], Centro
+    // 12/02/2019, Hedy, [Motherboard ASUS 1500, HDD Toyiva], Caballito
+    // 21/02/2019, Grace, [Motherboard MZI, RAM Quinston], Centro
+    // 08/02/2019, Sheryl, [Monitor ASC 543, HDD Wezter Dishital], Centro
+    // 16/02/2019, Sheryl, [Monitor GPRS 3000, RAM Quinston Fury], Centro
+    // 27/02/2019, Hedy, [Motherboard ASUS 1200, HDD Toyiva], Caballito
+    // 22/02/2019, Grace, [Monitor ASC 543, HDD Wezter Dishital], Centro
+    // 05/02/2019, Ada, [Motherboard ASUS 1500, RAM Quinston], Centro
+    // 01/02/2019, Grace, [Motherboard MZI, HDD Wezter Dishital], Centro
+    // 07/02/2019, Sheryl, [Monitor GPRS 3000, RAM Quinston], Caballito
+    // 14/02/2019, Ada, [Motherboard ASUS 1200, HDD Toyiva], Centro
+    ```
+
+    * Crear la función **ventasSucursal(sucursal)**, que obtiene las ventas totales realizadas por una sucursal sin límite de fecha.
+      ```js
+      console.log( ventasSucursal("Centro") ); // 4195
+      ```
+
+    * Las funciones **ventasSucursal** y **ventasVendedora** tienen mucho código en común, ya que es la misma funcionalidad pero trabajando con una propiedad distinta. Entonces, ¿cómo harías para que ambas funciones reutilicen código y evitemos repetir?
+
+    * Crear la función **sucursalDelMes(mes, anio)**, que se le pasa dos parámetros numéricos, (mes, anio) y devuelve el nombre de la sucursal que más vendió en plata en el mes. No cantidad de ventas, sino importe total de las ventas. El importe de una venta es el que indica la función `precioMaquina`. El mes es un número entero que va desde el 1 (enero) hasta el 12 (diciembre).
+      ```js
+      console.log( sucursalDelMes(1, 2019) ); // "Centro"
+      ```
+
+3. Para tener una mejor muestra de como está resultando el local, queremos desarrollar un reporte que nos muestre las ventas por sucursal y por mes. Para esto, necesitamos crear las siguientes funciones:
+    * **renderPorMes()**: Muestra una lista ordenada del importe total vendido por cada mes/año
+    ```js
+    console.log( renderPorMes() );
+    // Ventas por mes:
+    //   Total de enero 2019: 1250
+    //   Total de febrero 2019: 4210
+    ```
+
+    * **renderPorSucursal()**: Muestra una lista del importe total vendido por cada sucursal
+    ```js
+    console.log( renderPorSucursal() );
+    // Ventas por sucursal:
+    //   Total de Centro: 4195
+    //   Total de Caballito: 1265
+    ```
+
+    * **render()**: Tiene que mostrar la unión de los dos reportes anteriores, cual fue el producto más vendido y la vendedora que más ingresos generó
+    ```js
+    console.log( render() );
+    // Reporte
+    // Ventas por mes:
+    //   Total de enero 2019: 1250
+    //   Total de febrero 2019: 4210
+    // Ventas por sucursal:
+    //   Total de Centro: 4195
+    //   Total de Caballito: 1265
+    // Producto estrella: Monitor GPRS 3000
+    // Vendedora que más ingresos generó: Grace
+    ```
