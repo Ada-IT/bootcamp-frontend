@@ -33,6 +33,260 @@ Abrimos una terminal, nos movemos de directorio hasta la carpeta donde guardamos
 
 El código de ejemplo se encuentra en: `./ejemplos/01-helloWorld`
 
+### **Ejecutar Scripts de Node.js**
+
+**Node** es un lenguaje y entorno interpretado, no compilado. Hay tres formas principales de ejecutar código de node:
+
+1. REPL
+2. Opción **eval**
+3. Lanzar código de node desde un archivo
+
+#### Ejecutar código node desde un archivo
+
+Este es el caso de uso más común porque nos permite guardar programas largos de Node, y ejecutarlos. Para ejecutar un script de Node.js desde un archivo, simplemente escriba `node [NOMBRE_ARCHIVO]`.
+
+Por ejemplo, para correr el código de un archivo `app.js`, que se encuentra en la carpeta actual, simplemente tenemos que ejecutar:
+```cmd
+  node app.js
+```
+
+El archivo tiene que estar en la misma carpeta. Si necesitamos ejecutar código desde un archivo que está en una carpeta diferente, necesitamos agregar la ruta relativa o absoluta:
+
+```cmd
+node ./app/server.js
+node /var/www/app/server.js
+```
+
+El `.js` es opcional siempre que tenga un archivo con esa extensión. En otras palabras, si tenemos el archivo `server.js` puede ejecutar **`node server`**.
+
+### **Node.js Globals**
+
+A pesar de estar creado siguiendo un estándar, Node.js y JavaScript del navegador se diferencian en lo que se refiere a variables globales.
+Por ejemplo, en el navegador tenemos un variable/objeto `document`. Sin embargo, en Node.js, no existe (ya que no tratamos con el DOM del navegador), pero si vamos a tener a disposición otras globales / palabras claves:
+
+- process
+- global
+- module.exports and exports
+
+Vamos a ver las principales diferencias entre Node.js y JavaScript.
+
+#### **global**
+
+Tenemos una variable llamada `global`, que es accesible desde cualquier programa o archivo de Node. Esta se refiere al objeto global, y tiene diferentes propiedades como: `global.process` o `global.require` o `global.console`.
+
+Cualquier propiedad del primer nivel dentro del objeto `global`, es accesible sin agregar el prefijo `global`. Por ejemplo, `global.process` es igual a `process`.
+
+#### **Principales propiedades globales**
+
+Estas son las principales propiedades del objeto `global` y se conocen como `globals`:
+
+- process
+- require()
+- module and module.exports
+- console and console.log()`
+- setTimeout() and setInterval()
+- __dirname and __filename
+
+`console.log()` y `setTimeout()` funcionan similar a los métodos del navegador. Ahora nos vamos a centrar en ver `process`, `require()` y `module.exports`.
+
+#### **__dirname, __filename** y **process.cwd**
+
+`__dirname` es un path absoluto al archivo desde donde estamos utilizando alguna variable **global**.
+
+`process.cwd` es el path absoluto desde donde ejecutamos nuestra aplicación de Node.
+
+
+`__filename` es similar a __dirname solo que tiene concatenado el nombre del archivo desde donde utilizamos la variable.
+
+Código de ejemplo en: [`./ejemplos/02-globals`](./ejemplos/02-globals)
+
+#### **Node.js process**
+
+Cada archivo de Node.js que ejecutamos es un **proceso**.
+
+Podemos acceder a información importante sobre este proceso utilizando el objeto global `process`. Por ejemplo, en la consola podemos ejecutar `node -e "console.log(process.pid)"` y veríamos algo como `95716`.
+
+Otra información importante sobre este proceso es:
+
+- env: Variables de entorno
+- argv: argumentos de la línea de comando
+- exit(): método para terminar el proceso
+
+Veamos cada una por separado.
+
+**env: Variables de entorno**
+
+Las variables de entorno son accesibles mediante el atributo `env`:
+
+```js
+console.log(process.env);
+
+// { TERM_SESSION_ID: 'w0t1p0:5F3F2BB6-0F80-4CBD-A640-8FECECA11D21',
+//   SSH_AUTH_SOCK: '/private/tmp/com.apple.launchd.H1OjgEfM8Z/Listeners',
+//   Apple_PubSub_Socket_Render: '/private/tmp/com.apple.launchd.Xdne1YeBVQ/Render',
+//   COLORFGBG: '15;0',
+//   ...
+// }
+```
+
+Las variables de entorno se utilizan para definir parámetros básicos en la configuración de los programas, y que estos se ejecuten en diferentes ambientes sin tener que editar el código fuente del script. Su uso es habitual porque los programas se pueden ejecutar en diferentes ordenadores.
+
+Entre los valores más habituales que pueden cambiar entre diferentes entornos, puede ser por ejemplo:
+- usuario y contraseña para enviar emails
+- claves para acceders a APIs
+- etc.
+
+Estos valores tenemos que definirlos al ejecutar el programa.
+
+Una forma breve de configurar variables de entorno en la terminal/consola, y después ejecutar un script de Node es, por ejemplo, la siguiente:
+
+
+```cmd
+NODE_ENV=development node -e "console.log(process.env.NODE_ENV)"
+```
+
+`NODE_ENV` es una convención. Algunos valores comunes son:
+
+- **development**
+- **production**
+
+**Argumentos de la línea de comandos**
+
+Para acceder a los argumentos que escribimos en la consola al momento de ejecutar nuestro programa de Node, podemos utilizar la propiedad `process.argv`, que es un array.
+
+Por ejemplo, si el comando es
+```cmd
+node app.js arg1 arg2 arg3=val3
+```
+
+Los primeros dos argumentos van a ser `node` y el nombre de la aplicación, mientras que el resto de los elementos del array son los argumentos que escribimos.
+Por ejemplo:
+
+```js
+console.log(process.argv);
+
+// [
+//   'node',
+//   'app.js',
+//   'arg1',
+//   'arg2',
+//   'arg3=val3'
+// ]
+```
+
+Código de ejemplo en: [`./ejemplos/04-process.argv`](./ejemplos/04-process.argv)
+
+### **Módulos**
+* Un módulo es una forma de encapsular código en una sola unidad de código
+* Es decir que vamos a agrupar nuestro código por funcionalidad y lo vamos a poner en un archivo que luego podemos utilizar como módulo
+* Node.js tiene un sistema de carga de módulos que es muy fácil de utilizar
+* Un archivo puede ser utilizado como un módulo dentro del proyecto y se lo trata de forma individual
+* La función `require` acepta un string con el nombre del módulo que queremos utilizar
+* Node.js al ejecutar `require` busca si existe el nombre del módulo solicitado dentro de la carpeta node_modules
+
+```js
+const modulo = require('nombredelmodulo')
+```
+
+* Otra forma de cargar un módulo es utilizando rutas relativas
+* Por ejemplo si tengo el archivo index.js y el archivo mi-modulo.js puedo cargar mi-modulo desde el index de la siguiente manera
+
+```js
+const modulo = require('./mi-modulo')
+```
+
+* Algo a destacar es que al utilizar `require` para cargar un módulo no tenemos la necesidad de establecer que la extensión del archivo es **.js**
+
+Código de ejemplo en: [`./ejemplos/05-modulos`](./ejemplos/05-modulos);
+
+#### **Servidor Web**
+
+Si bien Node.js puede ser usado para una gran variedad de tareas, su uso primario es para crear aplicaciones web. Node _prospera_ en redes como resultado de su naturalez asíncrona y los módulos del núcleo (como **http**). Node es excelente para crear servidores web rápidos y eficientes.
+
+![Aplicación Web](https://www.proyecto2017.linti.unlp.edu.ar/teorias/clase7/images/rest-api.png)
+![Verbos HTTP](https://www.oreilly.com/library/view/restful-net/9780596155025/httpatomoreillycomsourceoreillyimages224471.png)
+
+Vamos a ver un ejemplo sencillo de un servidor web.
+En el ejemplo vamos a crear un objeto **server**, definir un manejador de requests (una función con un parámetro `req` y `res`), y enviarle alguna información a quien nos hizo un pedido.
+
+```js
+const http = require('http');
+const port = 3000;
+
+// creamos la funcion que maneja los pedidos
+const handle = (req, res) => {
+  res.writeHead(200, {
+    'Content-Type': 'text/plain'
+  });
+  res.end('Hola Mundo, no está trucado!');
+};
+
+// creamos el objeto servidor
+const server = http.createServer(handle);
+
+// ponemos el servidor a escuchar pedidos
+server.listen(port, err => {
+  if (err) {
+    return console.log('explotó algo al poner el server a la escucha', err)
+  }
+
+  console.log(`el servidor esta a la escucha en el puerto ${port}`)
+});
+
+```
+
+Vamos a separar el código en pedazo más chicos.
+
+El siguiente código carga el módulo **http**, con el que vamos a poder crear el servidor:
+```js
+const http = require('http');
+```
+
+Abajo, estamos definiendo la función que va a manejar los pedidos que nos lleguen, que tiene dos parametros: `res` y `res`.
+```js
+const handle = (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hola Mundo!');
+};
+```
+Los parámetros `req` y `res` tienen toda la firmación sobre el pedido y la respuesta HTTP.
+
+Para configurar el tipo de respuesta que le queremos devolver a quien nos hizo un pedido, utilizamos el siguiente código:
+```js
+res.writeHead(200, { 'Content-Type': 'text/plain' });
+```
+
+Para enviar el mensaje **Hola mundo!**, usamos:
+```js
+res.end('Hola Mundo!');
+```
+
+El fragmento de código a continuación, crea un servidor con la función de callback que contiene el código para manejar los pedidos (creada anteriormente):
+```js
+const server = http.createServer(handle);
+```
+
+Para poner el servidor a la escuchar (poder aceptar pedidos), tenemos que hacer:
+```js
+server.listen(port);
+```
+
+Ahora, en una terminal/consola paradas donde tenemos el archivo `server.js` podemos ejecutar el siguiente comando para iniciar nuestro servidor:
+```cmd
+node server.js
+```
+
+Ahora que tenemos nuestro servidor funcionando podemos abrir una pestaña de nuestro navegador, escribir en la barra de direcciones **localhost:3000** y vamos a ver el mensaje **Hola mundo!**.
+
+Para cortar/matar al proceso servidor, tenemos que apretar `CTRL + C` en la terminal.
+
+La función de callback que pasamos como parámetro al ejecutar `createServer`, se va a ejecutar cada vez que nos llegue un pedido a este servidor.
+
+Para más información del módulo **http**:
+- https://nodejs.org/api/http.html
+- https://nodejs.org/api/http.html#http_class_http_server
+
+
 ### NPM
 * NPM Significa Node Package Manager
 * Utilizando NPM podemos instalar un montón de módulos de Node y utilizarlos en nuestros programas
@@ -108,27 +362,6 @@ npm start
 ```
 
 * Podemos ver que de esta forma creamos, configuramos y corremos un script desde NPM
-
-### Módulos
-* Un módulo es una forma de encapsular código en una sola unidad de código
-* Es decir que vamos a agrupar nuestro código por funcionalidad y lo vamos a poner en un archivo que luego podemos utilizar como módulo
-* Node.js tiene un sistema de carga de módulos que es muy fácil de utilizar
-* Un archivo puede ser utilizado como un módulo dentro del proyecto y se lo trata de forma individual
-* La función `require` acepta un string con el nombre del módulo que queremos utilizar
-* Node.js al ejecutar `require` busca si existe el nombre del módulo solicitado dentro de la carpeta node_modules
-
-```js
-const modulo = require('nombredelmodulo')
-```
-
-* Otra forma de cargar un módulo es utilizando rutas relativas
-* Por ejemplo si tengo el archivo index.js y el archivo mi-modulo.js puedo cargar mi-modulo desde el index de la siguiente manera
-
-```js
-const modulo = require('./mi-modulo')
-```
-
-* Algo a destacar es que al utilizar `require` para cargar un módulo no tenemos la necesidad de establecer que la extensión del archivo es **.js**
 
 ### Instalar un módulo
 * Utilizando NPM podemos instalar módulos y utilizarlos en nuestros proyectos
