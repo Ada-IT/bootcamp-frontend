@@ -203,8 +203,7 @@ Código de ejemplo en: [`./ejemplos/05-modulos`](./ejemplos/05-modulos);
 
 Si bien Node.js puede ser usado para una gran variedad de tareas, su uso primario es para crear aplicaciones web. Node _prospera_ en redes como resultado de su naturalez asíncrona y los módulos del núcleo (como **http**). Node es excelente para crear servidores web rápidos y eficientes.
 
-![Aplicación Web](https://www.proyecto2017.linti.unlp.edu.ar/teorias/clase7/images/rest-api.png)
-![Verbos HTTP](https://www.oreilly.com/library/view/restful-net/9780596155025/httpatomoreillycomsourceoreillyimages224471.png)
+[Ir a la teoría de HTTP](./http/README.md)
 
 Vamos a ver un ejemplo sencillo de un servidor web.
 En el ejemplo vamos a crear un objeto **server**, definir un manejador de requests (una función con un parámetro `req` y `res`), y enviarle alguna información a quien nos hizo un pedido.
