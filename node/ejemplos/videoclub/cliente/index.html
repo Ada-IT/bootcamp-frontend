@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peliculas</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <h2>Peliculas</h2>
+
+  <form id="new-movie">
+    <label for="title">Titulo</label>
+    <input type="text" id="title" name="title">
+
+    <label for="summary">Descripción</label>
+    <textarea id="summary" name="summary"></textarea>
+
+    <label for="year">Año</label>
+    <input type="text" id="year" name="year">
+
+    <!-- importante el type="button" -->
+    <button type="button">Guardar</button>
+  </form>
+
+  <hr>
+
+  <div id="movies">
+    <!-- Asi deberia quedar cada div contenedor de una pelicula
+      <div class="movie">
+        <span class="title">Tempor diam.</span>
+        <span class="year">1900</span>
+
+        <button>Ver detalle</button>
+        <button>Editar</button>
+        <button>Eliminar</button>
+      </div>
+    -->
+  </div>
+
+  <div class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+
+        <h3 class="title"><!-- aca vamos a agregar el titulo de la pelicula con js --></h3>
+        <small class="year"><!-- aca vamos a agregar el año de la pelicula con js --></small>
+
+        <p class="summary"><!-- aca vamos a agregar el detalle de la pelicula con js --></p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

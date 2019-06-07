@@ -628,4 +628,401 @@ app.use(express.static('otracarpeta'));
 ```
 
 * En este caso Express intenta primero buscar en la carpeta `public` y luego en la `otracarpeta`
+* El código del ejemplo se encuentra en `./ejemplos/10-express-static-files`
 
+## Crear una API rest
+* Es una forma de describir la forma en que los programas o los sitios webs intercambian datos.
+* El formato de intercambio de datos normalmente es JSON.
+* Necesitamos APIs para:
+    * Ofrecer datos a aplicaciones que se ejecutan en un celular
+    * Ofrecer datos a nuestra propia web/aplicación
+    * Consumir datos de otras aplicaciones o sitios Web
+* Con Node / Express vamos a poder crear nuestra propia API
+
+Imaginemos que tenemos que desarrollar una aplicación web de un videoclub.
+La página web, la interfaz que va a ver el usuario, la vamos a desarrollar con HTML y CSS para que se vea bien, y con Javascript vamos a poder agregarle animaciones e interacción.
+
+Ahora, necesitamos que los datos de las películas estén guardados en algún lugar central. Cada vez que entremos a nuestra web, sin importar desde que dispositivo y en que momento, queremos ver todo lo que tenemos, y que eso se guarde históricamente.
+
+Esos datos van a ser almacenados en el **servidor**, y para que podamos verlos/crearlos/eliminarlos desde la web, vamos a implementar nuestra API. En este contexto, la API (que van a ser rutas creadas en express) son un acceso que damos a los datos que guardamos en el servidor. Y vamos a poder _consumir_ nuestra API mediante requests con ajax.
+
+* Vamos a crear dos carpetas: **cliente** y **servidor**
+* Dentro de la carpeta **cliente** vamos a tener todo el código de la página web (html, css y js). Acá simplemente vamos a _consumir_ nuestra API para mostrarle los datos a un usuario, o darle la posibilidad de eliminar / modificar / agregar. La web es simplemente la interfaz con la cual le permito a alguien poder usar los datos que guardamos en el servidor.
+* En la carpeta **servidor** vamos a tener un proyecto de Node.js, donde vamos a poner todo el código necesario para gestionar los datos que estamos guardando. En algún lugar vamos a guardar los datos, y vamos a crear las rutas necesarios (los puntos de entrada) para que alguien desde afuera (desde la web) pueda pedirnos esos datos, o que creemos / eliminemos / editemos otros.
+
+1. Lo primero que hacemos, es crear una carpeta para nuestro proyecto que se llame `videoclub`
+2. Dentro de esa carpeta, creamos dos nuevas carpetas: `cliente` y `servidor`
+3. Entrando a la carpeta servidor, inicializamos un nuevo proyecto de Node.js con `npm init` e instalamos el módulo express con `npm install express --save` y el módulo cors con `npm install cors --save`
+4. Creamos un archivo llamado `index.js`, una carpeta llamada `routes` y dentro de esa carpeta un archivo llamado `api.js`.
+5. La estructura final, por ahora, quedaría así:
+    ```
+    .
+    ├── cliente
+    |   ├── index.html
+    |   ├── style.css
+    |   └── index.js
+    |
+    └── servidor
+        ├── node_modules
+        ├── .gitignore
+        ├── package.json
+        ├── index.js
+        └── routes
+            └── api.js
+    ```
+5. Una vez realizado eso, empezamos con el código:
+
+**servidor/index.js**
+```js
+// importo los modulos que vamos a estar utilizando
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const apiRouter = require('./routes/api');
+
+// creo el servidor de express
+const app = express();
+
+// estas dos lineas, permiten que cuando desde una web nos envien un objeto de JS, express lo lea e interprete automáticamente y nos lo guarde en la propiedad req.body
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+// para que podamos hacer pedidos a esta api, sin importar desde que dominio hagan ese request
+app.use(cors());
+
+// agrego mis rutas
+app.use('/', apiRouter);
+
+// porngo el servidor a la escucha
+app.listen(3000, function() {
+  console.log('Example app listening on port 3000!')
+});
+```
+
+**servidor/routes/api.js**
+```js
+const express = require('express');
+const router = express.Router();
+
+// creo un array, donde voy a ir almacenando las peliculas
+// de esta forma la informacion no esta escrita en la web, sino que la guardamos en un servidor, en un lugar central
+// y cada vez que entremos a nuestra app web, vamos a poder consultar esa info mediante la API
+const movies = [
+  { id: 1, title: 'Batman Begins', summary: 'After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption.', year: 2005 },
+  { id: 2, title: 'The Dark Knight', summary: 'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.', year: 2008 },
+  { id: 3, title: 'The Dark Knight Rises', summary: 'Eight years after the Joker\'s reign of anarchy, Batman, with the help of the enigmatic Catwoman, is forced from his exile to save Gotham City, now on the edge of total annihilation, from the brutal guerrilla terrorist Bane.', year: 2012 }
+];
+
+// creo una ruta que devuelve el array de peliculas
+router.get('/api/movies', (req, res) => {
+  // respondo al cliente con el array de peliculas
+  res.json(movies);
+});
+
+// exporto mi modulo router
+module.exports = router
+```
+
+* Creamos una nueva ruta que devuelve un listado de peliculas en formato JSON
+* Ahora vamos a poder llamar desde el cliente usando AJAX al servidor y pedirle que nos mande el listado de peliculas
+* Lo vamos a mostrar en pantalla recorriendo la respuesta y armando una lista
+* Primero creamos un contenedor en el HTML de la página de productos para poder insertar los nuevos valores que traemos con un llamado de AJAX
+* Aclaración del código a continuación: **Todo este código, es del lado del cliente**
+
+**cliente/index.html**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peliculas</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <h2>Peliculas</h2>
+
+  <div id="movies">
+    <!-- Asi deberia quedar cada div contenedor de una pelicula
+    <div class="movie" id="${movie.id}">
+      <span class="title">${movie.title}</span>
+      <span class="year">${movie.year}</span>
+
+      <button class="trigger-view">Ver detalle</button>
+      <button class="trigger-delete">Eliminar</button>
+    </div>
+    -->
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
+```
+
+* Luego agregamos el siguiente código para hacer el llamado por AJAX, obtener la respuesta y crear de forma dinámica los items de películas
+
+**cliente/index.js**
+```js
+// creamos una función que pasándole un película por parámetro, nos retorne el HTML de esa película
+const makeMovie = movie => {
+  return `
+    <div class="movie" id="${movie.id}">
+      <span class="title">${movie.title}</span>
+      <span class="year">${movie.year}</span>
+
+      <button class="trigger-view">Ver detalle</button>
+      <button class="trigger-delete">Eliminar</button>
+    </div>
+  `;
+}
+
+// una función que busca el contenedor de peliculas, y adjunta una nueva película
+const addMovie = movie => {
+  document.querySelector('#movies').innerHTML += makeMovie(movie);
+}
+
+// hacemos el pedido de las películas a la API
+fetch('http://localhost:3000/api/movies')
+  .then(res => res.json())
+  .then(function (movies) {
+    // el parametro respuesta es lo que nos contesta el servidor (en este caso el array de las peliculas)
+
+    // por cada película, llamamos a la función que cremos más arriba para ir agregándolas en el DOM
+    movies.forEach((movie) => {
+      addMovie(movie);
+    });
+  });
+```
+
+* De esta forma estamos vinculando archivos del cliente y el servidor
+* En cuanto se carga nuestra web, estamos pidiendo a nuestra API que nos devuelva las peliculas que están guardadas en el servidor
+* Entonces, no importa si accedemos desde una computadora, un celular, o cualquier otro dispositvo: como siempre estamos usando la misma API, vamos a obtener los mismo datos
+
+### Obteniendo parametros
+* Express nos permite obtener los parámetros enviados en el request de diferentes maneras
+* Una de las formas más comúnes de pasar parámetros es utilizando la url
+* Por ejemplo si queremos ver la descripción de una pelicula podemos utilizar la url `/api/movies/:id`
+* Al establecer estar ruta estamos diciendo que si llamamos al server con una url tipo `/api/movies/3` obtenemos el parámetro id con el valor 3
+* Vamos a crear una ruta que nos devuelva una película específica del array `movies`
+
+**servidor/routes/api.js**
+```js
+// Configuramos la url para que espere un id
+// la agregamos antes del module.exports
+router.get('/api/movies/:id', (req, res) => {
+  const id = req.params.id;
+
+  // Usamos el id para buscar en el array el objeto que tenga ese mismo id
+  const movie = movies.find(function (pelicula) {
+    return pelicula.id == id;
+  });
+
+  // si no encontré ninguna pelicula, le devolvemos un estado 404 not found y un mensaje
+  if (!movie) {
+    return res.status(404).send(`La pelicula con id ${id} no existe.`);
+  }
+
+  // respondemos a quien nos pidio la pelicula con el objeto json que encontramos
+  res.json(movie);
+});
+```
+
+* Si navegamos a la ruta: `http://localhost:3000/api/movies/1` ya podemos ver en el browser el JSON del objeto específico
+  * Podemos probar las otras url cambiando 1 por 2, 3 y ver que pasa si pasamos un parámetro donde no tenemos valores en el array (por ejemplo 15)
+
+* Vamos a agregar un modal para ver el detalle de cada película
+* Tenemos que agregarlo al final del body, antes del tag `<script>`
+
+**cliente/index.html**
+```html
+<div class="modal">
+  <div class="modal-content">
+      <span class="close-button">&times;</span>
+
+      <h3 class="title"><!-- aca vamos a agregar el titulo de la pelicula con js --></h3>
+      <small class="year"><!-- aca vamos a agregar el año de la pelicula con js --></small>
+      <p class="summary"><!-- aca vamos a agregar el detalle de la pelicula con js --></p>
+  </div>
+</div>
+```
+
+* Dentro del fetch, después de que hicimos el **forEach**, vamos a llamar a una nueva función `configureEvents` que va a configurar el `onclick` para abrir el modal de la película.
+
+**cliente/index.js**
+```js
+fetch('http://localhost:3000/api/movies')
+  .then(res => res.json())
+  .then(function (movies) {
+    // el parametro respuesta es lo que nos contesta el servidor (en este caso el array de las peliculas)
+    movies.forEach((movie) => {
+      addMovie(movie);
+    });
+
+    configureEvents();
+  });
+
+// esta función sirve para agregar el onclick sobre el boton para abrir el modal
+const configureEvents = () => {
+  // configuro el boton para abril el modal con la información de la pelicula
+  const triggersEdit = document.querySelectorAll(".trigger-view");
+  triggersEdit.forEach(trigger => trigger.addEventListener("click", openModal));
+}
+
+// esta función la ejecutamos cuando hacemos click en el boton para ver el detalle de una película
+const openModal = e => {
+  // buscamos el id de la película, que lo dejamos en un atributo del elemento
+  const movieId = e.target.closest('.movie').id;
+
+  // hacemos un pedido a la API para traernos los datos específicos de esa película
+  fetch(`http://localhost:3000/api/movies/${movieId}`)
+    .then(res => res.json())
+    .then(movie => {
+      // modificas todos los elementos del modal con la información de la película
+      document.querySelector('.modal .title').innerText = movie.title;
+      document.querySelector('.modal .summary').innerText = movie.summary;
+      document.querySelector('.modal .year').innerText = movie.year;
+
+      // muestro el modal
+      toggleModal();
+    });
+}
+
+// configuro el botón para cerrar el modal
+const closeButton = document.querySelector(".close-button");
+closeButton.addEventListener("click", toggleModal);
+
+// esta función muestra/oculta el modal
+const toggleModal = () => document.querySelector(".modal").classList.toggle("show-modal");
+```
+
+* Cuando vamos a abrir el detalle desde la página del listado de películas necesitamos alguna forma de obtener sobre que película en particular estamos haciendo click
+* Una solución para esto, es agregar ese identificador único de la película como un atributo en el HTML
+* Por eso, cuando generamos el HTML de cada película, agregamos lo siguiente `<div class="movie" id="${movie.id}">`
+* Cuando hacemos click en el botón, lo que hacemos es buscar el elemento padre que tiene ese atributo id, y nos lo guardamos en una variable `e.target.closest('.movie').id;`
+* Una vez que obtuvimos el ID, hacemos un `fetch` a nuestra API
+* El **endpoint** al que le pegamos con el fetch, es el que nos devuelve específicamente los datos de una sola película `http://localhost:3000/api/movies/:id`
+* Una vez que la API nos responde, modificas el HTML y mostramos el modal llamando a la función `toggleModal()`
+
+### Agregar una nueva pelicula - Submit de form por post - Express body y body-parse
+* Ahora, vamos a agregar la posibilidad de crear nuevas peliculas
+* Para eso vamos a agregar un formulario en el HTML. Podemos agregar antes o después del listado de películas
+* Vamos a tener un input para el título, otro para la descripción y uno más para el número
+
+**cliente/index.html**
+```html
+<form id="new-movie">
+  <label for="title">Titulo</label>
+  <input type="text" id="title" name="title">
+
+  <label for="summary">Descripción</label>
+  <textarea id="summary" name="summary"></textarea>
+
+  <label for="year">Año</label>
+  <input type="text" id="year" name="year">
+
+  <!-- importante el type="button" -->
+  <button type="button">Guardar</button>
+</form>
+```
+
+* En el `index.js` vamos a agregar una función con la que vamos a hacer un request, para pedirle al servidor que guarde una nueva película
+* También configuramos el `onclick` sobre el botón del formulario para que, una vez completados los datos de cada input, al hacer click ejecutemos esta función donde hacemos un HTTP POST a `/api/movies`
+* Una vez que la API nos responde OK, agregamos esa nueva película al DOM (reutilizando la función que teníamos más arriba `addMovie`) y configuramos el evento para abrir el modal sobre esa película
+
+**cliente/index.js**
+```js
+const saveMovie = () => {
+  // obtenemos todos los datos de los inputs en el html
+  const title = document.querySelector('input[name="title"]').value;
+  const summary = document.querySelector('textarea[name="summary"]').value;
+  const year = document.querySelector('input[name="year"]').value;
+
+  // creamos el objeto que estamos creando y le vamos a mandar al servidor para que guarde
+  const newMovie = {
+    title: title,
+    summary: summary,
+    year: year
+  }
+
+  // finalmente, con ajax, le enviamos un HTTP POST al servidor para que guarde el objeto
+  // y le pasamos como data el nuevo objeto
+  fetch('http://localhost:3000/api/movies', {
+    method: 'post',
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newMovie)
+  })
+  .then(res => res.json())
+  .then(newMovie => {
+    // agrego la película al DOM
+    addMovie(newMovie);
+    // configuro el onclick del modal
+    configureModals();
+  })
+}
+
+const saveButton = document.querySelector("#new-movie button");
+saveButton.addEventListener('click', saveMovie);
+```
+
+* En el onclick, después de obtener los datos de los inputs, le pedimos al servidor que guarde ese objeto nuevo
+* Entonces tenemos que crear la ruta POST en el servidor
+* Para poder acceder a los valores pasados por POST tenemos que usar un nuevo módulo llamado `body-parser`
+* Este módulo funciona como `middleware` y agrega los valores pasados por POST a la propiedad `body` del objeto Request
+* Tenemos que configurarlo en nuestro proyecto
+* Tenemos que agregar el siguiente código antes de la linea `app.use('/', apiRouter)`
+
+**servidor/index.js**
+```js
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+```
+
+* Primero requerimos el módulo y luego configuramos el middleware utilizando el método `use` de Express
+* Agregamos `urlencoded` y `json` para poder configurar la forma en que body-parser parsea los datos
+* Al configurar este módulo obtenemos que en cada request que llegue por POST podamos acceder a los datos utilizando la propiedad `body` del objeto Request
+* Dado que nos mandan los valores por POST podemos obtenerlos usando `body`
+* Ahora necesitamos manejar el request usando una nueva ruta por POST
+* Agregamos una nueva **ruta** antes del `module.exports`
+
+**servidor/routes/api.js**
+```js
+router.post('/api/movies', (req, res) => {
+  // me guardo todas las propiedades que me llegaron desde un cliente
+  const title = req.body.title;
+  const summary = req.body.summary;
+  const year = req.body.year;
+
+  // es necesario que cada película nueva, tenga una propiedad ID, para identificarla univocamente
+  // esta propiedad por lo general es numérica
+  // para eso, lo que hacemos es buscar al última película, y le sumamos 1 a ese ID
+  let nextId = 1;
+  if (movies.length > 0) {
+    nextId = movies.slice(-1)[0].id;
+  }
+
+  // creamos el nuevo objeto a pushear en el array
+  const movieToPush = {
+    id: nextId,
+    title: title,
+    summary: summary,
+    year: year
+  };
+
+  // agregamos la nueva película a nuestro array de películas (que sería nuestra "base de datos")
+  movies.push(movieToPush);
+
+  // y le respondemos al cliente con el objeto de la película recién creado
+  res.json(movieToPush);
+});
+```
+
+* Al mandar los valores por POST los obtenemos utilizando `body`
+* Pueden leer más sobre [body-parser en su sitio](https://www.npmjs.com/package/body-parser)
+
+* A este punto, nuestra aplicación tiene 3 endpoints:
+  * GET   /api/movies -> devuelve la lista de películas guardadas
+  * GET   /api/movies/:id -> devuelve la película cuyo ID es igual al que nos llegan en el parámetro `:id`
+  * POST  /api/movies -> agrega una nueva película a nuestro array de películas guardadas
