@@ -1,4 +1,12 @@
-### **HTTP**
+# Internet
+
+* [¿Qué es internet?](https://www.youtube.com/watch?v=Dxcc6ycZ73M)
+* [Internet: Alambres, Cables & Wifi](https://www.youtube.com/watch?v=ZhEf7e4kopM)
+* [Internet: IP & DNS](https://www.youtube.com/watch?v=5o8CwafCxnU)
+* [Internet: Paquetes, Routing & Fiabilidad](https://www.youtube.com/watch?v=AYdF7b3nMto)
+* [Internet: HTTP & HTML](https://www.youtube.com/watch?v=kBXQZMmiA4s)
+
+# HTTP
 
 Las aplicaciones web consisten en dos componentes, una parte llamada **cliente** y otra parte llamada **servidor**, y se comunican cuando un cliente envia pedidos al servidor.
 
