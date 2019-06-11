@@ -7,6 +7,7 @@ Una empresa de venta de computadoras está desarrollando un sistema para llevar 
   * Lista de las vendedoras de la empresa
   * Lista de ventas. Un array con objetos. Cada objeto representa una venta y tiene las propiedades `fecha`, `nombreVendedora` (un String con el nombre), `componentes` (un array Strings con el nombre de cada componente vendido).
   * Lista de precios de los componentes, de la forma (nombre componente, precio).
+  * Se debe visualizar el listado de ventas como indica el mockup*
 
 ```js
 var local = {
@@ -78,6 +79,9 @@ var local = {
     * Agregar al objeto principal la propiedad `sucursales: ['Centro', 'Caballito']`
 
     * Cargar la siguiente información en el array `ventas`, creando sus respectivos objetos siguiendo el patrón: fecha, nombreVendedora, componentes, sucursal
+
+    * En la aplicación debe haber un botón **Nueva venta** donde se pueda sumar manualmente un nuevo ingreso con los campos requeridos *
+
     ```js
     // 12/02/2019, Hedy, [Monitor GPRS 3000, HDD Toyiva], Centro
     // 24/02/2019, Sheryl, [Motherboard ASUS 1500, HDD Wezter Dishital], Caballito
@@ -138,3 +142,5 @@ var local = {
     // Producto estrella: Monitor GPRS 3000
     // Vendedora que más ingresos generó: Grace
     ```
+
+    * El reporte se tiene que visualizar al final del sitio web en la cuadro indicado en el mock *
