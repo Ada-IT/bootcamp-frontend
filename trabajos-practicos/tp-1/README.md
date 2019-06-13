@@ -1,34 +1,31 @@
 # Trabajo Práctico 1
 
-* Generar una página según el modelo del mockup, tanto mobile, como desktop. Tener en cuenta respetar la estructura de carpetas, para las hojas de estilos, los html y las imagenes.
-* En la carpeta “images” van a encontrar todas las imagenes necesarias para realizar dicho trabajo.
-* La primer imágen del carousel tiene que redireccionar a la receta completa (nuevo html).
-* El primer link del nav "platos" (ensalada) tiene que redireccionar a la receta completa.
-* La home debe redireccionar a la Home
-* Los íconos tienen que tener un link
+* Modelo: [https://newbiz-master-uqgespkghu.now.sh](https://newbiz-master-uqgespkghu.now.sh)
+* Generar una página según el modelo, tanto mobile como desktop. Tener en cuenta respetar la estructura de carpetas, para las hojas de estilos, los html y las imagenes.
+* En la carpeta **images** van a encontrar todas las imagenes necesarias para realizar dicho trabajo.
+* El carousel de la sección **Testimonials** no debe ser funcional (solo la maqueta web).
+* El modal y los botones para filtrar de la sección **Our Portfolio** no deben ser funcionales (solo la maqueta web).
+* Las imagenes de **our clients**, **team** y **testimonials** pueden ser otras.
+* El mapa que se muestra en **contact us**, es un `iframe` sacado de google maps.
 
 ### Para resolverlo es necesario:
-* Sass
+* SASS
 * FlexBox
 * HTML5
 * Buena organización de carpetas
 * Buena tabulación en dichos archivos
 * Realizar los hovers
 * Respetar el diseño propuesto
-* El video puede ser tomado de youtube, es indistinto cual utilices, pero tiene que haber uno si o si.
-* La foto de perfil puede ser la propia de ustedes, o cualquiera que deseen utilizar al igual que la descripción de las recetas.
 * Los iconos a utilizar son tomados de esta libreria : https://fontawesome.com/icons?d=gallery
 
-FUENTES :
-```css
-font-family: "IBM Plex Mono", monospace;
-```
-```html
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
-```
-```css
-font-family: "Indie Flower", cursive;
-```
-```html
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-```
+FUENTES:
+
+- Párrafos
+  ```css
+  font-family: “Open Sans”, sans-serif;
+  ```
+
+- Títulos
+  ```css
+  font-family: “Montserrat”, sans-serif;
+  ```
