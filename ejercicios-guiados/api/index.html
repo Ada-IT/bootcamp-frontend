@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button img {
+      width: 15px;
+      height: 15px;
+    }
+
+    .error {
+      background-color: red;
+      color: white;
+      padding: 30px;
+      display: none;
+    }
+
+    #editar-tarea-btn {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>todos</h1>
+
+  <input id="nueva-tarea" type="text" placeholder="nombre de la tarea"/>
+  <button id="nueva-tarea-btn">agregar tarea</button>
+  <button id="editar-tarea-btn">editar</button>
+
+  <div class="notificacion error"></div>
+
+  <ul></ul>
+
+  <script src="index.js"></script>
+</body>
+</html>
