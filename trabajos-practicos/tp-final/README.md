@@ -1,7 +1,8 @@
 # TP Final Js - React
 
 * Generar una página según el modelo del mockup, tanto mobile, como desktop (ejemplo real: https://screeching-field.surge.sh/).
-* La API para extraer la información es: https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search
+* La API para extraer la información es:  
+https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search
 * Para utilizar la API, es necesario crear una API Key y un API Secret.  
   1. Crear una cuenta ingresando en https://developers.amadeus.com/register
   2. Una vez creada la cuenta (luego de verificar la cuenta de email), ingresamos al perfil: https://developers.amadeus.com/my-apps
