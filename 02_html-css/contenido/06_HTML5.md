@@ -17,10 +17,6 @@ Mejoras en HTML5:
 ### Viewport
 El viewport es el área visible del usuario de una página web. Éste varía con el dispositivo y será menor en un teléfono móvil que en una pantalla de computadora.
 
-
-### Nuevos elementos
-[img]
-
 ### Etiquetas
 | Etiqueta           | Descripción  |
 | ------------------ | -------------|
