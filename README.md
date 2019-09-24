@@ -2,10 +2,9 @@
 
 ## Módulos
 
-* [Internet & HTTP](./internet-http/README.md)
-* [Git & Github](./git/README.md)
-* [HTML](./html/README.md)
-* [CSS](./css/README.md)
-* [JavaScript](./javascript/README.md)
-* [Node](./node/README.md)
-* [React](./react/README.md)
+* [Internet & HTTP](./00_internet-http)
+* [Git & Github](./01_git)
+* [HTML-CSS](./02_html-css)
+* [JavaScript](./03_javascript)
+* [Node](./04_node)
+* [React](./05_react)
