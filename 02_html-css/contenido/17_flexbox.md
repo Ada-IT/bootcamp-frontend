@@ -70,7 +70,8 @@ Es una propiedad que se le da a los elementos **dentro** de un contenedor flexib
 ```css
 .item-1 {
     flex-basis: 400px;
-} .item-2 {
+} 
+.item-2 {
     flex-basis: 100px;
 }
 ```
@@ -217,7 +218,7 @@ Posiciona los elementos al final de la línea perpendicular al eje del contenedo
 ```
 
 ### align-content
-Funciona como **justify-content**, pero distribuyendo el espacio que hay a lo largo del eje perpendicular al ehe contenedor. Debe usarse en combinación con **flex-wrap**, ya que no funcuina cuando el contenedor tiene una sola línea de elementos.
+Funciona como **justify-content**, pero distribuyendo el espacio que hay a lo largo del eje perpendicular al eje contenedor. Debe usarse en combinación con **flex-wrap**, ya que no funcuina cuando el contenedor tiene una sola línea de elementos.
 
 #### flex-start
 ```css
