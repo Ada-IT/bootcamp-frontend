@@ -26,7 +26,7 @@
       - total (suma de subtotales)
       - si abona con tarjeta, cantidad de cuotas y monto de cada cuota a pagar
    8. Preguntar si tiene un código de descuento
-      - si la respuesta es SÍ, pedir que ingrese el código
+      - si la respuesta es "SÍ", pedir que ingrese el código
       - mostrar si el código ingresado es correcto o incorrecto
    9. Mostrar el detalle de la compra con:
       - subtotales de cada producto (precio x cantidad) 
@@ -45,6 +45,7 @@
    - Nombre de producto 2
    - Precio de producto 1
    - Precio de producto 2
+   - Código de descuento
 <br/>
 
 ✔️ Todos los valores y mensajes que se requieran son libres (pueden poner cualquier cosa)
