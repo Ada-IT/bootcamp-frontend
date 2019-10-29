@@ -2,12 +2,14 @@
 
 ## Local de ventas de PCs
 
+Mock: http://brainy-market.surge.sh/
+
 Una empresa de venta de computadoras está desarrollando un sistema para llevar registro de ventas. Para ello cuenta con la siguiente información:
 
   * Lista de las vendedoras de la empresa
-  * Lista de ventas. Un array con objetos. Cada objeto representa una venta y tiene las propiedades `fecha`, `nombreVendedora` (un String con el nombre), `componentes` (un array Strings con el nombre de cada componente vendido).
+  * Lista de ventas. Un array con objetos. Cada objeto representa una venta y tiene las propiedades `fecha`, `nombreVendedora` (un String con el nombre), `componentes` (un array Strings con el nombre de cada componente vendido), `sucursal` (un String con el nombre de la sucursal) y `id` (un valor que identifica de forma única a cada venta).
   * Lista de precios de los componentes, de la forma (nombre componente, precio).
-  * Se debe visualizar el listado de ventas como indica el mockup*
+  * Se debe visualizar el listado de ventas como indica el mockup. Cada vente debe contar con un botón 'eliminar'.
 
 ```js
 var local = {
@@ -15,11 +17,11 @@ var local = {
 
   ventas: [
     // tener en cuenta que Date guarda los meses del 0 (enero) al 11 (diciembre)
-    { fecha: new Date(2019, 1, 4), nombreVendedora: "Grace", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
-    { fecha: new Date(2019, 0, 1), nombreVendedora: "Ada", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
-    { fecha: new Date(2019, 0, 2), nombreVendedora: "Grace", componentes: ["Monitor ASC 543", "Motherboard MZI"] },
-    { fecha: new Date(2019, 0, 10), nombreVendedora: "Ada", componentes: ["Monitor ASC 543", "Motherboard ASUS 1200"] },
-    { fecha: new Date(2019, 0, 12), nombreVendedora: "Grace", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1200"] }
+    { id: 1, fecha: new Date(2019, 1, 4), nombreVendedora: "Grace", sucursal: "Centro", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
+    { id: 2, fecha: new Date(2019, 0, 1), nombreVendedora: "Ada", sucursal: "Centro", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"] },
+    { id: 3, fecha: new Date(2019, 0, 2), nombreVendedora: "Grace", sucursal: "Caballito", componentes: ["Monitor ASC 543", "Motherboard MZI"] },
+    { id: 4, fecha: new Date(2019, 0, 10), nombreVendedora: "Ada", sucursal: "Centro", componentes: ["Monitor ASC 543", "Motherboard ASUS 1200"] },
+    { id: 5, fecha: new Date(2019, 0, 12), nombreVendedora: "Grace", sucursal: "Caballito", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1200"] }
   ],
 
   precios: [
@@ -32,7 +34,9 @@ var local = {
     { componente: "HDD Wezter Dishital", precio: 75 },
     { componente: "RAM Quinston", precio: 110 },
     { componente: "RAM Quinston Fury", precio: 230 }
-  ]
+  ],
+
+  sucursales: ['Centro', 'Caballito']
 };
 ```
 
@@ -72,33 +76,7 @@ var local = {
       console.log( huboVentas(3, 2019) ); // false
       ```
 
-
-2. Como se abrió una nueva sucursal en Caballito, ahora los datos de las ventas también tienen el nombre de la sucursal en la cual se realizó. Por ejemplo: `{ fecha: new Date(2019, 1, 1), nombreVendedora: "Ada", componentes: ["Monitor GPRS 3000", "Motherboard ASUS 1500"], sucursal: 'Centro' }`. Por este cambio, se pide:
-    * En las ventas ya existentes, tenemos que agregar la propiedad `sucursal` con el valor **Centro** (ya que es la sucursal original).
-
-    * Agregar al objeto principal la propiedad `sucursales: ['Centro', 'Caballito']`
-
-    * Cargar la siguiente información en el array `ventas`, creando sus respectivos objetos siguiendo el patrón: fecha, nombreVendedora, componentes, sucursal
-
-    * En la aplicación debe haber un botón **Nueva venta** donde se pueda sumar manualmente un nuevo ingreso con los campos requeridos *
-
-    ```js
-    // 12/02/2019, Hedy, [Monitor GPRS 3000, HDD Toyiva], Centro
-    // 24/02/2019, Sheryl, [Motherboard ASUS 1500, HDD Wezter Dishital], Caballito
-    // 01/02/2019, Ada, [Motherboard MZI, RAM Quinston Fury], Centro
-    // 11/02/2019, Grace, [Monitor ASC 543, RAM Quinston], Caballito
-    // 15/02/2019, Ada, [Motherboard ASUS 1200, RAM Quinston Fury], Centro
-    // 12/02/2019, Hedy, [Motherboard ASUS 1500, HDD Toyiva], Caballito
-    // 21/02/2019, Grace, [Motherboard MZI, RAM Quinston], Centro
-    // 08/02/2019, Sheryl, [Monitor ASC 543, HDD Wezter Dishital], Centro
-    // 16/02/2019, Sheryl, [Monitor GPRS 3000, RAM Quinston Fury], Centro
-    // 27/02/2019, Hedy, [Motherboard ASUS 1200, HDD Toyiva], Caballito
-    // 22/02/2019, Grace, [Monitor ASC 543, HDD Wezter Dishital], Centro
-    // 05/02/2019, Ada, [Motherboard ASUS 1500, RAM Quinston], Centro
-    // 01/02/2019, Grace, [Motherboard MZI, HDD Wezter Dishital], Centro
-    // 07/02/2019, Sheryl, [Monitor GPRS 3000, RAM Quinston], Caballito
-    // 14/02/2019, Ada, [Motherboard ASUS 1200, HDD Toyiva], Centro
-    ```
+2. En la aplicación debe haber un botón **Nueva venta** donde se pueda sumar manualmente un nuevo ingreso de una venta con todos sus campos. El mismo debe abrir un ventana modal con el formulario para cargar la venta. Además, necesitamos crear algunas funciones adicionales:
 
     * Crear la función **ventasSucursal(sucursal)**, que obtiene las ventas totales realizadas por una sucursal sin límite de fecha.
       ```js
@@ -112,35 +90,9 @@ var local = {
       console.log( sucursalDelMes(1, 2019) ); // "Centro"
       ```
 
-3. Para tener una mejor muestra de como está resultando el local, queremos desarrollar un reporte que nos muestre las ventas por sucursal y por mes. Para esto, necesitamos crear las siguientes funciones:
-    * **renderPorMes()**: Muestra una lista ordenada del importe total vendido por cada mes/año
-    ```js
-    console.log( renderPorMes() );
-    // Ventas por mes:
-    //   Total de enero 2019: 1250
-    //   Total de febrero 2019: 4210
-    ```
-
-    * **renderPorSucursal()**: Muestra una lista del importe total vendido por cada sucursal
-    ```js
-    console.log( renderPorSucursal() );
-    // Ventas por sucursal:
-    //   Total de Centro: 4195
-    //   Total de Caballito: 1265
-    ```
-
-    * **render()**: Tiene que mostrar la unión de los dos reportes anteriores, cual fue el producto más vendido y la vendedora que más ingresos generó
-    ```js
-    console.log( render() );
-    // Reporte
-    // Ventas por mes:
-    //   Total de enero 2019: 1250
-    //   Total de febrero 2019: 4210
-    // Ventas por sucursal:
-    //   Total de Centro: 4195
-    //   Total de Caballito: 1265
-    // Producto estrella: Monitor GPRS 3000
-    // Vendedora que más ingresos generó: Grace
-    ```
-
-    * El reporte se tiene que visualizar al final del sitio web en la cuadro indicado en el mock *
+3. Para tener una mejor muestra de como está resultando el local, queremos desarrollar un reporte que nos muestre las ventas por sucursal y otros dos datos más.
+    * El reporte se tiene que visualizar al final del sitio web como se ve en la web ejemplo
+    * Debe contener una tabla donde se liste cada sucursal y el total de ventas que tuvo.
+    * Debe mostrar:
+      * Producto estrella: el componente que más ventas generó
+      * Vendedora que más ingresos generó: la vendedora que mayor cantidad de ingresos generó (no cantidad de ventas)
