@@ -80,7 +80,7 @@ var local = {
 
     * Crear la función **ventasSucursal(sucursal)**, que obtiene las ventas totales realizadas por una sucursal sin límite de fecha.
       ```js
-      console.log( ventasSucursal("Centro") ); // 4195
+      console.log( ventasSucursal("Centro") ); // 990
       ```
 
     * Las funciones **ventasSucursal** y **ventasVendedora** tienen mucho código en común, ya que es la misma funcionalidad pero trabajando con una propiedad distinta. Entonces, ¿cómo harías para que ambas funciones reutilicen código y evitemos repetir?
