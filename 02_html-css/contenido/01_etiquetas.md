@@ -5,7 +5,7 @@ Una etiqueta actúa como un contenedor y describe los datos o información que c
 <tipoDeEtiqueta>Contenido</tipoDeEtiqueta>
 ```
 
-###Una etiqueta esta compuesta por:
+### Una etiqueta esta compuesta por:
 
 **Etiqueta de apertura:**
 * `<` un signo menor que se conoce como apertura de la etiqueta
