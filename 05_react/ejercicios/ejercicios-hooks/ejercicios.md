@@ -65,3 +65,26 @@
 
 **[Link ejercicio](https://codesandbox.io/s/react-ejercicio-6-children-y-composicion-dvkiu)**
 
+--- 
+
+## Agregando componentes
+
+  1. Crea dos componentes, `Comments` y `Comment`
+  2. `Comment` que debe contener un `article` con clase `comment`, el cual debe tener anidado un componente `PostInfo` y un elemento `p` que contenga el texto del comentario, con la clase `comment-content`. Importar `PostInfo` con el nombre de `CommentInfo`.
+  3. Agregar a `Comment` los `props` y `propTypes` que correspondan
+  4. `Comments` debe contener un `section` con la clase `comments`, un `h2` con el texto "Comentarios" y la clase "comments-title", y un componente `Comment`. Pasarle al componente `Comment` los props necesarios con datos cualquiera para que se renderice.
+  5. Agregar `Comments` a `App.js`, dentro del componente `Post`
+
+**[Link ejercicio](https://codesandbox.io/s/react-ejercicio-7-agregando-componentes-7052e)**
+
+--- 
+
+## Listas
+
+  1. Pasar el objeto `postInfo` a un archivo del mismo nombre, ubicado en el mismo nivel que `App.js`, exportarlo e importarlo en `App.js`
+  2. Agregar a `Comments` un `prop` llamado `comments`
+  3. Pasar la propiedad `comments` (que contiene el array con comentarios) de `postInfo` como `prop` al componente `Comments`
+  4. En `Comments`, después de `comments-title`, agregar un `ul` con clase `comments-list`
+  5. Dentro del `ul`, iterar sobre la `prop` `comments`, y por cada item, mapear el componente `Comment` dentro de un `li` con clase `comment-item`, pasándole las `props` correspondiente
+
+**[Link ejercicio](https://codesandbox.io/s/react-ejercicio-8-listas-5g11r)**
