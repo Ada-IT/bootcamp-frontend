@@ -78,7 +78,7 @@
 **[Link ejercicio](https://codesandbox.io/s/react-ejercicio-7-agregando-componentes-7052e)**
 
 --- 
-
+  
 ## Listas
 
   1. Pasar el objeto `postInfo` a un archivo del mismo nombre, ubicado en el mismo nivel que `App.js`, exportarlo e importarlo en `App.js`
