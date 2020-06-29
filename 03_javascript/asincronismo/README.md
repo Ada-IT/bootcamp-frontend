@@ -188,7 +188,6 @@ setTimeout(function(){
 
 [Ejercicio 1](./ejercicios/ej_01.md)
 
-
 ### **Promesas**
 
 Una promesa es un objeto que representa el resultado de una operación asíncrona. Este resultado podría estar disponible ahora o en el futuro. Las promesas se basan en callbacks pero añaden un mejor manejo y sintaxis. Las promesas son especiales en términos de asincronía ya que añaden un nuevo nivel de prioridad que estudiaremos a continuación.
@@ -294,3 +293,5 @@ Promise.resolve().then(() => console.log("2"));
 ```
 
 El callback de la promesa (`() => console.log("2")`) tiene mayor prioridad que el callback del setTimeout gracias a la cola de microtareas, y por ello es procesado primero.
+
+[Ejercicio 2](./ejercicios/ej_02.md)
