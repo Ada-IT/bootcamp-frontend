@@ -65,4 +65,5 @@ console.log(2 + 2);
 * [Objetos](./objetos/README.md)
 * [DOM](./dom/README.md)
 * [ES6](./es6/README.md)
+* [Asincronismo](./asincronismo/README.md)
 
