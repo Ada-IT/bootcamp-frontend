@@ -1,0 +1,206 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GitHub Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700,600);
+
+      body {
+        background: #ecf0f1;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 400;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      *:active,
+      *:focus {
+        border: 0;
+        outline: 0;
+      }
+
+      a {
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      #card {
+        width: 25rem;
+        margin: auto;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      .search--box label {
+        position: relative;
+      }
+
+      .search--box label:after {
+        position: absolute;
+        content: "";
+        border-right: 0.625rem solid transparent;
+        border-left: 0.625rem solid transparent;
+        border-bottom: 0.625rem solid #fff;
+        bottom: -1.0625rem;
+        right: 50%;
+        margin-right: -0.3125rem;
+      }
+
+      .search--box input[type="search"] {
+        width: 100%;
+        font: 1rem "Titillium Web", sans-serif;
+        color: #1a4e8e;
+        border: 0;
+        padding: 0.75rem 0.9375rem 0.9375rem;
+        background: #e6ebed;
+        border-radius: 0.3125rem 0.3125rem 0 0;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .notfound {
+        background: #fff;
+        padding: 1.875rem;
+        text-align: center;
+      }
+
+      .notfound h2 {
+        font-size: 2rem;
+        color: #2368bd;
+        margin-bottom: 0.625rem;
+      }
+
+      .notfound p {
+        font-size: 1rem;
+        color: #a3b6bb;
+      }
+
+      .github--profile {
+        width: 100%;
+      }
+
+      .github--profile__info {
+        background: #fff;
+        text-align: center;
+        padding: 1.875rem 0.9375rem;
+      }
+
+      .github--profile__info img {
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 50%;
+        display: block;
+        box-shadow: 0 0 0.0625rem rgba(0, 0, 0, 0.5);
+      }
+
+      .github--profile__info h2 a {
+        font-size: 1.65rem;
+        color: #2368bd;
+      }
+
+      .github--profile__info h3 {
+        font-size: 1.1885rem;
+        color: #bdcbce;
+      }
+
+      .github--profile__state {
+        background: #1a4e8e;
+        text-align: center;
+        padding: 1.875rem 0.9375rem;
+        border-radius: 0 0 0.3125rem 0.3125rem;
+      }
+
+      .github--profile__state ul {
+        direction: ltr;
+      }
+
+      .github--profile__state li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 1rem;
+      }
+
+      .github--profile__state li:last-child {
+        margin-right: 0;
+      }
+
+      .github--profile__state a {
+        color: #fff;
+      }
+
+      .github--profile__state i {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-style: normal;
+        display: block;
+      }
+
+      .github--profile__state span {
+        font-size: 0.844rem;
+        letter-spacing: 0.0625rem;
+        color: #2776d7;
+      }
+
+      .hesmaili {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #b4c4c8;
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+
+      .hesmaili a {
+        color: #2368bd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <section id="card">
+        <div class="search--box">
+          <form>
+            <label><input type="search" placeholder="Type Username + Enter" /></label>
+          </form>
+        </div>
+        <section class="github--profile">
+          <div class="github--profile__info">
+            <a href="#" target="_blank">
+              <img src="#" />
+            </a>
+            <h2>
+              <a href="#" target="_blank">...</a>
+            </h2>
+          </div>
+          <div class="github--profile__state">
+            <ul>
+              <li>
+                <a href="#" target="_blank" title="Number Of Followers"><i>-</i><span>Followers</span></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" title="Number Of Repositoriy"><i>-</i><span>Repositoriy</span></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" title="Number Of Following"><i>-</i><span>Following</span></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
