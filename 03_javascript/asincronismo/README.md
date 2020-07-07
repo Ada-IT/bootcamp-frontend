@@ -295,3 +295,247 @@ Promise.resolve().then(() => console.log("2"));
 El callback de la promesa (`() => console.log("2")`) tiene mayor prioridad que el callback del setTimeout gracias a la cola de microtareas, y por ello es procesado primero.
 
 [Ejercicio 2](./ejercicios/ej_02.md)
+[Ejercicio 3](./ejercicios/ej_03.md)
+[Ejercicio 4](./ejercicios/ej_04.md)
+[Ejercicio 5](./ejercicios/ej_05.md)
+[Ejercicio 6](./ejercicios/ej_06.md)
+[Ejercicio 7](./ejercicios/ej_07.md)
+[Ejercicio 8](./ejercicios/ej_08.md)
+[Ejercicio 9](./ejercicios/ej_09.md)
+
+### **Async/Await**
+
+Hay una sintaxis especial para trabajar con promesas más cómoda, llamada **async/await**.
+
+#### **Async functions**
+
+Empecemos con la palabra reserva `async`. Puede ser puesta antes de la función, por ejemplo:
+
+```js
+async function f () {
+  return 1;
+}
+```
+
+La palabra `async` antes de la función significa una cosa: una función que **siempre** devuelve una promesa. Si la función retorna cualquier otro valor, se envolvería dentro de una promesa automáticamente.
+
+Por ejemplo, esta función retorna una promesa que se resuelve con el valor `1`. Veamos como funciona:
+
+```js
+async function f() {
+  return 1;
+}
+
+f().then(res => console.log(res)); // 1
+```
+
+...podemos explicitamente retornar una promesa, que sería lo mismo:
+
+```js
+async function f() {
+  return new Promise((resolve, reject) => resolve(1))
+}
+
+f().then(res => console.log(res)); // 1
+```
+
+Entonces, `async` nos asegura que una función retorna una promesa, y envuelve valores que no son promesas dentro de una. Pero no es lo único, tenemos otra palabra clave, `await`, que **solo** funciona dentro de funciones `async`.
+
+#### **Await**
+
+La sintáxis:
+
+```js
+// funciones solo dentro de funciones con async
+let value = await promise;
+```
+
+La palabra `await` hace que JavaScript espere hasta que la promesa se resuelva y retorne un resultado
+
+Veamos un ejemplo de una promesa que se resuelve en una semana:
+
+```js
+async function mostrarSaludo () {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("¡hola mundo!"), 1000)
+  });
+
+  let result = await promise; // espera hasta que la promesa termine (*)
+
+  alert(result); // "¡hola mundo!"
+}
+
+f();
+```
+
+La ejecución de la función se _pausa_ en la línea `(*)` y sigue ejecutándose cuando la promesa se resolvió, guardando el valor que resuelve en la variable `result`. Entonces el código arriba muestra el texto `¡hola mundo!` en 1 segundo.
+
+Para enfatizar: `await` literalmente hace que JavaScript espere hasta que la promesa termine, y después retorna el resultado. Esto no genera ninguna carga extra al CPU ni bloquea el event loop, porque el motor de JS puede seguir haciendo otros procesos en el mientras: ejecutar otros scripts, manejar eventos, etc.
+
+Es solo una sintaxis más elegante de obtener el resultado de una promesa sin usar `promise.then()`, por lo que es más sencillo de escribir y leer.
+
+🚫 **No se puede usar `await` en funciones regulares**
+
+Si tratamos de usarla dentro de una función que no es `async`, vamos a tener un error de sintáxis:
+
+```js
+function f() {
+  let promise = Promise.resolve(1);
+  let result = await promise; // Syntax error
+}
+```
+
+Vamos a ver un ejemplo de una función `mostrarAvatar()`, que toma los datos de perfil de GitHub y agrega la imagen del usuario:
+
+**Con promise.then**
+```js
+const mostrarAvatar = userName => {
+  // leo la api de github, y espero su respuesta
+  fetch(`https://api.github.com/users/${userName}`)
+    .then(githubResponse => githubResponse.json()) // como fetch me devuelve un objeto Response, tengo que decir que el cuerpo de lo devuelva como JSON
+    .then(githubUser => {
+      // muestro el avatar
+      let img = document.createElement('img');
+      img.src = githubUser.avatar_url;
+      img.className = "promise-avatar-example";
+      document.body.append(img);
+
+      // espero 3 segundos, y elimino la imagen
+      new Promise((resolve, reject) => setTimeout(resolve, 3000))
+        .then(() => {
+          img.remove()
+        })
+    })
+}
+
+mostrarAvatar('Ada-IT');
+```
+
+**Con async/await**
+```js
+const mostrarAvatar = async userName => {
+  // leo la api de github, y espero su respuesto con await
+  let githubResponse = await fetch(`https://api.github.com/users/${userName}`);
+  // como fetch me devuelve un objeto Response, tengo que decir que el cuerpo de lo devuelva como JSON
+  let githubUser = await githubResponse.json();
+
+  // muestro el avatar
+  let img = document.createElement('img');
+  img.src = githubUser.avatar_url;
+  img.className = "promise-avatar-example";
+  document.body.append(img);
+
+  // espero 3 segundos, y elimino la imagen
+  await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+  img.remove();
+}
+
+mostrarAvatar('Ada-IT');
+```
+
+La segunda opción, con `async/await`, es más limpia y fácil de leer.
+
+<br>
+
+❕ `await` no funciona en código _top/level_ (global, fuera de una función)
+
+Por ejemplo, el siguiente caso no funciona:
+
+```js
+// syntax error
+let response = await fetch('/user.json');
+let user = await response.json();
+```
+
+Pero podemos envolverlo en una función anónima con `async`:
+
+```js
+(async () => {
+  let response = await fetch('/user.json');
+  let user = await response.json();
+})();
+```
+
+### **Error handling**
+
+Cuando una promesa se resuelve normalmante, entonces el `await` de una promesa nos retorna el resultado. Pero en el caso de un rechazo (`reject`), lanza un error como una excepción.
+
+Este código:
+
+```js
+async function f() {
+  await Promise.reject(new Error("Error!"));
+}
+```
+
+Es lo mismo que:
+
+```js
+async function f() {
+  throw new Error("Error!");
+}
+```
+
+En situaciones reales, la promesa tardaría algún tiempo antes de que sea rechazada. En ese caso, habría un delay antes de que `await` lance (throws) un error.
+
+Podemos atrapar ese error utilizando `try..catch`, igual que con excepciones regulares:
+
+```js
+async function traerAlgunDato() {
+  try {
+    let response = await fetch('http://urlmala');
+  } catch(err) {
+    console.log(err); // TypeError: failed to fetch
+  }
+}
+
+traerAlgunDato();
+```
+
+En el caso de un error, la función salta directamente al bloque `catch`. Podemos también poner varias líneas:
+
+```js
+async function fetchUser() {
+
+  try {
+    let response = await fetch('http://urlmala');
+    let user = await response.json();
+  } catch(err) {
+    // atrapa cualquier error de las dos promesas
+    alert(err);
+  }
+}
+
+fetchUser();
+```
+
+Si no tenemos el bloque `try...catch`, entonces la promesa generada por la llamada a la función `async` se _rechaza_. Podemos utilizar `.catch()` para manejar el error:
+
+```js
+async function fetchData() {
+  let response = await fetch('http://no-such-url');
+}
+
+// fetchData() se vuelve una promesa que se rechaza
+fetchData().catch(console.log); // TypeError: failed to fetch // (*)
+```
+
+Si nos olvidamos de agregar el `.catch()`, vamos a obtener un mensaje de error en la consola de _unhandled promise error_.
+
+### **Resumen async/await**
+
+La palabre clave `async` tiene dos efectos:
+
+1. Hace que la función **siempre** retorne una promesa
+2. Nos permite que podamos utilizar `await` dentro de ella
+
+La palabra clave `await` antes de una promesa, hace que JavaScript espere hasta que esa promesa finalice, y después:
+
+1. Si hay un error, entonces se genera un excepción (igual que si lanzamos una excepción en ese mismo lugar `throw "¡esto es una excepción!"`)
+2. Si no hay ningún error, retorna el resultado
+
+Juntas, nos proveen de una gran herramienta para escribir código asícrono que es más fácil de leer y escribir.
+
+Con `async/await` rara vez vamos a necesitar escribir `promise.then/catch`, pero nunca tenemos que olvidar que en el fondo estan basadas en promesas, porque podemos encontrarnos en alguna situación donde las necesitemos usar.
