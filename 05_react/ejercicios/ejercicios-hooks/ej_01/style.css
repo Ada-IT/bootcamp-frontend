@@ -1,0 +1,30 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.btn {
+  border-radius: 0 !important;
+  cursor: pointer;
+}
+
+.clicker {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.clicker-display {
+  height: 200px;
+}
+
+.clicker-button-panel {
+  height: 100px;
+}
+
+.header {
+  height: 100px;
+}
