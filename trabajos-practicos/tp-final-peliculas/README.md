@@ -89,12 +89,6 @@ Debe contener los siguientes datos:
 - Fecha de estreno
 - Cantidad de temporadas
 - Cantidad de episodios
-
-### Búsqueda
-
-- `select` para seleccionar medio: `Película` o `Televisión`
-- `input` de texto para  buscar por nombre
-- Botón para realizar la búsqueda
   
 ## Comentarios de componentes
 
