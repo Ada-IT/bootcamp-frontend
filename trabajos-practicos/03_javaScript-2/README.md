@@ -7,14 +7,13 @@
 1. Respetar el diseño propuesto en: https://ada-tp-js-2.surge.sh/
 
 
-2. La URL de la API a utilizar es: https://tp-js-2-api-wjfqxquokl.now.sh
+2. La URL de la API a utilizar es: https://5fd39ad7e9cda40016f5b79f.mockapi.io/. Si tienen una cuenta en MockApi, pueden clonarla usando https://mockapi.io/clone/5fd39ad7e9cda40016f5b7a0 (recomendado para evitar que se sature).
 
     Los endpoints que permite la misma son:
 
     - **`GET /users?search=:q`**
 
       Retorna un array de personas guardadas en el servidor. Las mismas se pueden filtrar utilizando el queryParam search
-
 
     - **`POST /users`**
 
